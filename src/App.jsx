@@ -45,6 +45,20 @@ export default function App() {
     setQuery('')
   }
 
+  function handleEntryChanged(result) {
+    setCourses((prev) =>
+      prev.map((c) => {
+        if (c.id !== result.courseId) return c
+        const next = { ...c }
+        next[result.oldSection] = next[result.oldSection].filter((e) => e.id !== result.entryId)
+        if (result.entry) {
+          next[result.newSection] = [...next[result.newSection], result.entry]
+        }
+        return next
+      }),
+    )
+  }
+
   const filteredEntries = useMemo(() => {
     if (!activeCourse) return []
     const list = activeCourse[activeSection] || []
@@ -98,9 +112,15 @@ export default function App() {
             className="w-full bg-[var(--panel-2)] border border-[var(--edge)] rounded-lg p-2.5 text-sm font-mono text-slate-200 mb-8 focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
           />
 
-          {activeSection === 'commands' && <CommandsSection entries={filteredEntries} />}
-          {activeSection === 'concepts' && <ConceptsSection entries={filteredEntries} />}
-          {activeSection === 'glossary' && <GlossarySection entries={filteredEntries} />}
+          {activeSection === 'commands' && (
+            <CommandsSection entries={filteredEntries} courseId={activeCourseId} onEntryChanged={handleEntryChanged} />
+          )}
+          {activeSection === 'concepts' && (
+            <ConceptsSection entries={filteredEntries} courseId={activeCourseId} onEntryChanged={handleEntryChanged} />
+          )}
+          {activeSection === 'glossary' && (
+            <GlossarySection entries={filteredEntries} courseId={activeCourseId} onEntryChanged={handleEntryChanged} />
+          )}
         </>
       )}
     </div>

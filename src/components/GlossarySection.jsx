@@ -1,7 +1,15 @@
 import EmptyState from './EmptyState.jsx'
+import EntryCard from './EntryCard.jsx'
 import { groupBySubmodule } from '../lib/group.js'
 
-export default function GlossarySection({ entries }) {
+const FIELDS = [
+  { key: 'term', label: 'Término', type: 'text' },
+  { key: 'tag', label: 'Etiqueta', type: 'text' },
+  { key: 'definition', label: 'Definición', type: 'textarea' },
+  { key: 'submodule', label: 'Submódulo', type: 'text' },
+]
+
+export default function GlossarySection({ entries, courseId, onEntryChanged }) {
   const groups = groupBySubmodule(entries)
   if (!groups.length) return <EmptyState label="términos" />
 
@@ -14,7 +22,14 @@ export default function GlossarySection({ entries }) {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {items.map((e) => (
-              <div key={e.id} className="bg-[var(--panel)] border border-[var(--edge)] rounded-xl p-5">
+              <EntryCard
+                key={e.id}
+                entry={e}
+                section="glossary"
+                courseId={courseId}
+                fields={FIELDS}
+                onChanged={onEntryChanged}
+              >
                 <h4 className="font-mono text-sm mb-2 flex items-center gap-2 flex-wrap">
                   {e.term}
                   {e.tag && (
@@ -24,7 +39,7 @@ export default function GlossarySection({ entries }) {
                   )}
                 </h4>
                 <p className="text-sm text-[var(--mute)]">{e.definition}</p>
-              </div>
+              </EntryCard>
             ))}
           </div>
         </div>

@@ -1,7 +1,15 @@
 import EmptyState from './EmptyState.jsx'
+import EntryCard from './EntryCard.jsx'
 import { groupBySubmodule } from '../lib/group.js'
 
-export default function ConceptsSection({ entries }) {
+const FIELDS = [
+  { key: 'title', label: 'Título', type: 'text' },
+  { key: 'explanation', label: 'Explicación', type: 'textarea' },
+  { key: 'keyPoints', label: 'Puntos clave (uno por línea)', type: 'list' },
+  { key: 'submodule', label: 'Submódulo', type: 'text' },
+]
+
+export default function ConceptsSection({ entries, courseId, onEntryChanged }) {
   const groups = groupBySubmodule(entries)
   if (!groups.length) return <EmptyState label="conceptos" />
 
@@ -14,7 +22,14 @@ export default function ConceptsSection({ entries }) {
           </h3>
           <div className="grid gap-4">
             {items.map((e) => (
-              <div key={e.id} className="bg-[var(--panel)] border border-[var(--edge)] rounded-xl p-5">
+              <EntryCard
+                key={e.id}
+                entry={e}
+                section="concepts"
+                courseId={courseId}
+                fields={FIELDS}
+                onChanged={onEntryChanged}
+              >
                 <h4 className="font-mono text-sm mb-2">{e.title}</h4>
                 {e.explanation && <p className="text-sm text-slate-300">{e.explanation}</p>}
                 {e.keyPoints?.length > 0 && (
@@ -24,7 +39,7 @@ export default function ConceptsSection({ entries }) {
                     ))}
                   </ul>
                 )}
-              </div>
+              </EntryCard>
             ))}
           </div>
         </div>

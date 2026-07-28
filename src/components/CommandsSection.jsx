@@ -1,8 +1,17 @@
 import Terminal from './Terminal.jsx'
 import EmptyState from './EmptyState.jsx'
+import EntryCard from './EntryCard.jsx'
 import { groupBySubmodule } from '../lib/group.js'
 
-export default function CommandsSection({ entries }) {
+const FIELDS = [
+  { key: 'title', label: 'Título', type: 'text' },
+  { key: 'command', label: 'Comando', type: 'text' },
+  { key: 'explanation', label: 'Explicación', type: 'textarea' },
+  { key: 'example', label: 'Ejemplo', type: 'textarea' },
+  { key: 'submodule', label: 'Submódulo', type: 'text' },
+]
+
+export default function CommandsSection({ entries, courseId, onEntryChanged }) {
   const groups = groupBySubmodule(entries)
   if (!groups.length) return <EmptyState label="comandos" />
 
@@ -15,7 +24,14 @@ export default function CommandsSection({ entries }) {
           </h3>
           <div className="space-y-6">
             {items.map((e) => (
-              <div key={e.id} className="bg-[var(--panel)] border border-[var(--edge)] rounded-xl p-5">
+              <EntryCard
+                key={e.id}
+                entry={e}
+                section="commands"
+                courseId={courseId}
+                fields={FIELDS}
+                onChanged={onEntryChanged}
+              >
                 <h4 className="font-mono text-sm mb-3">{e.title}</h4>
                 {e.command && <Terminal code={e.command} />}
                 {e.explanation && <p className="text-sm text-slate-300 mb-3">{e.explanation}</p>}
@@ -29,7 +45,7 @@ export default function CommandsSection({ entries }) {
                     </pre>
                   </>
                 )}
-              </div>
+              </EntryCard>
             ))}
           </div>
         </div>
