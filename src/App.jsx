@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import CourseTabs from './components/CourseTabs.jsx'
+import Sidebar from './components/Sidebar.jsx'
+import Home from './components/Home.jsx'
 import SectionTabs from './components/SectionTabs.jsx'
 import CommandsSection from './components/CommandsSection.jsx'
 import ConceptsSection from './components/ConceptsSection.jsx'
@@ -9,7 +10,8 @@ import { fetchNotes } from './lib/github.js'
 
 export default function App() {
   const [courses, setCourses] = useState([])
-  const [activeCourseId, setActiveCourseId] = useState(null)
+  const [activeCourseId, setActiveCourseId] = useState(null) // null = Inicio
+  const [pendingNewCourseName, setPendingNewCourseName] = useState(null)
   const [activeSection, setActiveSection] = useState('commands')
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(true)
@@ -17,16 +19,34 @@ export default function App() {
 
   useEffect(() => {
     fetchNotes()
-      .then((data) => {
-        const list = data.courses || []
-        setCourses(list)
-        if (list.length) setActiveCourseId(list[0].id)
-      })
+      .then((data) => setCourses(data.courses || []))
       .catch((err) => setLoadError(err.message))
       .finally(() => setLoading(false))
   }, [])
 
   const activeCourse = courses.find((c) => c.id === activeCourseId)
+  const showHome = !pendingNewCourseName && !activeCourse
+
+  function handleSelectHome() {
+    setActiveCourseId(null)
+    setPendingNewCourseName(null)
+    setActiveSection('commands')
+    setQuery('')
+  }
+
+  function handleSelectCourse(id) {
+    setActiveCourseId(id)
+    setPendingNewCourseName(null)
+    setActiveSection('commands')
+    setQuery('')
+  }
+
+  function handleStartNewCourse(name) {
+    setPendingNewCourseName(name)
+    setActiveCourseId(null)
+    setActiveSection('commands')
+    setQuery('')
+  }
 
   function handleAdded(result) {
     setCourses((prev) => {
@@ -42,6 +62,7 @@ export default function App() {
       return next
     })
     setActiveCourseId(result.courseId)
+    setPendingNewCourseName(null)
     setQuery('')
   }
 
@@ -76,53 +97,84 @@ export default function App() {
     : {}
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pb-24 min-h-screen">
-      <header className="pt-16 pb-10">
-        <div className="font-mono text-sm text-[var(--green)] mb-4">$ whoami</div>
-        <h1 className="font-mono text-4xl mb-3">
-          Apuntes <span className="text-[var(--mute)]">— todos mis cursos</span>
-        </h1>
-        <p className="text-[var(--mute)] max-w-xl">
-          Cada curso tiene sus comandos, conceptos y glosario. Se organiza solo con IA a medida
-          que voy pegando notas.
-        </p>
-      </header>
+    <div className="flex min-h-screen">
+      <Sidebar
+        courses={courses}
+        activeCourseId={activeCourseId}
+        homeActive={showHome}
+        onSelectHome={handleSelectHome}
+        onSelectCourse={handleSelectCourse}
+        onNewCourse={handleStartNewCourse}
+      />
 
-      <AddNoteForm courses={courses} defaultCourseId={activeCourseId} onAdded={handleAdded} />
+      <main className="flex-1 px-6 pb-24">
+        <div className="max-w-3xl mx-auto">
+          {loading && <p className="pt-16 text-[var(--mute)] font-mono text-sm">Cargando apuntes…</p>}
+          {loadError && <p className="pt-16 text-[var(--red)] font-mono text-sm">{loadError}</p>}
 
-      {loading && <p className="text-[var(--mute)] font-mono text-sm">Cargando apuntes…</p>}
-      {loadError && <p className="text-[var(--red)] font-mono text-sm">{loadError}</p>}
+          {!loading && !loadError && showHome && <Home courses={courses} onSelectCourse={handleSelectCourse} />}
 
-      {!loading && !courses.length && (
-        <p className="text-[var(--mute)] font-mono text-sm">
-          Todavía no hay cursos. Agregá tu primera nota arriba para crear el primero.
-        </p>
-      )}
-
-      {courses.length > 0 && (
-        <>
-          <CourseTabs courses={courses} activeCourseId={activeCourseId} onSelect={setActiveCourseId} />
-
-          <SectionTabs active={activeSection} onSelect={setActiveSection} counts={counts} />
-
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Buscar en esta sección…"
-            className="w-full bg-[var(--panel-2)] border border-[var(--edge)] rounded-lg p-2.5 text-sm font-mono text-slate-200 mb-8 focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
-          />
-
-          {activeSection === 'commands' && (
-            <CommandsSection entries={filteredEntries} courseId={activeCourseId} onEntryChanged={handleEntryChanged} />
+          {!loading && !loadError && pendingNewCourseName && (
+            <>
+              <header className="pt-16 pb-10">
+                <div className="font-mono text-sm text-[var(--green)] mb-4">$ whoami</div>
+                <h1 className="font-mono text-4xl mb-3">
+                  Nuevo curso <span className="text-[var(--mute)]">— {pendingNewCourseName}</span>
+                </h1>
+                <p className="text-[var(--mute)] max-w-xl">
+                  Pegá tu primera nota para crear el curso — se guarda apenas la IA la organiza.
+                </p>
+              </header>
+              <AddNoteForm newCourseName={pendingNewCourseName} onAdded={handleAdded} />
+            </>
           )}
-          {activeSection === 'concepts' && (
-            <ConceptsSection entries={filteredEntries} courseId={activeCourseId} onEntryChanged={handleEntryChanged} />
+
+          {!loading && !loadError && activeCourse && (
+            <>
+              <header className="pt-16 pb-10">
+                <div className="font-mono text-sm text-[var(--green)] mb-4">$ whoami</div>
+                <h1 className="font-mono text-4xl mb-3">{activeCourse.name}</h1>
+                <p className="text-[var(--mute)] max-w-xl">
+                  Se organiza solo con IA a medida que voy pegando notas.
+                </p>
+              </header>
+
+              <AddNoteForm courseId={activeCourse.id} onAdded={handleAdded} />
+
+              <SectionTabs active={activeSection} onSelect={setActiveSection} counts={counts} />
+
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Buscar en esta sección…"
+                className="w-full bg-[var(--panel-2)] border border-[var(--edge)] rounded-lg p-2.5 text-sm font-mono text-slate-200 mb-8 focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
+              />
+
+              {activeSection === 'commands' && (
+                <CommandsSection
+                  entries={filteredEntries}
+                  courseId={activeCourse.id}
+                  onEntryChanged={handleEntryChanged}
+                />
+              )}
+              {activeSection === 'concepts' && (
+                <ConceptsSection
+                  entries={filteredEntries}
+                  courseId={activeCourse.id}
+                  onEntryChanged={handleEntryChanged}
+                />
+              )}
+              {activeSection === 'glossary' && (
+                <GlossarySection
+                  entries={filteredEntries}
+                  courseId={activeCourse.id}
+                  onEntryChanged={handleEntryChanged}
+                />
+              )}
+            </>
           )}
-          {activeSection === 'glossary' && (
-            <GlossarySection entries={filteredEntries} courseId={activeCourseId} onEntryChanged={handleEntryChanged} />
-          )}
-        </>
-      )}
+        </div>
+      </main>
     </div>
   )
 }
