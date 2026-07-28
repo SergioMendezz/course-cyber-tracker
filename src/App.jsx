@@ -1,84 +1,108 @@
-import { useEffect, useState } from 'react'
-import Terminal from './components/Terminal.jsx'
-import GlossaryGrid from './components/GlossaryGrid.jsx'
-import CareerRoles from './components/CareerRoles.jsx'
+import { useEffect, useMemo, useState } from 'react'
+import CourseTabs from './components/CourseTabs.jsx'
+import SectionTabs from './components/SectionTabs.jsx'
+import CommandsSection from './components/CommandsSection.jsx'
+import ConceptsSection from './components/ConceptsSection.jsx'
+import GlossarySection from './components/GlossarySection.jsx'
 import AddNoteForm from './components/AddNoteForm.jsx'
 import { fetchNotes } from './lib/github.js'
 
 export default function App() {
-  const [modules, setModules] = useState([])
+  const [courses, setCourses] = useState([])
+  const [activeCourseId, setActiveCourseId] = useState(null)
+  const [activeSection, setActiveSection] = useState('commands')
+  const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState(null)
 
   useEffect(() => {
     fetchNotes()
-      .then((data) => setModules(data.modules || []))
+      .then((data) => {
+        const list = data.courses || []
+        setCourses(list)
+        if (list.length) setActiveCourseId(list[0].id)
+      })
       .catch((err) => setLoadError(err.message))
       .finally(() => setLoading(false))
   }, [])
 
-  function handleAdded(newModule) {
-    setModules((prev) => [...prev, newModule])
+  const activeCourse = courses.find((c) => c.id === activeCourseId)
+
+  function handleAdded(result) {
+    setCourses((prev) => {
+      const exists = prev.some((c) => c.id === result.courseId)
+      const next = exists
+        ? prev.map((c) => (c.id === result.courseId ? { ...c } : c))
+        : [...prev, { id: result.courseId, name: result.courseName, commands: [], concepts: [], glossary: [] }]
+
+      const target = next.find((c) => c.id === result.courseId)
+      for (const { section, entry } of result.entries) {
+        target[section] = [...target[section], entry]
+      }
+      return next
+    })
+    setActiveCourseId(result.courseId)
+    setQuery('')
   }
+
+  const filteredEntries = useMemo(() => {
+    if (!activeCourse) return []
+    const list = activeCourse[activeSection] || []
+    if (!query.trim()) return list
+    const q = query.toLowerCase()
+    return list.filter((e) => JSON.stringify(e).toLowerCase().includes(q))
+  }, [activeCourse, activeSection, query])
+
+  const counts = activeCourse
+    ? {
+        commands: activeCourse.commands.length,
+        concepts: activeCourse.concepts.length,
+        glossary: activeCourse.glossary.length,
+      }
+    : {}
 
   return (
     <div className="max-w-3xl mx-auto px-6 pb-24 min-h-screen">
       <header className="pt-16 pb-10">
         <div className="font-mono text-sm text-[var(--green)] mb-4">$ whoami</div>
         <h1 className="font-mono text-4xl mb-3">
-          Pre Security <span className="text-[var(--mute)]">— apuntes de curso</span>
+          Apuntes <span className="text-[var(--mute)]">— todos mis cursos</span>
         </h1>
         <p className="text-[var(--mute)] max-w-xl">
-          Apuntes organizados por concepto del curso Pre Security de TryHackMe. Se actualiza con IA
-          a medida que avanzo.
+          Cada curso tiene sus comandos, conceptos y glosario. Se organiza solo con IA a medida
+          que voy pegando notas.
         </p>
       </header>
 
-      <AddNoteForm onAdded={handleAdded} />
+      <AddNoteForm courses={courses} defaultCourseId={activeCourseId} onAdded={handleAdded} />
 
       {loading && <p className="text-[var(--mute)] font-mono text-sm">Cargando apuntes…</p>}
       {loadError && <p className="text-[var(--red)] font-mono text-sm">{loadError}</p>}
 
-      {modules
-        .slice()
-        .sort((a, b) => a.order - b.order)
-        .map((m) => (
-          <section key={m.id} className="py-10 border-t border-[var(--edge)] first:border-t-0">
-            <div className="font-mono text-xs text-[var(--amber)] mb-3">
-              {String(m.order).padStart(2, '0')} · {m.type?.toUpperCase()}
-            </div>
-            <h2 className="font-mono text-2xl mb-2">{m.title}</h2>
-            {m.summary && <p className="text-[var(--mute)] max-w-xl mb-6">{m.summary}</p>}
+      {!loading && !courses.length && (
+        <p className="text-[var(--mute)] font-mono text-sm">
+          Todavía no hay cursos. Agregá tu primera nota arriba para crear el primero.
+        </p>
+      )}
 
-            {m.callouts?.map((c, i) => (
-              <div
-                key={i}
-                className="flex gap-3 p-3.5 rounded-lg bg-[var(--blue-10)] border border-[var(--blue-30)] text-sm mb-4"
-              >
-                <span>💡</span>
-                <div>{c.text}</div>
-              </div>
-            ))}
+      {courses.length > 0 && (
+        <>
+          <CourseTabs courses={courses} activeCourseId={activeCourseId} onSelect={setActiveCourseId} />
 
-            {m.terminal && <Terminal label={m.terminal.label} lines={m.terminal.lines} />}
+          <SectionTabs active={activeSection} onSelect={setActiveSection} counts={counts} />
 
-            {m.steps?.length > 0 && (
-              <ol className="space-y-2 mt-4">
-                {m.steps.map((s, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-slate-300">
-                    <span className="font-mono text-[var(--green)] border border-[var(--edge)] rounded w-6 h-6 flex items-center justify-center text-xs shrink-0">
-                      {i + 1}
-                    </span>
-                    {s}
-                  </li>
-                ))}
-              </ol>
-            )}
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Buscar en esta sección…"
+            className="w-full bg-[var(--panel-2)] border border-[var(--edge)] rounded-lg p-2.5 text-sm font-mono text-slate-200 mb-8 focus:outline-none focus:ring-2 focus:ring-[var(--blue)]"
+          />
 
-            {m.terms && <GlossaryGrid terms={m.terms} />}
-            {m.roles && <CareerRoles teams={m.teams} roles={m.roles} />}
-          </section>
-        ))}
+          {activeSection === 'commands' && <CommandsSection entries={filteredEntries} />}
+          {activeSection === 'concepts' && <ConceptsSection entries={filteredEntries} />}
+          {activeSection === 'glossary' && <GlossarySection entries={filteredEntries} />}
+        </>
+      )}
     </div>
   )
 }

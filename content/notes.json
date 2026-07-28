@@ -1,110 +1,55 @@
 {
-  "modules": [
+  "courses": [
     {
-      "id": "fundamentos",
-      "order": 1,
-      "type": "concept",
-      "title": "¿Qué es la seguridad ofensiva?",
-      "summary": "Consiste en pensar como un atacante para encontrar debilidades en un sistema antes de que lo haga un hacker real.",
-      "callouts": [
-        { "text": "Idea central: encontrar la vulnerabilidad primero, de forma legal y controlada, para poder corregirla." }
-      ],
-      "terminal": null,
-      "steps": null,
-      "terms": null,
-      "teams": null,
-      "roles": null
-    },
-    {
-      "id": "laboratorio-fakebank",
-      "order": 2,
-      "type": "lab",
-      "title": "Descubriendo páginas ocultas — Fakebank",
-      "summary": "Primer ejercicio práctico: usar dirb (la interfaz de línea de comandos de DirBuster) para descubrir rutas ocultas en un sitio web.",
-      "callouts": [
-        { "text": "DirBuster/dirb: escáner de seguridad web gratuito que fuerza directorios y archivos ocultos mediante diccionario, fuerza bruta e híbridos." }
-      ],
-      "terminal": {
-        "label": "user@thm: ~",
-        "lines": [
-          { "text": "$ dirb http://fakebank.thm", "style": "prompt" },
-          { "text": "" },
-          { "text": "---- Scanning URL: http://fakebank.thm/ ----", "style": "head" },
-          { "text": "" },
-          { "text": "+ http://fakebank.thm/bank-transfer (CODE:200|SIZE:4663)", "style": "found" },
-          { "text": "+ http://fakebank.thm/images (CODE:301|SIZE:179)", "style": "found" },
-          { "text": "" },
-          { "text": "DOWNLOADED: 4610 - FOUND: 2", "style": "mute" }
-        ]
-      },
-      "steps": [
-        "Abrir /bank-transfer en el navegador del escritorio simulado.",
-        "Usar el número de cuenta 8881 y depositar $2000 o más.",
-        "Volver a la página de la cuenta y confirmar que el saldo quedó positivo."
-      ],
-      "terms": null,
-      "teams": null,
-      "roles": null
-    },
-    {
-      "id": "glosario-1",
-      "order": 3,
-      "type": "glossary",
-      "title": "Términos que aparecen en el módulo",
-      "summary": "Definiciones cortas de conceptos mencionados junto al laboratorio y a los perfiles profesionales.",
-      "callouts": [],
-      "terminal": null,
-      "steps": null,
-      "terms": [
-        { "icon": "🛡️", "name": "IDS", "tag": "Intrusion Detection System", "definition": "Sistema que detecta intrusiones no autorizadas en una red o sistema." },
-        { "icon": "⚙️", "name": "UEFI", "tag": "", "definition": "Interfaz entre el sistema operativo y el firmware. Reemplazo moderno del BIOS." },
-        { "icon": "💾", "name": "BIOS", "tag": "", "definition": "Firmware de arranque que inicia el equipo, revisa hardware y carga el SO." },
-        { "icon": "🖥️", "name": "Sistema Operativo (OS)", "tag": "", "definition": "Capa entre el hardware y las aplicaciones. Ejemplos: Android, Linux, macOS, Windows." }
-      ],
-      "teams": null,
-      "roles": null
-    },
-    {
-      "id": "carreras-1",
-      "order": 4,
-      "type": "careers",
-      "title": "¿Hacia dónde puede ir esta carrera?",
-      "summary": "Tres perfiles de entrada a la ciberseguridad, según si defiendes (blue team) o atacas de forma ética (red team).",
-      "callouts": [],
-      "terminal": null,
-      "steps": null,
-      "terms": null,
-      "teams": [
-        { "color": "blue", "label": "🔵 Blue Team — defensa" },
-        { "color": "red", "label": "🔴 Red Team — ataque ético" }
-      ],
-      "roles": [
+      "id": "pre-security",
+      "name": "Pre Security (TryHackMe)",
+      "commands": [
         {
-          "team": "blue",
-          "name": "Security Analyst",
-          "tag": "blue team · detallista, curioso",
-          "description": "Monitorea, investiga y responde a la actividad de dispositivos y red.",
-          "day": ["Monitorear actividad", "Investigar actividad sospechosa", "Reconstruir incidentes", "Colaborar con otros equipos"],
-          "progression": ["Security Analyst", "Threat Hunting", "Incident Response", "Malware Analysis"],
-          "note": null
+          "id": "dirb-fakebank",
+          "submodule": "Reconocimiento web",
+          "title": "dirb — descubrir rutas ocultas",
+          "command": "dirb http://fakebank.thm",
+          "explanation": "dirb es la interfaz de línea de comandos de DirBuster: fuerza directorios y archivos ocultos en un servidor mediante diccionario, fuerza bruta e híbridos. Cada línea del resultado que empieza con + es una ruta encontrada.",
+          "example": "---- Scanning URL: http://fakebank.thm/ ----\n+ http://fakebank.thm/bank-transfer (CODE:200|SIZE:4663)\n+ http://fakebank.thm/images (CODE:301|SIZE:179)\n\nDOWNLOADED: 4610 - FOUND: 2"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "seguridad-ofensiva",
+          "submodule": "Fundamentos",
+          "title": "¿Qué es la seguridad ofensiva?",
+          "explanation": "Consiste en pensar como un atacante para encontrar debilidades en un sistema antes de que lo haga un hacker real, de forma legal y controlada, para poder corregirlas.",
+          "keyPoints": []
+        }
+      ],
+      "glossary": [
+        {
+          "id": "ids",
+          "submodule": "Sistemas",
+          "term": "IDS",
+          "tag": "Intrusion Detection System",
+          "definition": "Sistema que detecta intrusiones no autorizadas en una red o sistema."
         },
         {
-          "team": "blue",
-          "name": "Security Engineer",
-          "tag": "blue team · construye sistemas",
-          "description": "Construye y mantiene los sistemas que protegen la red, como un IDS.",
-          "day": ["Diseñar sistemas de seguridad", "Mantenerse al día con ataques nuevos", "Documentar procesos", "Evaluar riesgos"],
-          "progression": ["Security Engineer", "Application Security", "Cloud Security"],
-          "note": null
+          "id": "uefi",
+          "submodule": "Sistemas",
+          "term": "UEFI",
+          "tag": "",
+          "definition": "Interfaz entre el sistema operativo y el firmware. Reemplazo moderno del BIOS."
         },
         {
-          "team": "red",
-          "name": "Penetration Tester",
-          "tag": "red team · metódico",
-          "description": "Prueba la seguridad de sistemas de forma segura y bajo acuerdo (engagement).",
-          "day": ["Probar sistemas, redes y sitios web", "Evaluaciones y auditorías", "Analizar resultados y crear reportes"],
-          "progression": ["Pentester", "Network/Web Testing", "Red Teaming"],
-          "note": "Red Teaming simula ataques completos a largo plazo, a veces con intrusión física."
+          "id": "bios",
+          "submodule": "Sistemas",
+          "term": "BIOS",
+          "tag": "",
+          "definition": "Firmware de arranque que inicia el equipo, revisa hardware y carga el sistema operativo."
+        },
+        {
+          "id": "os",
+          "submodule": "Sistemas",
+          "term": "Sistema Operativo (OS)",
+          "tag": "",
+          "definition": "Capa entre el hardware y las aplicaciones. Ejemplos: Android, Linux, macOS, Windows."
         }
       ]
     }
