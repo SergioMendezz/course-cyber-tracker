@@ -74,7 +74,7 @@ Reglas generales:
       apiKey: env.ANTHROPIC_API_KEY,
       system: systemPrompt,
       userText: rawText,
-      maxTokens: 3000,
+      maxTokens: 8000,
       retries: 1,
     })
 

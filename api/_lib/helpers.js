@@ -72,6 +72,7 @@ export async function callClaude({ apiKey, system, userText, maxTokens = 2000 })
     body: JSON.stringify({
       model: 'claude-sonnet-5', // revisá docs.claude.com por si el nombre del modelo cambió
       max_tokens: maxTokens,
+      thinking: { type: 'disabled' }, // no necesitamos razonamiento largo para esta extracción, y así todo el presupuesto de tokens va al JSON de salida
       system,
       messages: [{ role: 'user', content: userText }],
     }),
@@ -84,19 +85,30 @@ export async function callClaude({ apiKey, system, userText, maxTokens = 2000 })
 
   const data = await res.json()
   const textBlock = data.content?.find((b) => b.type === 'text')?.text || ''
-  return textBlock.replace(/```json|```/g, '').trim()
+  return {
+    text: textBlock.replace(/```json|```/g, '').trim(),
+    stopReason: data.stop_reason,
+  }
 }
 
 /**
  * Igual que callClaude, pero espera JSON de vuelta: si Claude devuelve texto
  * vacío o algo que no parsea, reintenta una vez antes de fallar con un
- * mensaje claro (en vez de romper con "Unexpected end of JSON input").
+ * mensaje claro (en vez de romper con "Unexpected end of JSON input"). Si la
+ * respuesta se cortó por llegar al límite de tokens, avisa eso puntualmente
+ * en vez de reintentar a ciegas (el reintento fallaría igual).
  */
 export async function callClaudeForJson({ apiKey, system, userText, maxTokens = 2000, retries = 1 }) {
   let lastRaw = ''
   for (let attempt = 0; attempt <= retries; attempt++) {
-    const cleaned = await callClaude({ apiKey, system, userText, maxTokens })
+    const { text: cleaned, stopReason } = await callClaude({ apiKey, system, userText, maxTokens })
     lastRaw = cleaned
+
+    if (stopReason === 'max_tokens') {
+      throw new Error(
+        'El texto es demasiado largo para procesarlo en una sola pasada (se cortó la respuesta de la IA). Pegalo en partes más chicas.',
+      )
+    }
     if (!cleaned) continue
     try {
       return JSON.parse(cleaned)
