@@ -36,7 +36,13 @@ export async function readNotes(env) {
   const getRes = await fetch(`${ghApiBase}?ref=${env.GITHUB_BRANCH}`, { headers: ghHeaders })
   if (!getRes.ok) throw new Error('No se pudo leer content/notes.json de GitHub')
   const getData = await getRes.json()
-  const content = JSON.parse(Buffer.from(getData.content, 'base64').toString('utf-8'))
+
+  let content
+  try {
+    content = JSON.parse(Buffer.from(getData.content, 'base64').toString('utf-8'))
+  } catch {
+    throw new Error('content/notes.json en GitHub no es un JSON válido — revisalo a mano')
+  }
   content.courses = content.courses || []
 
   return { content, sha: getData.sha, ghApiBase, ghHeaders }
@@ -79,4 +85,25 @@ export async function callClaude({ apiKey, system, userText, maxTokens = 2000 })
   const data = await res.json()
   const textBlock = data.content?.find((b) => b.type === 'text')?.text || ''
   return textBlock.replace(/```json|```/g, '').trim()
+}
+
+/**
+ * Igual que callClaude, pero espera JSON de vuelta: si Claude devuelve texto
+ * vacío o algo que no parsea, reintenta una vez antes de fallar con un
+ * mensaje claro (en vez de romper con "Unexpected end of JSON input").
+ */
+export async function callClaudeForJson({ apiKey, system, userText, maxTokens = 2000, retries = 1 }) {
+  let lastRaw = ''
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const cleaned = await callClaude({ apiKey, system, userText, maxTokens })
+    lastRaw = cleaned
+    if (!cleaned) continue
+    try {
+      return JSON.parse(cleaned)
+    } catch {
+      continue
+    }
+  }
+  console.error('Respuesta de Claude no parseable como JSON:', lastRaw.slice(0, 500))
+  throw new Error('La IA no devolvió una respuesta válida. Probá de nuevo, o con un texto un poco distinto.')
 }

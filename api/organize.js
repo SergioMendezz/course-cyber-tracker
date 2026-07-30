@@ -1,4 +1,4 @@
-import { slugify, makeId, getEnv, readNotes, writeNotes, callClaude } from './_lib/helpers.js'
+import { slugify, makeId, getEnv, readNotes, writeNotes, callClaudeForJson } from './_lib/helpers.js'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -67,16 +67,17 @@ Reglas generales:
 - Todo en español, salvo comandos, código y términos técnicos que deban quedar en inglés.
 - No inventes información que no esté en el texto.
 - Los campos "example", "keyPoints" y "tag" pueden quedar vacíos ("" o []) si no aplican, pero el campo debe existir siempre.
-- Si el texto no tiene información nueva organizable, devolvé un array vacío [].`
+- Si el texto no tiene información nueva organizable, devolvé un array vacío [].
+- SIEMPRE devolvé al menos el array vacío "[]" — nunca dejes la respuesta en blanco.`
 
-    const cleaned = await callClaude({
+    const rawEntries = await callClaudeForJson({
       apiKey: env.ANTHROPIC_API_KEY,
       system: systemPrompt,
       userText: rawText,
       maxTokens: 3000,
+      retries: 1,
     })
 
-    const rawEntries = JSON.parse(cleaned)
     if (!Array.isArray(rawEntries)) throw new Error('La IA no devolvió un array válido')
 
     const newEntries = []

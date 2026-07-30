@@ -1,4 +1,4 @@
-import { getEnv, readNotes, writeNotes, callClaude } from './_lib/helpers.js'
+import { getEnv, readNotes, writeNotes, callClaudeForJson } from './_lib/helpers.js'
 
 const VALID_SECTIONS = ['commands', 'concepts', 'glossary']
 
@@ -81,14 +81,14 @@ Reglas:
 - Reusá un submódulo existente si corresponde, o inventá uno corto si hace falta.
 - Todo en español salvo comandos y términos técnicos.`
 
-      const cleaned = await callClaude({
+      const parsed = await callClaudeForJson({
         apiKey: env.ANTHROPIC_API_KEY,
         system: systemPrompt,
         userText: feedback,
         maxTokens: 1500,
+        retries: 1,
       })
 
-      const parsed = JSON.parse(cleaned)
       const { section: aiSection, ...rest } = parsed
       const targetSection = VALID_SECTIONS.includes(aiSection) ? aiSection : section
 
