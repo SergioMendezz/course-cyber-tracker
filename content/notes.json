@@ -20,6 +20,224 @@
           "title": "¿Qué es la seguridad ofensiva?",
           "explanation": "Consiste en pensar como un atacante para encontrar debilidades en un sistema antes de que lo haga un hacker real, de forma legal y controlada, para poder corregirlas.",
           "keyPoints": []
+        },
+        {
+          "id": "internet-of-things-iot-ms72jj42-ww96",
+          "submodule": "IoT",
+          "title": "Internet of Things (IoT)",
+          "explanation": "IoT se refiere a la red de objetos físicos o \"cosas\" que están embebidos con sensores y software que les permiten recolectar e intercambiar datos a través de Internet. Estos objetos incluyen desde dispositivos domésticos como termostatos, refrigeradores y bombillas de luz, hasta equipos industriales, vehículos y más.",
+          "keyPoints": []
+        },
+        {
+          "id": "lamp-stack-ms72jj42-hncj",
+          "submodule": "Fundamentos",
+          "title": "LAMP Stack",
+          "explanation": "LAMP significa Linux, Apache, MySQL y PHP, un stack open-source popular usado para alojar aplicaciones web dinámicas, y uno de los entornos más comunes que se encuentran durante los pentests web.",
+          "keyPoints": []
+        },
+        {
+          "id": "redundancia-y-disponibilidad-ms72jj42-h0bi",
+          "submodule": "Fundamentos",
+          "title": "Redundancia y disponibilidad",
+          "explanation": "La energía redundante reduce un único punto de falla. El uptime mejora cuando la redundancia se combina con backups y monitoreo.",
+          "keyPoints": []
+        },
+        {
+          "id": "origen-de-internet-ms72jj42-vj4u",
+          "submodule": "Fundamentos",
+          "title": "Origen de Internet",
+          "explanation": "Múltiples organizaciones alrededor del mundo comenzaron con la idea de interconectar sistemas para facilitar el intercambio de información y el uso compartido de recursos sin importar la distancia. De ahí nacieron los precursores de \"internet\", con redes como ARPANET, CYCLADES, NPL y NSFNET que allanaron el camino para el internet moderno.",
+          "keyPoints": []
+        },
+        {
+          "id": "cliente-ms72jj42-22di",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Cliente",
+          "explanation": "En la analogía de Bob y Alice, Alice es la cliente que pasa su pedido a Bob, quien lo lleva al servidor en Luigi's Pizzas. En términos informáticos, el navegador es el cliente que solicita la página web, y el servidor es el sistema que la sirve. El cliente es quien siempre inicia la solicitud.",
+          "keyPoints": []
+        },
+        {
+          "id": "request-y-response-ms72jj42-p9x4",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Request y Response",
+          "explanation": "Si la solicitud no está formateada correctamente o el recurso solicitado no está disponible, se obtiene una respuesta de error. En sistemas informáticos, Alice usa un navegador (el cliente) para solicitar una página web a un servidor, que luego envía la página al cliente.",
+          "keyPoints": []
+        },
+        {
+          "id": "protocolo-ms72jj42-mos9",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Protocolo",
+          "explanation": "Un protocolo define cómo un cliente puede comunicarse con un servidor. Esta definición incluye: qué comandos entienden el cliente y el servidor, cómo se estructura una solicitud, qué sintaxis se usa, qué respuesta se debe dar a cada tipo de solicitud y qué respuesta dar a solicitudes con errores.",
+          "keyPoints": [
+            "Comandos que cliente y servidor entienden",
+            "Estructura de la solicitud",
+            "Sintaxis usada",
+            "Respuesta esperada según el tipo de solicitud",
+            "Respuesta ante solicitudes erróneas"
+          ]
+        },
+        {
+          "id": "puerto-port-ms72jj42-9zjg",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Puerto (Port)",
+          "explanation": "Un puerto se usa para identificar un servicio específico que corre en un sistema. Cuando un cliente quiere acceder a un servicio en un servidor, debe conectarse usando el puerto correcto. Un solo servidor puede correr múltiples servicios al mismo tiempo, cada uno identificado por un puerto diferente.",
+          "keyPoints": []
+        },
+        {
+          "id": "dns-como-gps-ms72jj42-zmtt",
+          "submodule": "Modelo cliente-servidor",
+          "title": "DNS como GPS",
+          "explanation": "DNS (Domain Name Service) funciona de forma similar a un GPS: cuando se ingresa el nombre de un sitio web, DNS lo resuelve a la ubicación del servidor. Estas coordenadas de ubicación se llaman dirección IP (Internet Protocol) en términos informáticos.",
+          "keyPoints": []
+        },
+        {
+          "id": "http-ms72jj42-e2fd",
+          "submodule": "HTTP",
+          "title": "HTTP",
+          "explanation": "Hypertext Transfer Protocol (HTTP) es el protocolo que especifica cómo se comunican un navegador web y un servidor web.",
+          "keyPoints": []
+        },
+        {
+          "id": "http-s-sin-estado-ms72jj42-ki5n",
+          "submodule": "HTTP",
+          "title": "HTTP(S) sin estado",
+          "explanation": "HTTP(S) es un protocolo cliente-servidor sin estado usado para la World Wide Web, lo que significa que cada solicitud se procesa de forma independiente, sin que el servidor retenga información de solicitudes previas. Aunque el protocolo es sin estado, los sitios y aplicaciones web modernas implementan mecanismos para introducir estado a nivel de aplicación, como los identificadores de sesión almacenados en cookies o tokens.",
+          "keyPoints": []
+        },
+        {
+          "id": "metodos-http-ms72jj42-w2g8",
+          "submodule": "HTTP",
+          "title": "Métodos HTTP",
+          "explanation": "En las especificaciones principales que definen HTTP (RFC), existen 9 comandos centrales llamados métodos: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, CONNECT y TRACE.",
+          "keyPoints": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "PATCH",
+            "HEAD",
+            "OPTIONS",
+            "CONNECT",
+            "TRACE"
+          ]
+        },
+        {
+          "id": "metodo-get-ms72jj42-w7l8",
+          "submodule": "HTTP",
+          "title": "Método GET",
+          "explanation": "El método GET se usa para recuperar un recurso de un servidor web, por ejemplo GET https://tryhackme.com/index.php. Cuando el servidor web recibe la solicitud, envía una respuesta que incluye un código de estado (indicando el tipo de respuesta) y la información solicitada.",
+          "keyPoints": []
+        },
+        {
+          "id": "estructura-de-la-respuesta-http-ms72jj42-5ksu",
+          "submodule": "HTTP",
+          "title": "Estructura de la respuesta HTTP",
+          "explanation": "La respuesta de una solicitud HTTP se divide en dos partes: el header de respuesta, que contiene metadata sobre la respuesta, y el body de respuesta, que contiene el contenido solicitado.",
+          "keyPoints": []
+        },
+        {
+          "id": "cpu-ms72jj42-1aks",
+          "submodule": "Fundamentos",
+          "title": "CPU",
+          "explanation": "Una CPU (central processing unit), también llamada procesador central o procesador principal, es el procesador más importante de una computadora. Su circuitería electrónica ejecuta las instrucciones de un programa de computadora, como operaciones aritméticas, lógicas, de control y de entrada/salida (I/O). Esto contrasta con componentes externos como la memoria principal, la circuitería de I/O y coprocesadores especializados como las GPUs.",
+          "keyPoints": []
+        },
+        {
+          "id": "modelo-tradicional-un-servidor-una-aplicacion-ms72jj42-4egw",
+          "submodule": "Virtualización",
+          "title": "Modelo tradicional: un servidor, una aplicación",
+          "explanation": "Antes de la virtualización, la regla era \"un servidor = una aplicación\". Cada máquina física tenía un propósito único. Esto generaba alto costo, baja utilización de recursos (5-20% de uso), despliegue lento y dificultad para escalar, ya que agregar servicios requería comprar más servidores físicos.",
+          "keyPoints": [
+            "Alto costo (hardware, electricidad, refrigeración, mantenimiento, espacio)",
+            "Baja utilización de recursos",
+            "Despliegue lento",
+            "Difícil de escalar"
+          ]
+        },
+        {
+          "id": "virtualizacion-y-el-hipervisor-ms72jj42-bgxl",
+          "submodule": "Virtualización",
+          "title": "Virtualización y el hipervisor",
+          "explanation": "La virtualización introdujo la idea de que múltiples aplicaciones compartan de forma segura el mismo servidor físico. Se usa una capa de virtualización llamada hipervisor, que actúa como árbitro entre las máquinas virtuales, permitiendo que cada una se comporte de forma independiente como una computadora física.",
+          "keyPoints": []
+        },
+        {
+          "id": "analogia-del-edificio-ms72jj42-beni",
+          "submodule": "Virtualización",
+          "title": "Analogía del edificio",
+          "explanation": "La virtualización se compara con dividir un edificio de 10 pisos en apartamentos independientes en vez de que una sola persona use todo el edificio. El edificio = el servidor físico, los apartamentos = las máquinas virtuales, los inquilinos = aplicaciones o sistemas operativos, y el administrador del edificio = el hipervisor.",
+          "keyPoints": []
+        },
+        {
+          "id": "hipervisor-ms72jj42-2zeh",
+          "submodule": "Virtualización",
+          "title": "Hipervisor",
+          "explanation": "El hipervisor es la tecnología central detrás de la virtualización. Es el software que crea y gestiona las máquinas virtuales. Divide una computadora física en múltiples virtuales, da a cada una su propia porción de CPU, memoria y almacenamiento, mantiene todo aislado y seguro, y gestiona el ciclo de vida de las VMs (iniciar, detener, pausar, clonar, eliminar).",
+          "keyPoints": [
+            "Divide una computadora física en múltiples virtuales",
+            "Asigna CPU, memoria y almacenamiento a cada VM",
+            "Mantiene aislamiento y seguridad",
+            "Gestiona el ciclo de vida de las VMs"
+          ]
+        },
+        {
+          "id": "tipos-de-hipervisor-ms72jj42-1b66",
+          "submodule": "Virtualización",
+          "title": "Tipos de hipervisor",
+          "explanation": "Existen dos tipos principales de hipervisores. Los de Tipo 1 corren directamente sobre el hardware físico, siendo rápidos y eficientes, ideales para servidores y entornos profesionales. Los de Tipo 2 corren dentro de un sistema operativo existente, siendo más fáciles de instalar e ideales para aprendizaje, pruebas o configuraciones pequeñas.",
+          "keyPoints": [
+            "Tipo 1: corre directo sobre hardware, usado en servidores de producción, bases de datos y centros de datos",
+            "Tipo 2: corre sobre un SO existente, usado para pruebas de software, archivos maliciosos y Kali Linux"
+          ]
+        },
+        {
+          "id": "aislamiento-al-probar-archivos-maliciosos-ms72jj42-62pc",
+          "submodule": "Virtualización",
+          "title": "Aislamiento al probar archivos maliciosos",
+          "explanation": "Al usar virtualización para probar archivos maliciosos, se debe tener cuidado de que la máquina host no se infecte con el malware probado en la máquina invitada. Un enfoque es usar sistemas operativos distintos para el guest y el host, o aislar la máquina guest para que no se comunique con el host.",
+          "keyPoints": []
+        },
+        {
+          "id": "lab-machine-vm-ms72jj42-127z",
+          "submodule": "Virtualización",
+          "title": "Lab Machine (VM)",
+          "explanation": "Una Lab Machine (VM) es una computadora virtual creada por el hipervisor. Aunque es virtual, se comporta como una máquina real: tiene su propia CPU, RAM, almacenamiento y red virtuales, puede correr cualquier sistema operativo, y está completamente aislada de otras VMs, de modo que si una se rompe, las demás siguen funcionando.",
+          "keyPoints": []
+        },
+        {
+          "id": "containers-ms72jj42-yllp",
+          "submodule": "Virtualización",
+          "title": "Containers",
+          "explanation": "Un container es un entorno ligero y aislado que corre una única aplicación y todos los componentes necesarios para soportarla. En vez de traer un sistema operativo completo, un container toma prestado el núcleo (kernel) del sistema existente, que es la parte del SO que se comunica con el hardware y gestiona recursos como memoria y programas en ejecución. Por compartir el kernel, inician rápido y usan menos recursos que las VMs, pero deben coincidir con el tipo de sistema del host (no se puede correr un container de Windows en una máquina Linux).",
+          "keyPoints": [
+            "Empaquetan la aplicación y sus dependencias",
+            "Comparten el sistema operativo del host",
+            "Están aislados entre sí",
+            "Corren de forma consistente en cualquier máquina"
+          ]
+        },
+        {
+          "id": "vms-vs-containers-ms72jj42-r30z",
+          "submodule": "Virtualización",
+          "title": "VMs vs Containers",
+          "explanation": "Las VMs proveen el \"apartamento completo\" con máxima separación y flexibilidad, mientras que los containers ofrecen \"habitaciones\" ligeras ideales para aplicaciones escalables y de despliegue rápido.",
+          "keyPoints": []
+        },
+        {
+          "id": "beneficios-de-la-virtualizacion-ms72jj43-v2xs",
+          "submodule": "Virtualización",
+          "title": "Beneficios de la virtualización",
+          "explanation": "Los beneficios clave de la virtualización incluyen ahorro de costos, mejor uso de recursos, pruebas seguras para ciberseguridad, despliegue más rápido, flexibilidad, portabilidad, escalabilidad y gestión centralizada.",
+          "keyPoints": [
+            "Ahorro de costos",
+            "Mejor uso de recursos",
+            "Pruebas seguras para ciberseguridad",
+            "Despliegue más rápido",
+            "Flexibilidad",
+            "Portabilidad",
+            "Escalabilidad",
+            "Gestión centralizada"
+          ]
         }
       ],
       "glossary": [
@@ -50,6 +268,104 @@
           "term": "Sistema Operativo (OS)",
           "tag": "",
           "definition": "Capa entre el hardware y las aplicaciones. Ejemplos: Android, Linux, macOS, Windows."
+        },
+        {
+          "id": "laptop-ms72jj42-lyco",
+          "submodule": "Hardware",
+          "term": "Laptop",
+          "tag": "",
+          "definition": "Computadora con pantalla y teclado, orientada a la computación portátil cotidiana."
+        },
+        {
+          "id": "desktop-ms72jj42-tzcs",
+          "submodule": "Hardware",
+          "term": "Desktop",
+          "tag": "",
+          "definition": "Computadora con pantalla y teclado, orientada a rendimiento sostenido en una ubicación fija."
+        },
+        {
+          "id": "workstation-ms72jj42-gbsf",
+          "submodule": "Hardware",
+          "term": "Workstation",
+          "tag": "",
+          "definition": "Computadora con pantalla y teclado, orientada a precisión y confiabilidad para tareas profesionales."
+        },
+        {
+          "id": "server-ms72jj42-xhbu",
+          "submodule": "Hardware",
+          "term": "Server",
+          "tag": "",
+          "definition": "Computadora sin pantalla ni teclado propios, cuyo propósito es proveer servicios a muchos usuarios a través de una red."
+        },
+        {
+          "id": "dns-ms72jj42-kuqd",
+          "submodule": "Sistemas",
+          "term": "DNS",
+          "tag": "",
+          "definition": "Domain Name System, el protocolo responsable de resolver hostnames, como tryhackme.com, a sus respectivas direcciones IP."
+        },
+        {
+          "id": "rfc-ms72jj42-1hxa",
+          "submodule": "Sistemas",
+          "term": "RFC",
+          "tag": "",
+          "definition": "Request for Comments, una publicación en una serie de los principales organismos técnicos y de estandarización de Internet, sobre todo el IETF (Internet Engineering Task Force)."
+        },
+        {
+          "id": "status-200-ok-ms72jj42-7qjp",
+          "submodule": "HTTP",
+          "term": "Status 200 OK",
+          "tag": "",
+          "definition": "Código de estado HTTP que indica que la solicitud fue exitosa."
+        },
+        {
+          "id": "linux-ms72jj42-ukgg",
+          "submodule": "Sistemas",
+          "term": "Linux",
+          "tag": "",
+          "definition": "Sistema operativo de línea de comandos basado en Unix. Existen múltiples sistemas operativos basados en Linux."
+        },
+        {
+          "id": "ram-ms72jj42-cgbb",
+          "submodule": "Sistemas",
+          "term": "RAM",
+          "tag": "",
+          "definition": "Random-access memory, una forma de memoria electrónica de computadora que puede leerse y modificarse en cualquier orden, típicamente usada para almacenar datos de trabajo y código máquina."
+        },
+        {
+          "id": "container-ms72jj42-j39j",
+          "submodule": "Virtualización",
+          "term": "Container",
+          "tag": "",
+          "definition": "Paquete de software que agrupa código y todas sus dependencias para poder ejecutarse de forma confiable en cualquier entorno."
+        },
+        {
+          "id": "virtualbox-vmware-workstation-ms72jj42-yoze",
+          "submodule": "Virtualización",
+          "term": "VirtualBox / VMware Workstation",
+          "tag": "",
+          "definition": "Herramientas que actúan como hipervisor de Tipo 2 y permiten correr múltiples sistemas operativos, como Windows, Linux y macOS, en un mismo equipo."
+        },
+        {
+          "id": "docker-ms72jj42-0cob",
+          "submodule": "Virtualización",
+          "term": "Docker",
+          "tag": "",
+          "definition": "Plataforma de software open-source que simplifica el proceso de construir, desplegar y ejecutar aplicaciones usando containerización."
+        },
+        {
+          "id": "container-image-ms72jj42-klu2",
+          "submodule": "Virtualización",
+          "term": "Container Image",
+          "tag": "",
+          "definition": "Plantilla o receta pre-empaquetada usada para crear containers."
+        },
+        {
+          "id": "network-ports-ms72jj42-s25r",
+          "submodule": "Virtualización",
+          "term": "Network Ports",
+          "tag": "",
+          "definition": "Puntos de entrada numerados especiales que las aplicaciones usan para comunicarse a través de la red."
         }
       ]
     }
