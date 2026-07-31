@@ -37,12 +37,12 @@
           "example": ""
         },
         {
-          "id": "listar-contenido-de-un-directorio-ms97vcto-ewxo",
           "submodule": "Reconocimiento web",
           "title": "Listar contenido de un directorio",
-          "command": "ls",
-          "explanation": "Muestra los archivos y carpetas del directorio donde se ejecuta, permitiendo ver todo lo que contiene.",
-          "example": ""
+          "command": "ls -la, ls -lh, ls -R, ls -t, ls -S",
+          "explanation": "Muestra los archivos y carpetas del directorio donde se ejecuta, permitiendo ver todo lo que contiene. Opciones útiles: -l (formato detallado), -a (incluye ocultos), -h (tamaños legibles), -R (recursivo, muestra subdirectorios), -t (ordena por fecha de modificación), -S (ordena por tamaño). Se pueden combinar, por ejemplo -la o -lah.",
+          "example": "",
+          "id": "listar-contenido-de-un-directorio-ms97vcto-ewxo"
         }
       ],
       "concepts": [
