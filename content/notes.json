@@ -11,6 +11,38 @@
           "command": "dirb http://fakebank.thm",
           "explanation": "dirb es la interfaz de línea de comandos de DirBuster: fuerza directorios y archivos ocultos en un servidor mediante diccionario, fuerza bruta e híbridos. Cada línea del resultado que empieza con + es una ruta encontrada.",
           "example": "---- Scanning URL: http://fakebank.thm/ ----\n+ http://fakebank.thm/bank-transfer (CODE:200|SIZE:4663)\n+ http://fakebank.thm/images (CODE:301|SIZE:179)\n\nDOWNLOADED: 4610 - FOUND: 2"
+        },
+        {
+          "id": "abrir-terminal-en-kali-linux-ms97vcto-1050",
+          "submodule": "Reconocimiento web",
+          "title": "Abrir terminal en Kali Linux",
+          "command": "ctrl + alt + t",
+          "explanation": "Abre una nueva terminal en Kali Linux.",
+          "example": ""
+        },
+        {
+          "id": "cerrar-terminal-en-kali-linux-ms97vcto-5m3f",
+          "submodule": "Reconocimiento web",
+          "title": "Cerrar terminal en Kali Linux",
+          "command": "ctrl + shift + w",
+          "explanation": "Cierra la terminal actual en Kali Linux.",
+          "example": ""
+        },
+        {
+          "id": "limpiar-la-terminal-ms97vcto-chtj",
+          "submodule": "Reconocimiento web",
+          "title": "Limpiar la terminal",
+          "command": "clear",
+          "explanation": "Limpia la pantalla de la terminal, eliminando el texto mostrado previamente.",
+          "example": ""
+        },
+        {
+          "id": "listar-contenido-de-un-directorio-ms97vcto-ewxo",
+          "submodule": "Reconocimiento web",
+          "title": "Listar contenido de un directorio",
+          "command": "ls",
+          "explanation": "Muestra los archivos y carpetas del directorio donde se ejecuta, permitiendo ver todo lo que contiene.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -238,6 +270,82 @@
             "Escalabilidad",
             "Gestión centralizada"
           ]
+        },
+        {
+          "id": "beneficios-y-caracteristicas-del-cloud-computing-ms97vctn-j114",
+          "submodule": "Virtualización",
+          "title": "Beneficios y características del Cloud Computing",
+          "explanation": "El cloud fue diseñado para resolver problemas comunes como capacidad limitada, altos costos y crecimiento lento. Ofrece varias ventajas que facilitan ejecutar, escalar y gestionar aplicaciones.",
+          "keyPoints": [
+            "Scalability: escalar hacia arriba o abajo según las necesidades de la aplicación",
+            "On-demand self-service: crear o eliminar servidores y almacenamiento al instante",
+            "Pay only for what you use: se cobra según el uso, no por costos iniciales",
+            "Security: los proveedores protegen la infraestructura con medidas de seguridad robustas",
+            "High availability: las aplicaciones siguen funcionando aunque parte del sistema falle",
+            "Global access: la aplicación puede ser accedida por usuarios desde cualquier parte del mundo"
+          ]
+        },
+        {
+          "id": "tipos-de-despliegue-en-la-nube-ms97vctn-kaud",
+          "submodule": "Virtualización",
+          "title": "Tipos de despliegue en la nube",
+          "explanation": "Existen distintos modelos de despliegue de cloud según el nivel de control, costo y necesidades de la organización.",
+          "keyPoints": [
+            "Public Cloud: usada por startups, sitios web y apps globales; económica, fácil de escalar, sin gestión de infraestructura",
+            "Private Cloud: usada por bancos, salud y gobierno; ofrece mayor control, personalización y cumplimiento normativo",
+            "Hybrid Cloud: usada por empresas como e-commerce que necesitan mantener datos privados y escalar públicamente en alta demanda"
+          ]
+        },
+        {
+          "id": "modelos-de-servicio-en-la-nube-ms97vctn-r8mw",
+          "submodule": "Virtualización",
+          "title": "Modelos de servicio en la nube",
+          "explanation": "Los modelos de servicio en la nube definen qué gestiona el proveedor y qué gestiona el usuario.",
+          "keyPoints": [
+            "IaaS: se alquilan recursos básicos de cómputo (servidores virtuales, almacenamiento, redes); el usuario gestiona el SO y la aplicación",
+            "PaaS: el proveedor gestiona la infraestructura y el SO; el usuario se enfoca en construir y desplegar la aplicación",
+            "SaaS: se usa una aplicación completa a través de internet; el proveedor gestiona todo (ej: Gmail, Zoom)"
+          ]
+        },
+        {
+          "id": "sistema-operativo-os-ms97vcto-x9yl",
+          "submodule": "Fundamentos",
+          "title": "Sistema operativo (OS)",
+          "explanation": "Es el software central que coordina todo lo que sucede en una computadora. Se ubica entre el usuario, las aplicaciones y el hardware físico, actuando como el gestor invisible que mantiene la máquina funcionando como un sistema unificado.",
+          "keyPoints": []
+        },
+        {
+          "id": "responsabilidades-del-sistema-operativo-ms97vcto-fybj",
+          "submodule": "Fundamentos",
+          "title": "Responsabilidades del sistema operativo",
+          "explanation": "El sistema operativo cumple varias funciones clave para mantener el sistema funcionando de manera estable y organizada.",
+          "keyPoints": [
+            "Process Management: crea, programa, prioriza y termina programas en ejecución, gestionando el tiempo de CPU de cada proceso",
+            "Memory Management: asigna RAM a los procesos, protege la memoria de cada app y usa memoria virtual cuando la RAM escasea",
+            "File System Management: organiza archivos en directorios, gestiona nombres, rutas, permisos y metadatos",
+            "User Management: gestiona múltiples cuentas de usuario, autenticación y permisos de acceso",
+            "Device Management: carga drivers y provee una interfaz universal (capa de abstracción de hardware) para que las apps interactúen con dispositivos"
+          ]
+        },
+        {
+          "id": "command-line-interface-cli-ms97vcto-2jf9",
+          "submodule": "Fundamentos",
+          "title": "Command-Line Interface (CLI)",
+          "explanation": "Permite a los usuarios interactuar con una computadora escribiendo comandos de texto en lugar de hacer clic en íconos o menús. Se usa comúnmente por su velocidad, flexibilidad y control.",
+          "keyPoints": []
+        },
+        {
+          "id": "clasificacion-de-sistemas-operativos-por-tipo-de-dispositivo-ms97vcto-50u1",
+          "submodule": "Fundamentos",
+          "title": "Clasificación de sistemas operativos por tipo de dispositivo",
+          "explanation": "Los sistemas operativos se agrupan según el tipo de dispositivo en el que se usan: escritorio, servidor, móvil, embebidos/IoT y virtual/cloud.",
+          "keyPoints": [
+            "Desktop: Windows (10, 11), macOS (Sonoma, Sequoia, Tahoe), Linux (Ubuntu, Debian, Fedora)",
+            "Server: Windows Server (2016-2025), Linux (Ubuntu Server, Debian, CentOS, Red Hat), Unix (IBM AIX, Oracle Solaris)",
+            "Mobile: Android (14-16), iOS (17, 18, 26)",
+            "Embedded and IoT: Embedded Linux (OpenWrt, Ubuntu Core, Yocto Project), Real-Time OS (FreeRTOS, VxWorks, QNX)",
+            "Virtual and Cloud: Cloud/VM (Ubuntu LTS, Amazon Linux, Rocky Linux), Container-optimized (Alpine Linux, Bottlerocket AWS, Flatcar Linux)"
+          ]
         }
       ],
       "glossary": [
@@ -366,6 +474,34 @@
           "term": "Network Ports",
           "tag": "",
           "definition": "Puntos de entrada numerados especiales que las aplicaciones usan para comunicarse a través de la red."
+        },
+        {
+          "id": "ec2-ms97vctn-8vd3",
+          "submodule": "Virtualización",
+          "term": "EC2",
+          "tag": "AWS",
+          "definition": "Representa una computadora virtual en la nube. Tiene CPU y memoria (RAM) y puede ejecutar aplicaciones. Agregar una instancia EC2 equivale a agregar una computadora al entorno."
+        },
+        {
+          "id": "instance-type-ms97vcto-a2ej",
+          "submodule": "Virtualización",
+          "term": "Instance Type",
+          "tag": "AWS",
+          "definition": "Describe qué tan potente es la computadora virtual (ejemplo: t2, t3, m5). Instancias más grandes tienen más poder y mayor costo; instancias menores tienen menos poder y menor costo."
+        },
+        {
+          "id": "kernel-space-ms97vcto-vvcy",
+          "submodule": "Sistemas",
+          "term": "Kernel space",
+          "tag": "",
+          "definition": "El núcleo privilegiado y restringido del sistema operativo. Aquí corre el kernel, que gestiona directamente el hardware y los recursos del sistema, con acceso irrestricto a CPU, memoria, almacenamiento y todos los componentes de hardware."
+        },
+        {
+          "id": "user-space-ms97vcto-d81y",
+          "submodule": "Sistemas",
+          "term": "User space",
+          "tag": "",
+          "definition": "Espacio donde corren todas las aplicaciones estándar. Las aplicaciones no pueden acceder directamente al hardware; deben hacer una llamada al sistema (system call) para que el kernel actúe en su nombre."
         }
       ]
     }
