@@ -502,6 +502,20 @@
           "term": "User space",
           "tag": "",
           "definition": "Espacio donde corren todas las aplicaciones estándar. Las aplicaciones no pueden acceder directamente al hardware; deben hacer una llamada al sistema (system call) para que el kernel actúe en su nombre."
+        },
+        {
+          "id": "dos-ms9othp9-hi7v",
+          "submodule": "Sistemas",
+          "term": "DOS",
+          "tag": "",
+          "definition": "Sistema operativo de computadora que provee un sistema de archivos para operaciones como lectura, escritura y borrado de datos en un disco. Es un sistema operativo no gráfico, orientado a líneas y basado en comandos, diseñado para la IBM PC. Se desarrollaron varias variaciones como MS-DOS (Microsoft) y PC-DOS (IBM)."
+        },
+        {
+          "id": "firewall-ms9othp9-vta6",
+          "submodule": "Sistemas",
+          "term": "Firewall",
+          "tag": "",
+          "definition": "Herramienta de seguridad, de hardware o software, utilizada para filtrar el tráfico de red, deteniendo el tráfico entrante y saliente no autorizado."
         }
       ]
     }
