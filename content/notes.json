@@ -43,6 +43,126 @@
           "explanation": "Muestra los archivos y carpetas del directorio donde se ejecuta, permitiendo ver todo lo que contiene. Opciones útiles: -l (formato detallado), -a (incluye ocultos), -h (tamaños legibles), -R (recursivo, muestra subdirectorios), -t (ordena por fecha de modificación), -S (ordena por tamaño). Se pueden combinar, por ejemplo -la o -lah.",
           "example": "",
           "id": "listar-contenido-de-un-directorio-ms97vcto-ewxo"
+        },
+        {
+          "id": "mostrar-directorio-actual-msatww2g-3xn3",
+          "submodule": "Reconocimiento web",
+          "title": "Mostrar directorio actual",
+          "command": "pwd",
+          "explanation": "Muestra la ruta del directorio en el que se encuentra actualmente el usuario en la terminal.",
+          "example": "ubuntu@tryhackme:~$ pwd\n/home/ubuntu"
+        },
+        {
+          "id": "cambiar-de-directorio-msatww2g-dpg9",
+          "submodule": "Reconocimiento web",
+          "title": "Cambiar de directorio",
+          "command": "cd <directory>",
+          "explanation": "Permite moverse a través del sistema de archivos cambiando el directorio actual.",
+          "example": "cd Documents/"
+        },
+        {
+          "id": "volver-al-directorio-anterior-msatww2g-mrqx",
+          "submodule": "Reconocimiento web",
+          "title": "Volver al directorio anterior",
+          "command": "cd ..",
+          "explanation": "Retrocede un nivel en la jerarquía de directorios.",
+          "example": "ubuntu@tryhackme:~/Documents$ cd .."
+        },
+        {
+          "id": "buscar-archivos-por-nombre-msatww2g-ujq4",
+          "submodule": "Reconocimiento web",
+          "title": "Buscar archivos por nombre",
+          "command": "find <starting_point> -name <filename>",
+          "explanation": "Utilidad para localizar archivos dentro del sistema de archivos a partir de un punto de inicio y un nombre.",
+          "example": "find ~ -name mission_brief.txt"
+        },
+        {
+          "id": "leer-contenido-de-un-archivo-msatww2g-ka4i",
+          "submodule": "Reconocimiento web",
+          "title": "Leer contenido de un archivo",
+          "command": "cat <archivo>",
+          "explanation": "Muestra el contenido de un archivo de texto en la terminal.",
+          "example": "cat mission_brief.txt"
+        },
+        {
+          "id": "volver-a-usuario-normal-desde-root-msatww2g-gafq",
+          "submodule": "Reconocimiento web",
+          "title": "Volver a usuario normal desde root",
+          "command": "ctrl + d",
+          "explanation": "Combinación de teclas para salir de una sesión root y volver al usuario normal.",
+          "example": ""
+        },
+        {
+          "id": "ver-usuario-actual-msatww2g-5thy",
+          "submodule": "Reconocimiento web",
+          "title": "Ver usuario actual",
+          "command": "whoami",
+          "explanation": "Muestra el nombre del usuario actualmente conectado en la terminal.",
+          "example": "ubuntu@tryhackme:~$ whoami"
+        },
+        {
+          "id": "ver-informacion-del-sistema-y-kernel-msatww2g-mjxz",
+          "submodule": "Reconocimiento web",
+          "title": "Ver información del sistema y kernel",
+          "command": "uname -a",
+          "explanation": "Muestra información completa del sistema operativo, versión del kernel y arquitectura de hardware.",
+          "example": "Linux tryhackme <REDACTED>-aws #17-Ubuntu SMP Mon Sep 2 13:48:07 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"
+        },
+        {
+          "id": "ver-espacio-en-disco-legible-msatww2g-gm9u",
+          "submodule": "Reconocimiento web",
+          "title": "Ver espacio en disco legible",
+          "command": "df -h",
+          "explanation": "Muestra el uso y espacio disponible en disco en formato legible para humanos (usando G, M en vez de bytes).",
+          "example": "df -h\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/root        --G   12G   --G  17% /"
+        },
+        {
+          "id": "listar-contenido-de-un-directorio-msatww2g-p8yl",
+          "submodule": "Reconocimiento web",
+          "title": "Listar contenido de un directorio",
+          "command": "ls",
+          "explanation": "Lista los archivos y carpetas presentes dentro del directorio actual.",
+          "example": "cd /etc && ls"
+        },
+        {
+          "id": "listar-contenido-en-windows-cli-msatww2g-8022",
+          "submodule": "Reconocimiento web",
+          "title": "Listar contenido en Windows CLI",
+          "command": "dir",
+          "explanation": "Lista los archivos y carpetas presentes en el directorio actual en la línea de comandos de Windows.",
+          "example": ""
+        },
+        {
+          "id": "mostrar-archivos-y-carpetas-ocultos-msatww2g-2ubq",
+          "submodule": "Reconocimiento web",
+          "title": "Mostrar archivos y carpetas ocultos",
+          "command": "dir /a",
+          "explanation": "Muestra todos los elementos de un directorio en Windows, incluyendo archivos y carpetas ocultos.",
+          "example": ""
+        },
+        {
+          "id": "buscar-archivo-en-subcarpetas-windows-msatww2g-6p7s",
+          "submodule": "Reconocimiento web",
+          "title": "Buscar archivo en subcarpetas (Windows)",
+          "command": "dir /s <archivo>",
+          "explanation": "Busca un archivo en todas las subcarpetas a partir del directorio actual y muestra la ruta completa si existe.",
+          "example": "dir /s task_brief.txt"
+        },
+        {
+          "id": "ver-nombre-del-equipo-windows-msatww2g-eksv",
+          "submodule": "Reconocimiento web",
+          "title": "Ver nombre del equipo (Windows)",
+          "command": "hostname",
+          "explanation": "Muestra el nombre del equipo Windows, útil para identificar sistemas en una red.",
+          "example": ""
+        },
+        {
+          "id": "ver-configuracion-de-red-windows-msatww2g-3bwh",
+          "submodule": "Reconocimiento web",
+          "title": "Ver configuración de red (Windows)",
+          "command": "ipconfig",
+          "explanation": "Muestra la configuración de red de la máquina, incluyendo dirección IPv4 y puerta de enlace predeterminada.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -346,6 +466,38 @@
             "Embedded and IoT: Embedded Linux (OpenWrt, Ubuntu Core, Yocto Project), Real-Time OS (FreeRTOS, VxWorks, QNX)",
             "Virtual and Cloud: Cloud/VM (Ubuntu LTS, Amazon Linux, Rocky Linux), Container-optimized (Alpine Linux, Bottlerocket AWS, Flatcar Linux)"
           ]
+        },
+        {
+          "id": "informacion-del-sistema-con-uname-a-msatww2g-zhh8",
+          "submodule": "Sistemas",
+          "title": "Información del sistema con uname -a",
+          "explanation": "El comando uname -a entrega una línea completa de información sobre el sistema: el kernel utilizado, el hostname, la versión del kernel, la arquitectura de hardware y el tipo de sistema operativo.",
+          "keyPoints": [
+            "Linux: el sistema corre sobre el kernel Linux",
+            "tryhackme: es el hostname del equipo",
+            "<REDACTED>-aws: versión del kernel instalada",
+            "x86_64: arquitectura de hardware de 64 bits",
+            "GNU/Linux: tipo de sistema operativo (kernel Linux + herramientas GNU)"
+          ]
+        },
+        {
+          "id": "interpretacion-de-df-h-msatww2g-guhz",
+          "submodule": "Sistemas",
+          "title": "Interpretación de df -h",
+          "explanation": "El comando df -h permite revisar el uso de disco de forma legible. /dev/root es el disco principal del sistema, mientras que las entradas tmpfs son sistemas de archivos temporales almacenados en RAM y no en el disco físico.",
+          "keyPoints": [
+            "/dev/root: disco principal del sistema",
+            "tmpfs: sistemas de archivos temporales en RAM",
+            "/dev/shm: área de memoria compartida",
+            "/run/user/114: almacenamiento temporal para otro usuario del sistema"
+          ]
+        },
+        {
+          "id": "directorio-etc-en-linux-msatww2g-r9wd",
+          "submodule": "Sistemas",
+          "title": "Directorio /etc en Linux",
+          "explanation": "Linux almacena archivos de configuración e información del sistema en el directorio /etc, el cual puede explorarse navegando con cd y listando su contenido con ls.",
+          "keyPoints": []
         }
       ],
       "glossary": [
@@ -516,6 +668,27 @@
           "term": "Firewall",
           "tag": "",
           "definition": "Herramienta de seguridad, de hardware o software, utilizada para filtrar el tráfico de red, deteniendo el tráfico entrante y saliente no autorizado."
+        },
+        {
+          "id": "tmpfs-msatww2g-mkc7",
+          "submodule": "Sistemas",
+          "term": "tmpfs",
+          "tag": "",
+          "definition": "Sistema de archivos temporal que se almacena en la memoria RAM en lugar del disco físico."
+        },
+        {
+          "id": "etc-msatww2g-615k",
+          "submodule": "Sistemas",
+          "term": "/etc",
+          "tag": "",
+          "definition": "Directorio en Linux donde se almacenan archivos de configuración e información del sistema."
+        },
+        {
+          "id": "os-release-msatww2g-nm5y",
+          "submodule": "Sistemas",
+          "term": "os-release",
+          "tag": "",
+          "definition": "Archivo presente en casi todos los sistemas Linux que contiene información sobre la distribución y versión del sistema operativo."
         }
       ]
     }
