@@ -187,6 +187,38 @@
           "command": "su root",
           "explanation": "Permite cambiar la sesión actual al usuario root (superusuario), solicitando la contraseña correspondiente para obtener privilegios elevados.",
           "example": ""
+        },
+        {
+          "id": "seleccionar-datos-con-select-mse703pz-stys",
+          "submodule": "Bases de datos",
+          "title": "Seleccionar datos con SELECT",
+          "command": "SELECT",
+          "explanation": "Se usa para elegir qué datos mostrar en una consulta SQL.",
+          "example": ""
+        },
+        {
+          "id": "especificar-el-origen-de-los-datos-con-from-mse703pz-wqlt",
+          "submodule": "Bases de datos",
+          "title": "Especificar el origen de los datos con FROM",
+          "command": "FROM",
+          "explanation": "Se usa para elegir de dónde provienen los datos en una consulta SQL.",
+          "example": ""
+        },
+        {
+          "id": "filtrar-registros-con-where-mse703pz-43jx",
+          "submodule": "Bases de datos",
+          "title": "Filtrar registros con WHERE",
+          "command": "WHERE",
+          "explanation": "Se usa para filtrar registros según una condición en una consulta SQL.",
+          "example": ""
+        },
+        {
+          "id": "ordenar-resultados-con-order-by-mse703pz-fdvd",
+          "submodule": "Bases de datos",
+          "title": "Ordenar resultados con ORDER BY",
+          "command": "ORDER BY",
+          "explanation": "Se usa para ordenar los resultados de una consulta SQL.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -545,6 +577,49 @@
             "Los colores se especifican comúnmente en hexadecimal en programas gráficos",
             "Ejemplo: 10100011 11101010 00101010 = A3EA2A"
           ]
+        },
+        {
+          "id": "representacion-y-codificacion-de-datos-mse703pz-w6ku",
+          "submodule": "Fundamentos",
+          "title": "Representación y codificación de datos",
+          "explanation": "La representación es la idea de que los datos viven como bits y números en memoria. La codificación (encoding) es el mapeo específico y acordado entre números y significados, como qué número corresponde al carácter 'A'. En texto, cada carácter recibe un código numérico, por lo que una cadena se convierte en una secuencia de números que la computadora almacena y mueve como cualquier otro dato. Si el emisor y el receptor usan codificaciones diferentes, el archivo puede verse como texto ilegible (gibberish).",
+          "keyPoints": [
+            "Los caracteres son números con significados acordados",
+            "La codificación es el acuerdo entre número y significado",
+            "Un archivo puede verse como gibberish si emisor y receptor usan encodings distintos"
+          ]
+        },
+        {
+          "id": "utf-8-utf-16-y-utf-32-mse703pz-79hj",
+          "submodule": "Fundamentos",
+          "title": "UTF-8, UTF-16 y UTF-32",
+          "explanation": "Son distintas formas de codificar Unicode. UTF-8 usa de 1 a 4 bytes dinámicamente según la complejidad del carácter, siendo compatible con ASCII (1 byte) y muy usado en la web moderna. UTF-16 usa 2 o 4 bytes: caracteres comunes ocupan 2 bytes, mientras que emojis o escrituras raras requieren un par de unidades de 16 bits (4 bytes). UTF-32 es el más simple pero más costoso, ya que cada punto de código Unicode ocupa exactamente 4 bytes.",
+          "keyPoints": [
+            "UTF-8: 1 a 4 bytes dinámicos, compatible con ASCII",
+            "UTF-16: 2 o 4 bytes según el carácter",
+            "UTF-32: siempre 4 bytes por carácter, más simple pero más pesado",
+            "Ejemplo: 🔥 (U+1F525) usa 4 bytes en UTF-8 y UTF-32, y un par en UTF-16"
+          ]
+        },
+        {
+          "id": "que-es-una-base-de-datos-mse703pz-d89v",
+          "submodule": "Bases de datos",
+          "title": "Qué es una base de datos",
+          "explanation": "Una base de datos es un lugar donde una computadora almacena información de manera organizada, similar a un cuaderno digital que nunca se queda sin páginas. A diferencia de un cuaderno de papel, una base de datos permite a la computadora buscar, contar y ordenar información muy rápidamente.",
+          "keyPoints": [
+            "Almacena información de forma organizada",
+            "Permite buscar, contar y ordenar datos rápidamente"
+          ]
+        },
+        {
+          "id": "tablas-columnas-y-filas-mse703pz-3oo4",
+          "submodule": "Bases de datos",
+          "title": "Tablas, columnas y filas",
+          "explanation": "Una tabla se asemeja a una hoja de cálculo, donde la información se organiza en filas y columnas. Las columnas son los títulos en la parte superior de la tabla y describen el tipo de información almacenada. Las filas van a lo largo de la tabla y cada una contiene un conjunto completo de información.",
+          "keyPoints": [
+            "Columnas: describen el tipo de información",
+            "Filas: contienen un conjunto completo de datos"
+          ]
         }
       ],
       "glossary": [
@@ -743,6 +818,76 @@
           "term": "Ransomware",
           "tag": "",
           "definition": "Programa malicioso que encripta los archivos del usuario. La encriptación hace que el archivo sea ilegible sin conocer la contraseña de encriptación; es decir, los archivos se vuelven ininteligibles sin la desencriptación (revertir la encriptación)."
+        },
+        {
+          "id": "encoding-mse703pz-1yxg",
+          "submodule": "Fundamentos",
+          "term": "Encoding",
+          "tag": "",
+          "definition": "Acuerdo específico entre números y significados, como qué número representa a un carácter determinado."
+        },
+        {
+          "id": "ascii-mse703pz-1gcq",
+          "submodule": "Fundamentos",
+          "term": "ASCII",
+          "tag": "",
+          "definition": "American Standard Code for Information Interchange. Codificación de caracteres de 1963 que usa los números 0-127 para representar letras en inglés, dígitos, puntuación y algunos caracteres de control. Utiliza 7 bits originalmente."
+        },
+        {
+          "id": "unicode-mse703pz-20le",
+          "submodule": "Fundamentos",
+          "term": "Unicode",
+          "tag": "",
+          "definition": "Estándar universal de codificación de caracteres que asigna puntos de código únicos a caracteres de todos los sistemas de escritura modernos e históricos del mundo, permitiendo el uso de múltiples idiomas en un mismo archivo o mensaje."
+        },
+        {
+          "id": "utf-8-mse703pz-t7f7",
+          "submodule": "Fundamentos",
+          "term": "UTF-8",
+          "tag": "",
+          "definition": "Codificación Unicode muy común en la web moderna que usa de 1 a 4 bytes dinámicamente según la complejidad del carácter, siendo compatible con ASCII."
+        },
+        {
+          "id": "utf-16-mse703pz-iu6w",
+          "submodule": "Fundamentos",
+          "term": "UTF-16",
+          "tag": "",
+          "definition": "Codificación Unicode que usa 2 o 4 bytes por carácter; los caracteres comunes usan 2 bytes y los más raros requieren un par de unidades de 16 bits."
+        },
+        {
+          "id": "utf-32-mse703pz-2r7x",
+          "submodule": "Fundamentos",
+          "term": "UTF-32",
+          "tag": "",
+          "definition": "Codificación Unicode que usa exactamente 4 bytes para cada punto de código, siendo la más simple pero también la más costosa en espacio."
+        },
+        {
+          "id": "base-de-datos-mse703pz-gczi",
+          "submodule": "Bases de datos",
+          "term": "Base de datos",
+          "tag": "",
+          "definition": "Lugar donde una computadora almacena información de manera organizada, permitiendo búsquedas, conteos y ordenamientos rápidos."
+        },
+        {
+          "id": "tabla-mse703pz-2afy",
+          "submodule": "Bases de datos",
+          "term": "Tabla",
+          "tag": "",
+          "definition": "Estructura que organiza la información en filas y columnas, similar a una hoja de cálculo."
+        },
+        {
+          "id": "columna-mse703pz-azuw",
+          "submodule": "Bases de datos",
+          "term": "Columna",
+          "tag": "",
+          "definition": "Título en la parte superior de una tabla que describe el tipo de información almacenada."
+        },
+        {
+          "id": "fila-mse703pz-bdun",
+          "submodule": "Bases de datos",
+          "term": "Fila",
+          "tag": "",
+          "definition": "Elemento que va a lo largo de una tabla y contiene un conjunto completo de información."
         }
       ]
     }
