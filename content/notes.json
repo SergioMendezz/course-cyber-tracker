@@ -219,6 +219,38 @@
           "command": "ORDER BY",
           "explanation": "Se usa para ordenar los resultados de una consulta SQL.",
           "example": ""
+        },
+        {
+          "id": "select-mse727du-sw25",
+          "submodule": "Bases de datos",
+          "title": "SELECT",
+          "command": "SELECT",
+          "explanation": "Elige qué datos mostrar en una consulta SQL.",
+          "example": ""
+        },
+        {
+          "id": "from-mse727du-rexu",
+          "submodule": "Bases de datos",
+          "title": "FROM",
+          "command": "FROM",
+          "explanation": "Elige de dónde provienen los datos en una consulta SQL.",
+          "example": ""
+        },
+        {
+          "id": "where-mse727du-2kmd",
+          "submodule": "Bases de datos",
+          "title": "WHERE",
+          "command": "WHERE",
+          "explanation": "Filtra registros según una condición en una consulta SQL.",
+          "example": ""
+        },
+        {
+          "id": "order-by-mse727du-7cl5",
+          "submodule": "Bases de datos",
+          "title": "ORDER BY",
+          "command": "ORDER BY",
+          "explanation": "Ordena los resultados de una consulta SQL.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -620,6 +652,71 @@
             "Columnas: describen el tipo de información",
             "Filas: contienen un conjunto completo de datos"
           ]
+        },
+        {
+          "id": "representacion-y-codificacion-de-caracteres-mse727du-7pt0",
+          "submodule": "Fundamentos",
+          "title": "Representación y codificación de caracteres",
+          "explanation": "Los caracteres son solo números con significados acordados. Ese acuerdo se llama codificación (encoding). La representación es la idea de que los datos viven como bits y números en memoria, mientras que la codificación es el mapeo específico y acordado entre números y significados (por ejemplo, qué número corresponde al carácter 'A'). Cada carácter se asigna a un código numérico, así una cadena de texto se convierte en una secuencia de números que la computadora almacena y mueve como cualquier otro dato. Si el archivo se abre con una codificación distinta a la usada al guardarlo, aparece como texto ilegible (gibberish).",
+          "keyPoints": [
+            "Encoding = acuerdo entre números y significados",
+            "Representation = datos como bits/números en memoria",
+            "Un mismatch de encoding produce texto ilegible"
+          ]
+        },
+        {
+          "id": "ascii-mse727du-ql7a",
+          "submodule": "Fundamentos",
+          "title": "ASCII",
+          "explanation": "ASCII (American Standard Code for Information Interchange) es una codificación de caracteres temprana de 1963 que usa los números 0-127 para representar letras en inglés, dígitos, puntuación y algunos caracteres de control. Originalmente estaba limitado a 7 bits y funciona como un pequeño diccionario bilingüe entre texto y códigos numéricos.",
+          "keyPoints": [
+            "Usa números 0-127 (7 bits)",
+            "Representa letras inglesas, dígitos, puntuación y caracteres de control",
+            "Data de 1963"
+          ]
+        },
+        {
+          "id": "unicode-mse727du-rb3v",
+          "submodule": "Fundamentos",
+          "title": "Unicode",
+          "explanation": "Unicode es un estándar universal de codificación de caracteres. Asigna puntos de código únicos a caracteres de todos los sistemas de escritura modernos e históricos del mundo. Permite el intercambio, procesamiento y visualización de texto en diversos idiomas sin necesidad de preocuparse por elegir un estándar de codificación compatible con el idioma usado, facilitando además combinar distintos idiomas en un mismo archivo o mensaje.",
+          "keyPoints": [
+            "Asigna code points únicos a caracteres de todo el mundo",
+            "Permite mezclar idiomas en un mismo archivo",
+            "Es el estándar universal que reemplaza la necesidad de elegir encoding según idioma"
+          ]
+        },
+        {
+          "id": "utf-8-utf-16-y-utf-32-mse727du-xyzl",
+          "submodule": "Fundamentos",
+          "title": "UTF-8, UTF-16 y UTF-32",
+          "explanation": "Son formas de codificar los puntos de código de Unicode. UTF-8 es muy común en la web moderna y codifica puntos Unicode en 1 a 4 bytes de forma dinámica según la complejidad del carácter; los caracteres ASCII (U+0000 a U+007F) usan exactamente 1 byte, siendo compatible hacia atrás con ASCII. UTF-16 usa 2 o 4 bytes por carácter: los caracteres comunes (Latín, Cirílico, Hanzi chino) usan 2 bytes, mientras que caracteres raros como emojis usan un par de unidades de 16 bits (4 bytes en total). UTF-32 es la más simple pero más costosa en espacio, ya que cada punto de código Unicode usa exactamente 4 bytes.",
+          "keyPoints": [
+            "UTF-8: 1 a 4 bytes dinámicos, compatible con ASCII",
+            "UTF-16: 2 o 4 bytes (pares para caracteres raros)",
+            "UTF-32: siempre 4 bytes, simple pero ineficiente en espacio"
+          ]
+        },
+        {
+          "id": "que-es-una-base-de-datos-mse727du-nql6",
+          "submodule": "Bases de datos",
+          "title": "Qué es una base de datos",
+          "explanation": "Una base de datos es un lugar donde una computadora almacena información de manera organizada. Se la puede pensar como un cuaderno digital que nunca se queda sin páginas, permitiendo que la computadora busque, cuente y ordene información muy rápidamente, a diferencia de un cuaderno de papel.",
+          "keyPoints": [
+            "Almacena información de forma organizada",
+            "Permite buscar, contar y ordenar rápidamente"
+          ]
+        },
+        {
+          "id": "tablas-columnas-y-filas-mse727du-hole",
+          "submodule": "Bases de datos",
+          "title": "Tablas, columnas y filas",
+          "explanation": "Una tabla se asemeja a una hoja de cálculo, donde la información se organiza en filas y columnas. Las columnas son los títulos en la parte superior de la tabla y describen el tipo de información almacenada. Las filas van a lo largo de la tabla, y cada fila contiene un conjunto completo de información.",
+          "keyPoints": [
+            "Tabla = organización tipo hoja de cálculo",
+            "Columnas describen el tipo de dato",
+            "Filas contienen un registro completo"
+          ]
         }
       ],
       "glossary": [
@@ -888,6 +985,55 @@
           "term": "Fila",
           "tag": "",
           "definition": "Elemento que va a lo largo de una tabla y contiene un conjunto completo de información."
+        },
+        {
+          "id": "encoding-mse727du-1872",
+          "submodule": "Fundamentos",
+          "term": "Encoding",
+          "tag": "",
+          "definition": "Acuerdo o mapeo específico entre números y significados, como qué número corresponde a un carácter determinado."
+        },
+        {
+          "id": "representation-mse727du-hea3",
+          "submodule": "Fundamentos",
+          "term": "Representation",
+          "tag": "",
+          "definition": "Idea de que los datos viven como bits y números en la memoria de la computadora."
+        },
+        {
+          "id": "ascii-mse727du-1ia1",
+          "submodule": "Fundamentos",
+          "term": "ASCII",
+          "tag": "",
+          "definition": "American Standard Code for Information Interchange; codificación de caracteres de 1963 que usa números 0-127 para representar letras, dígitos, puntuación y caracteres de control."
+        },
+        {
+          "id": "unicode-mse727du-lz06",
+          "submodule": "Fundamentos",
+          "term": "Unicode",
+          "tag": "",
+          "definition": "Estándar universal de codificación de caracteres que asigna puntos de código únicos a caracteres de todos los sistemas de escritura del mundo."
+        },
+        {
+          "id": "utf-8-mse727du-5ymn",
+          "submodule": "Fundamentos",
+          "term": "UTF-8",
+          "tag": "",
+          "definition": "Codificación de Unicode muy usada en la web moderna que usa de 1 a 4 bytes dinámicamente según la complejidad del carácter, compatible con ASCII."
+        },
+        {
+          "id": "utf-16-mse727du-aw1g",
+          "submodule": "Fundamentos",
+          "term": "UTF-16",
+          "tag": "",
+          "definition": "Codificación de Unicode que usa 2 o 4 bytes por carácter, con pares de unidades de 16 bits para caracteres poco comunes como emojis."
+        },
+        {
+          "id": "utf-32-mse727du-yl82",
+          "submodule": "Fundamentos",
+          "term": "UTF-32",
+          "tag": "",
+          "definition": "Codificación de Unicode en la que cada punto de código usa exactamente 4 bytes, siendo la más simple pero también la más costosa en espacio."
         }
       ]
     }
