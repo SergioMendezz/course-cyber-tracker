@@ -163,6 +163,30 @@
           "command": "ipconfig",
           "explanation": "Muestra la configuración de red de la máquina, incluyendo dirección IPv4 y puerta de enlace predeterminada.",
           "example": ""
+        },
+        {
+          "id": "conectarse-por-ssh-a-un-usuario-remoto-mse2ysux-wzh2",
+          "submodule": "Reconocimiento web",
+          "title": "Conectarse por SSH a un usuario remoto",
+          "command": "ssh sammie@10.66.191.190",
+          "explanation": "Permite iniciar sesión de forma remota en la cuenta de un usuario (sammie) en la máquina con IP 10.66.191.190. El sistema remoto solicitará la contraseña del usuario para completar el inicio de sesión.",
+          "example": ""
+        },
+        {
+          "id": "ver-historial-de-comandos-mse2ysux-rvcd",
+          "submodule": "Sistemas",
+          "title": "Ver historial de comandos",
+          "command": "history",
+          "explanation": "Muestra el historial de comandos ejecutados previamente en la terminal, lo cual puede revelar información sensible como contraseñas o comandos usados anteriormente.",
+          "example": ""
+        },
+        {
+          "id": "cambiar-al-usuario-root-mse2ysux-5per",
+          "submodule": "Sistemas",
+          "title": "Cambiar al usuario root",
+          "command": "su root",
+          "explanation": "Permite cambiar la sesión actual al usuario root (superusuario), solicitando la contraseña correspondiente para obtener privilegios elevados.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -498,6 +522,29 @@
           "title": "Directorio /etc en Linux",
           "explanation": "Linux almacena archivos de configuración e información del sistema en el directorio /etc, el cual puede explorarse navegando con cd y listando su contenido con ls.",
           "keyPoints": []
+        },
+        {
+          "id": "sistemas-numericos-usados-en-computacion-mse2ysuy-ljv0",
+          "submodule": "Sistemas",
+          "title": "Sistemas numéricos usados en computación",
+          "explanation": "Los sistemas numéricos permiten representar valores de distintas formas según la base utilizada. El sistema decimal (base 10) es el que usamos en la vida diaria. El sistema binario (base 2) es el que entienden las computadoras, codificado en 0 y 1. El sistema hexadecimal (base 16) agrupa cada 4 bits en un dígito que va de 0 a F, y se usa comúnmente para representar colores en gráficos. El sistema octal (base 8) agrupa cada 3 bits en un dígito de 0 a 7, y es menos común en sistemas actuales.",
+          "keyPoints": [
+            "Decimal (base 10): sistema numérico cotidiano",
+            "Binario (base 2): usado por las computadoras, con dígitos 0 y 1",
+            "Hexadecimal (base 16): cada 4 bits equivale a un dígito de 0 a F, usado en colores",
+            "Octal (base 8): cada 3 bits equivale a un dígito de 0 a 7, poco común hoy en día"
+          ]
+        },
+        {
+          "id": "conversion-de-binario-a-hexadecimal-en-colores-mse2ysuy-outj",
+          "submodule": "Sistemas",
+          "title": "Conversión de binario a hexadecimal en colores",
+          "explanation": "Los colores en programas gráficos pueden especificarse en hexadecimal en lugar de binario, ya que cada 4 bits binarios corresponden a un dígito hexadecimal. Por ejemplo, en lugar de escribir 10100011 11101010 00101010, se puede escribir A3EA2A para representar el mismo color de forma más compacta.",
+          "keyPoints": [
+            "4 bits binarios equivalen a 1 dígito hexadecimal",
+            "Los colores se especifican comúnmente en hexadecimal en programas gráficos",
+            "Ejemplo: 10100011 11101010 00101010 = A3EA2A"
+          ]
         }
       ],
       "glossary": [
@@ -689,6 +736,13 @@
           "term": "os-release",
           "tag": "",
           "definition": "Archivo presente en casi todos los sistemas Linux que contiene información sobre la distribución y versión del sistema operativo."
+        },
+        {
+          "id": "ransomware-mse2ysux-meuk",
+          "submodule": "Sistemas",
+          "term": "Ransomware",
+          "tag": "",
+          "definition": "Programa malicioso que encripta los archivos del usuario. La encriptación hace que el archivo sea ilegible sin conocer la contraseña de encriptación; es decir, los archivos se vuelven ininteligibles sin la desencriptación (revertir la encriptación)."
         }
       ]
     }
