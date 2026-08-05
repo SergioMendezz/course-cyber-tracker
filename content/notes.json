@@ -859,6 +859,183 @@
             "DHCP Request",
             "DHCP ACK"
           ]
+        },
+        {
+          "id": "modelo-osi-msgmptx3-h1cy",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Modelo OSI",
+          "explanation": "El modelo OSI (Open Systems Interconnection) es un modelo esencial en redes que provee un marco que dicta cómo todos los dispositivos conectados en red enviarán, recibirán e interpretarán datos. Permite que dispositivos con diferentes funciones y diseños se comuniquen entre sí, siempre que sigan la uniformidad del modelo. Consiste en siete capas, cada una con un conjunto diferente de responsabilidades, organizadas de la Capa 7 a la Capa 1. En cada capa que atraviesan los datos, se agregan piezas de información específicas, proceso conocido como encapsulación.",
+          "keyPoints": [
+            "Consta de 7 capas: Física, Enlace de datos, Red, Transporte, Sesión, Presentación, Aplicación",
+            "Permite comunicación entre dispositivos con diseños distintos",
+            "El proceso de agregar información en cada capa se llama encapsulación"
+          ]
+        },
+        {
+          "id": "capa-1-fisica-osi-msgmptx3-nofl",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 1 - Física (OSI)",
+          "explanation": "Es la capa más baja y sencilla de entender. Hace referencia a los componentes físicos del hardware usado en redes. Los dispositivos usan señales eléctricas para transferir datos entre sí en un sistema numérico binario.",
+          "keyPoints": []
+        },
+        {
+          "id": "capa-2-enlace-de-datos-osi-msgmptx3-s71v",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 2 - Enlace de datos (OSI)",
+          "explanation": "Se enfoca en el direccionamiento físico de la transmisión. Recibe un paquete de la capa de red (incluyendo la IP del equipo remoto) y agrega la dirección física MAC del dispositivo receptor. Cada tarjeta de red (NIC) tiene una dirección MAC única asignada por el fabricante, que no puede cambiarse (aunque puede falsificarse/spoofearse). También es responsable de presentar los datos en un formato apto para la transmisión.",
+          "keyPoints": [
+            "Usa direcciones MAC para identificar dispositivos",
+            "La NIC tiene una MAC única grabada por el fabricante",
+            "Las MAC pueden ser spoofeadas pero no cambiadas físicamente"
+          ]
+        },
+        {
+          "id": "capa-3-red-osi-msgmptx3-il6n",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 3 - Red (OSI)",
+          "explanation": "Es donde ocurre el enrutamiento y reensamblado de datos. El enrutamiento determina la ruta más óptima para enviar los fragmentos de datos. Protocolos como OSPF y RIP determinan esta ruta según factores como la distancia más corta, la confiabilidad y la velocidad de la conexión física. En esta capa todo se maneja mediante direcciones IP, y los routers que trabajan con IP se conocen como dispositivos de Capa 3.",
+          "keyPoints": [
+            "Protocolos de enrutamiento: OSPF, RIP",
+            "Se decide la ruta según distancia, confiabilidad y velocidad",
+            "Los routers son dispositivos de Capa 3"
+          ]
+        },
+        {
+          "id": "capa-4-transporte-osi-msgmptx3-napu",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 4 - Transporte (OSI)",
+          "explanation": "Es vital para transmitir datos a través de la red. Los datos siguen uno de dos protocolos: TCP o UDP, elegidos según varios factores. TCP es orientado a conexión y confiable, mientras que UDP es sin conexión y más rápido pero sin garantías.",
+          "keyPoints": [
+            "Protocolos principales: TCP y UDP"
+          ]
+        },
+        {
+          "id": "tcp-transmission-control-protocol-msgmptx3-0nf2",
+          "submodule": "HTTP",
+          "title": "TCP (Transmission Control Protocol)",
+          "explanation": "Protocolo orientado a conexión que requiere un three-way handshake para establecer la conexión. Ofrece transferencia de datos confiable, control de flujo y control de congestión. Incorpora verificación de errores para garantizar que los datos enviados en fragmentos (desde la capa de sesión) sean recibidos y reensamblados en el mismo orden. Protocolos de nivel superior como HTTP, POP3, IMAP y SMTP usan TCP.",
+          "keyPoints": [
+            "Requiere three-way handshake",
+            "Provee control de flujo y congestión",
+            "Usado por HTTP, POP3, IMAP, SMTP"
+          ]
+        },
+        {
+          "id": "udp-user-datagram-protocol-msgmptx3-6w47",
+          "submodule": "HTTP",
+          "title": "UDP (User Datagram Protocol)",
+          "explanation": "Protocolo sin conexión que no requiere establecer una conexión previa. Es adecuado para protocolos que priorizan consultas rápidas, como DNS, y comunicaciones en tiempo real como audio/video conferencing y broadcast. Es un protocolo stateless que no realiza three-way handshake ni sincronización entre dispositivos.",
+          "keyPoints": [
+            "Sin conexión (connectionless) y stateless",
+            "Usado por DNS, streaming de audio/video, broadcast",
+            "No hay three-way handshake"
+          ]
+        },
+        {
+          "id": "capa-5-sesion-osi-msgmptx3-g2i7",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 5 - Sesión (OSI)",
+          "explanation": "Una vez que los datos han sido traducidos o formateados por la capa de presentación, la capa de sesión crea y mantiene la conexión con otro equipo destinatario de los datos. Mientras la conexión está activa, la sesión también lo está. Es responsable de cerrar la conexión si no se usa por un tiempo o si se pierde. Las sesiones pueden tener 'checkpoints' para ahorrar ancho de banda reenviando solo los datos más recientes perdidos. Las sesiones son únicas: los datos no pueden viajar entre distintas sesiones.",
+          "keyPoints": [
+            "Crea y mantiene la conexión entre dispositivos",
+            "Usa checkpoints para ahorrar ancho de banda",
+            "Las sesiones son únicas e independientes"
+          ]
+        },
+        {
+          "id": "capa-6-presentacion-osi-msgmptx3-uu6y",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 6 - Presentación (OSI)",
+          "explanation": "Es la capa donde comienza la estandarización de los datos. Actúa como traductor de datos hacia y desde la capa de aplicación, permitiendo que el equipo receptor entienda datos enviados en un formato distinto al suyo. Las características de seguridad como el cifrado de datos (por ejemplo HTTPS) ocurren en esta capa.",
+          "keyPoints": [
+            "Traduce y estandariza el formato de los datos",
+            "Cifrado de datos (ej. HTTPS) ocurre aquí"
+          ]
+        },
+        {
+          "id": "capa-7-aplicacion-osi-msgmptx3-o5nu",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Capa 7 - Aplicación (OSI)",
+          "explanation": "Es la capa más familiar para los usuarios, donde se establecen los protocolos y reglas que determinan cómo el usuario interactúa con los datos enviados o recibidos. Aplicaciones cotidianas como clientes de correo, navegadores o software de exploración de archivos (como FileZilla) proveen una interfaz gráfica (GUI) para interactuar con los datos. Otros protocolos incluyen DNS, que traduce direcciones web a direcciones IP.",
+          "keyPoints": [
+            "Incluye aplicaciones con GUI como navegadores y clientes de correo",
+            "DNS traduce nombres de dominio a direcciones IP"
+          ]
+        },
+        {
+          "id": "paquetes-y-tramas-frames-msgmptx3-gspv",
+          "submodule": "HTTP",
+          "title": "Paquetes y tramas (frames)",
+          "explanation": "Los paquetes y las tramas son pequeñas piezas de datos que, al unirse, forman un mensaje o información más grande, pero son cosas distintas en el modelo OSI. Un paquete es una pieza de datos de la Capa 3 (Red), que contiene información como un header IP y el payload. Una trama se usa en la Capa 2 (Enlace de datos) y encapsula el paquete agregando información adicional como direcciones MAC. Es análogo a enviar una carta por correo: el sobre es la trama, y el contenido es el paquete.",
+          "keyPoints": [
+            "Paquete = Capa 3 (Red), incluye header IP y payload",
+            "Trama = Capa 2 (Enlace de datos), encapsula el paquete con MAC",
+            "Analogía: sobre (trama) contiene la carta (paquete)"
+          ]
+        },
+        {
+          "id": "ventajas-de-los-paquetes-msgmptx3-4ot7",
+          "submodule": "HTTP",
+          "title": "Ventajas de los paquetes",
+          "explanation": "Los paquetes son una forma eficiente de comunicar datos entre dispositivos en red, ya que al intercambiarse en pequeñas piezas hay menos posibilidad de saturación (bottlenecking) en la red comparado con enviar mensajes grandes de una sola vez. Por ejemplo, al cargar una imagen desde un sitio web, esta no se envía completa sino en pequeñas piezas que se reconstruyen en el equipo destino.",
+          "keyPoints": [
+            "Reducen el riesgo de bottlenecking en la red",
+            "Ejemplo: carga de imágenes en fragmentos reconstruidos"
+          ]
+        },
+        {
+          "id": "modelo-tcp-ip-msgmptx3-tmmt",
+          "submodule": "HTTP",
+          "title": "Modelo TCP/IP",
+          "explanation": "Es un protocolo similar al modelo OSI, y puede considerarse una versión resumida de este. Consiste en cuatro capas: Aplicación, Transporte, Internet e Interfaz de red.",
+          "keyPoints": [
+            "4 capas: Aplicación, Transporte, Internet, Interfaz de red",
+            "Versión resumida del modelo OSI"
+          ]
+        },
+        {
+          "id": "headers-de-paquetes-tcp-msgmptx3-6ngw",
+          "submodule": "HTTP",
+          "title": "Headers de paquetes TCP",
+          "explanation": "Los paquetes TCP contienen varias secciones de información conocidas como headers, agregadas mediante encapsulación. Incluyen: Source Port (puerto de origen elegido al azar), Destination Port (puerto de destino de la aplicación remota), Source IP y Destination IP (direcciones IP de origen y destino), Sequence Number (número aleatorio asignado a la primera pieza de datos transmitida), Acknowledgement Number (número de secuencia + 1 para la siguiente pieza de datos), Checksum (valor que da integridad a TCP mediante un cálculo matemático), Data (donde se almacenan los bytes del archivo transmitido) y Flag (determina cómo debe manejarse el paquete durante el handshake).",
+          "keyPoints": [
+            "Source/Destination Port y IP",
+            "Sequence Number y Acknowledgement Number",
+            "Checksum garantiza integridad de los datos",
+            "Flag determina el comportamiento durante el handshake"
+          ]
+        },
+        {
+          "id": "three-way-handshake-msgmptx3-ih39",
+          "submodule": "HTTP",
+          "title": "Three-way handshake",
+          "explanation": "Es el proceso usado para establecer una conexión entre dos dispositivos en TCP. Se comunica mediante mensajes especiales: SYN (paquete inicial enviado por el cliente para sincronizar), SYN/ACK (enviado por el servidor para reconocer el intento de sincronización), ACK (reconoce que una serie de mensajes fue recibida exitosamente), DATA (envío de datos una vez establecida la conexión), FIN (cierra limpiamente la conexión) y RST (termina abruptamente la comunicación en caso de error).",
+          "keyPoints": [
+            "SYN → SYN/ACK → ACK establecen la conexión",
+            "DATA para el envío de datos",
+            "FIN cierra limpiamente, RST termina abruptamente"
+          ]
+        },
+        {
+          "id": "headers-de-paquetes-udp-msgmptx3-wm0y",
+          "submodule": "HTTP",
+          "title": "Headers de paquetes UDP",
+          "explanation": "Los paquetes UDP son más simples que los TCP y tienen menos headers. Incluyen: Time to Live (TTL, tiempo de expiración del paquete), Source Address y Destination Address (direcciones IP de origen y destino), Source Port y Destination Port (puertos de origen y destino) y Data (datos transmitidos). A diferencia de TCP, UDP no requiere una conexión constante ni realiza three-way handshake.",
+          "keyPoints": [
+            "TTL evita que el paquete quede circulando indefinidamente",
+            "No hay three-way handshake en UDP"
+          ]
+        },
+        {
+          "id": "puertos-de-red-msgmptx3-di2d",
+          "submodule": "HTTP",
+          "title": "Puertos de red",
+          "explanation": "Los puertos son valores numéricos entre 0 y 65535 que los dispositivos de red usan para hacer cumplir reglas estrictas de comunicación entre sí. Cuando se establece una conexión, cualquier dato enviado o recibido por un dispositivo pasa a través de estos puertos. Los puertos entre 0 y 1024 se conocen como puertos comunes, y están asociados a protocolos estándar.",
+          "keyPoints": [
+            "Rango de puertos: 0 a 65535",
+            "Puertos comunes: 0 a 1024",
+            "Permiten estandarizar cómo distintas aplicaciones envían/reciben datos"
+          ]
         }
       ],
       "glossary": [
@@ -1267,6 +1444,160 @@
           "term": "ISP (Internet Service Provider)",
           "tag": "",
           "definition": "Proveedor que otorga la dirección IP pública a un dispositivo o red, generalmente mediante una tarifa mensual."
+        },
+        {
+          "id": "encapsulacion-msgmptx3-vlml",
+          "submodule": "Sistemas",
+          "term": "Encapsulación",
+          "tag": "",
+          "definition": "Proceso por el cual, en cada capa del modelo OSI, se agrega información específica a los datos que se transmiten a través de la red."
+        },
+        {
+          "id": "mac-media-access-control-msgmptx3-q1vn",
+          "submodule": "Sistemas",
+          "term": "MAC (Media Access Control)",
+          "tag": "",
+          "definition": "Dirección física única asignada por el fabricante a la tarjeta de red (NIC) de un dispositivo, usada para identificar el receptor en la capa de enlace de datos."
+        },
+        {
+          "id": "nic-network-interface-card-msgmptx3-dy90",
+          "submodule": "Sistemas",
+          "term": "NIC (Network Interface Card)",
+          "tag": "",
+          "definition": "Tarjeta de red presente en todo equipo habilitado para redes, que viene con una dirección MAC única para identificarlo."
+        },
+        {
+          "id": "ospf-open-shortest-path-first-msgmptx3-ofvp",
+          "submodule": "HTTP",
+          "term": "OSPF (Open Shortest Path First)",
+          "tag": "",
+          "definition": "Protocolo de enrutamiento que determina la ruta óptima que deben seguir los datos en una red."
+        },
+        {
+          "id": "rip-routing-information-protocol-msgmptx3-qij2",
+          "submodule": "HTTP",
+          "term": "RIP (Routing Information Protocol)",
+          "tag": "",
+          "definition": "Protocolo de enrutamiento usado para determinar la ruta óptima que deben seguir los paquetes de datos en una red."
+        },
+        {
+          "id": "tcp-transmission-control-protocol-msgmptx3-ns9k",
+          "submodule": "HTTP",
+          "term": "TCP (Transmission Control Protocol)",
+          "tag": "",
+          "definition": "Protocolo de la capa de transporte orientado a conexión que garantiza la entrega confiable de datos mediante verificación de errores y three-way handshake."
+        },
+        {
+          "id": "udp-user-datagram-protocol-msgmptx3-n722",
+          "submodule": "HTTP",
+          "term": "UDP (User Datagram Protocol)",
+          "tag": "",
+          "definition": "Protocolo de la capa de transporte sin conexión (stateless) usado para comunicaciones rápidas y en tiempo real, sin garantía de entrega."
+        },
+        {
+          "id": "three-way-handshake-msgmptx3-1vnf",
+          "submodule": "HTTP",
+          "term": "Three-way handshake",
+          "tag": "",
+          "definition": "Proceso de establecimiento de conexión en TCP mediante el intercambio de mensajes SYN, SYN/ACK y ACK entre cliente y servidor."
+        },
+        {
+          "id": "syn-msgmptx3-cuvi",
+          "submodule": "HTTP",
+          "term": "SYN",
+          "tag": "",
+          "definition": "Paquete inicial enviado por el cliente durante el three-way handshake para iniciar y sincronizar una conexión."
+        },
+        {
+          "id": "syn-ack-msgmptx3-bntw",
+          "submodule": "HTTP",
+          "term": "SYN/ACK",
+          "tag": "",
+          "definition": "Paquete enviado por el servidor para reconocer el intento de sincronización del cliente durante el handshake."
+        },
+        {
+          "id": "ack-msgmptx3-eqzq",
+          "submodule": "HTTP",
+          "term": "ACK",
+          "tag": "",
+          "definition": "Paquete de reconocimiento usado por cliente o servidor para confirmar que una serie de mensajes fue recibida exitosamente."
+        },
+        {
+          "id": "fin-msgmptx3-ktut",
+          "submodule": "HTTP",
+          "term": "FIN",
+          "tag": "",
+          "definition": "Paquete usado para cerrar limpiamente una conexión TCP una vez completada."
+        },
+        {
+          "id": "rst-msgmptx3-6y5y",
+          "submodule": "HTTP",
+          "term": "RST",
+          "tag": "",
+          "definition": "Paquete que termina abruptamente toda comunicación, usado como último recurso ante un problema en la conexión."
+        },
+        {
+          "id": "ttl-time-to-live-msgmptx3-ojxh",
+          "submodule": "HTTP",
+          "term": "TTL (Time to Live)",
+          "tag": "",
+          "definition": "Campo de un paquete UDP que establece un temporizador de expiración para que no permanezca circulando indefinidamente en la red."
+        },
+        {
+          "id": "puerto-msgmptx3-i7n1",
+          "submodule": "HTTP",
+          "term": "Puerto",
+          "tag": "",
+          "definition": "Valor numérico entre 0 y 65535 usado por los dispositivos de red para enviar o recibir datos, identificando la aplicación o servicio correspondiente."
+        },
+        {
+          "id": "puerto-comun-msgmptx3-rs1h",
+          "submodule": "HTTP",
+          "term": "Puerto común",
+          "tag": "",
+          "definition": "Puerto numerado entre 0 y 1024, asociado a protocolos y servicios estándar."
+        },
+        {
+          "id": "ftp-file-transfer-protocol-msgmptx3-w0re",
+          "submodule": "HTTP",
+          "term": "FTP (File Transfer Protocol)",
+          "tag": "puerto 21",
+          "definition": "Protocolo usado por aplicaciones de intercambio de archivos basadas en un modelo cliente-servidor, que permite descargar archivos desde una ubicación central."
+        },
+        {
+          "id": "ssh-secure-shell-msgmptx3-k7l6",
+          "submodule": "HTTP",
+          "term": "SSH (Secure Shell)",
+          "tag": "puerto 22",
+          "definition": "Protocolo usado para iniciar sesión de forma segura en sistemas mediante una interfaz basada en texto para su administración."
+        },
+        {
+          "id": "http-hypertext-transfer-protocol-msgmptx3-nsfk",
+          "submodule": "HTTP",
+          "term": "HTTP (HyperText Transfer Protocol)",
+          "tag": "puerto 80",
+          "definition": "Protocolo que impulsa la World Wide Web, usado por los navegadores para descargar texto, imágenes y videos de páginas web."
+        },
+        {
+          "id": "https-hypertext-transfer-protocol-secure-msgmptx3-zemy",
+          "submodule": "HTTP",
+          "term": "HTTPS (HyperText Transfer Protocol Secure)",
+          "tag": "puerto 443",
+          "definition": "Igual que HTTP pero de forma segura, utilizando cifrado."
+        },
+        {
+          "id": "smb-server-message-block-msgmptx3-foal",
+          "submodule": "HTTP",
+          "term": "SMB (Server Message Block)",
+          "tag": "puerto 445",
+          "definition": "Protocolo similar a FTP que, además de archivos, permite compartir dispositivos como impresoras."
+        },
+        {
+          "id": "rdp-remote-desktop-protocol-msgmptx3-biun",
+          "submodule": "HTTP",
+          "term": "RDP (Remote Desktop Protocol)",
+          "tag": "puerto 3389",
+          "definition": "Protocolo seguro para iniciar sesión en un sistema mediante una interfaz de escritorio visual, a diferencia de la interfaz basada en texto de SSH."
         }
       ]
     }
