@@ -717,6 +717,148 @@
             "Columnas describen el tipo de dato",
             "Filas contienen un registro completo"
           ]
+        },
+        {
+          "id": "redes-publicas-y-privadas-msfks3n9-39f6",
+          "submodule": "Fundamentos",
+          "title": "Redes (públicas y privadas)",
+          "explanation": "Una red es un conjunto de dispositivos conectados entre sí. Internet es una gran red compuesta de muchas redes pequeñas dentro de ella. Existen dos tipos de red: privada y pública. Para comunicarse y mantener el orden, los dispositivos deben poder identificarse e ser identificables dentro de la red.",
+          "keyPoints": [
+            "Red privada",
+            "Red pública",
+            "Los dispositivos necesitan identificación mutua"
+          ]
+        },
+        {
+          "id": "direcciones-ip-msfks3n9-mc87",
+          "submodule": "Fundamentos",
+          "title": "Direcciones IP",
+          "explanation": "Una dirección IP identifica a un host en una red durante un período de tiempo, y puede asociarse a otro dispositivo sin cambiar. Está formada por cuatro octetos calculados mediante IP addressing & subnetting. No pueden estar activas simultáneamente más de una vez en la misma red. Las direcciones IP siguen protocolos que permiten a los dispositivos comunicarse en el mismo lenguaje.",
+          "keyPoints": [
+            "4 octetos",
+            "IP pública identifica al dispositivo en Internet",
+            "IP privada identifica al dispositivo entre otros dispositivos de la misma red",
+            "La IP pública la asigna el ISP"
+          ]
+        },
+        {
+          "id": "ipv4-vs-ipv6-msfks3n9-uwbv",
+          "submodule": "Fundamentos",
+          "title": "IPv4 vs IPv6",
+          "explanation": "IPv4 es la versión original del direccionamiento IP, con 2^32 direcciones posibles (4.29 mil millones), lo cual genera escasez ante el crecimiento de dispositivos conectados. IPv6 es la nueva versión que soporta hasta 2^128 direcciones (340 billones+) y es más eficiente gracias a nuevas metodologías.",
+          "keyPoints": [
+            "IPv4: 2^32 direcciones",
+            "IPv6: 2^128 direcciones",
+            "IPv6 resuelve la escasez de direcciones",
+            "IPv6 es más eficiente"
+          ]
+        },
+        {
+          "id": "direccion-mac-msfks3n9-cto1",
+          "submodule": "Fundamentos",
+          "title": "Dirección MAC",
+          "explanation": "Cada dispositivo en red tiene una interfaz de red física (chip en la placa madre) con una dirección MAC única asignada en fábrica. Es un número hexadecimal de doce caracteres separado en pares por dos puntos, donde los primeros seis caracteres identifican al fabricante y los últimos seis son un número único. Las direcciones MAC pueden ser falsificadas mediante spoofing, lo que puede romper diseños de seguridad mal implementados que confían en la identidad MAC.",
+          "keyPoints": [
+            "12 caracteres hexadecimales",
+            "Primeros 6: fabricante",
+            "Últimos 6: número único",
+            "Puede ser falsificada (spoofing)"
+          ]
+        },
+        {
+          "id": "topologia-en-estrella-star-msfks3n9-pbk8",
+          "submodule": "Fundamentos",
+          "title": "Topología en estrella (Star)",
+          "explanation": "Los dispositivos se conectan individualmente a un dispositivo central como un switch o hub. Es la topología más común hoy por su confiabilidad y escalabilidad, aunque tiene un costo mayor por el cableado y equipo dedicado necesario. Es fácil escalar, pero requiere más mantenimiento y sigue siendo vulnerable a fallos si el dispositivo central falla.",
+          "keyPoints": [
+            "Conexión vía dispositivo central (switch/hub)",
+            "Alta escalabilidad",
+            "Mayor costo",
+            "Punto único de falla en el dispositivo central"
+          ]
+        },
+        {
+          "id": "topologia-de-bus-bus-msfks3n9-yiav",
+          "submodule": "Fundamentos",
+          "title": "Topología de bus (Bus)",
+          "explanation": "Se basa en una única conexión llamada cable backbone, del cual salen los dispositivos como hojas de una rama. Es económica y fácil de instalar, pero propensa a cuellos de botella y con difícil resolución de fallas, ya que todos los datos viajan por el mismo cable. Tiene poca redundancia: si el cable backbone se rompe, ningún dispositivo puede transmitir ni recibir datos.",
+          "keyPoints": [
+            "Cable backbone único",
+            "Económica de instalar",
+            "Propensa a cuellos de botella",
+            "Punto único de falla en el cable backbone"
+          ]
+        },
+        {
+          "id": "topologia-en-anillo-ring-msfks3n9-7x92",
+          "submodule": "Fundamentos",
+          "title": "Topología en anillo (Ring)",
+          "explanation": "Los dispositivos se conectan directamente entre sí formando un bucle (loop), requiriendo menos cableado y menos dependencia de hardware dedicado. Los datos viajan en una sola dirección a través del bucle hasta llegar al dispositivo destino, usando otros dispositivos como intermediarios. Es fácil de solucionar fallas por tener un solo sentido de tráfico, pero es menos eficiente porque los datos pueden pasar por muchos dispositivos antes de llegar al destino. Un corte de cable o dispositivo roto puede romper toda la red.",
+          "keyPoints": [
+            "También llamada topología token",
+            "Datos viajan en una sola dirección",
+            "Menos propensa a cuellos de botella",
+            "Un fallo en el anillo rompe toda la red"
+          ]
+        },
+        {
+          "id": "switch-msfks3n9-k2w0",
+          "submodule": "Sistemas",
+          "title": "Switch",
+          "explanation": "Un switch es un dispositivo dedicado que agrupa múltiples dispositivos (computadoras, impresoras, etc.) mediante ethernet. Se usa en redes grandes como empresas o escuelas. A diferencia de un hub, un switch recuerda qué dispositivo está conectado a qué puerto y envía los paquetes solo al destino correspondiente, reduciendo el tráfico de red.",
+          "keyPoints": [
+            "Agrega múltiples dispositivos vía ethernet",
+            "Puertos comunes: 4, 8, 16, 24, 32, 64",
+            "Envía paquetes solo al destino correcto",
+            "Más eficiente que un hub"
+          ]
+        },
+        {
+          "id": "router-msfks3n9-khq1",
+          "submodule": "Sistemas",
+          "title": "Router",
+          "explanation": "Un router conecta redes distintas y pasa datos entre ellas mediante un proceso llamado routing. El routing implica crear un camino entre redes para que los datos puedan ser entregados exitosamente.",
+          "keyPoints": [
+            "Conecta redes distintas",
+            "Realiza el proceso de routing",
+            "Crea rutas para la entrega de datos"
+          ]
+        },
+        {
+          "id": "subnetting-msfks3n9-sdzz",
+          "submodule": "Sistemas",
+          "title": "Subnetting",
+          "explanation": "Subnetting es el proceso de dividir una red en redes más pequeñas dentro de sí misma. Una máscara de subred también se representa con cuatro bytes (32 bits) con valores de 0 a 255. Las subredes usan direcciones IP para identificar la dirección de red, la dirección de host y el gateway predeterminado. Se usa comúnmente en empresas con muchos dispositivos, brindando eficiencia, seguridad y control total.",
+          "keyPoints": [
+            "Divide una red en redes más pequeñas",
+            "Máscara de subred: 4 bytes (32 bits)",
+            "Dirección de red, dirección de host, gateway predeterminado",
+            "Beneficios: eficiencia, seguridad, control total"
+          ]
+        },
+        {
+          "id": "address-resolution-protocol-arp-msfks3n9-vgkk",
+          "submodule": "Sistemas",
+          "title": "Address Resolution Protocol (ARP)",
+          "explanation": "ARP es el protocolo responsable de asociar la dirección MAC de un dispositivo con su dirección IP en la red. Cada dispositivo mantiene un registro (cache) de las direcciones MAC asociadas a otros dispositivos. Cuando un dispositivo quiere comunicarse con otro, envía una solicitud de broadcast (ARP Request) preguntando qué MAC posee cierta IP; el dispositivo dueño responde con un ARP Reply indicando su MAC, y esa asociación se guarda en la cache ARP para uso futuro.",
+          "keyPoints": [
+            "Asocia IP con MAC",
+            "ARP cache almacena estas asociaciones",
+            "ARP Request: broadcast preguntando por una IP",
+            "ARP Reply: respuesta con la MAC correspondiente"
+          ]
+        },
+        {
+          "id": "dhcp-dynamic-host-configuration-protocol-msfks3n9-rk1x",
+          "submodule": "Sistemas",
+          "title": "DHCP (Dynamic Host Configuration Protocol)",
+          "explanation": "DHCP es el método automático más común para asignar direcciones IP a dispositivos. Cuando un dispositivo se conecta a la red sin IP asignada manualmente, sigue un proceso de cuatro pasos: DHCP Discover (busca servidores DHCP), DHCP Offer (el servidor ofrece una IP), DHCP Request (el dispositivo confirma que quiere esa IP) y DHCP ACK (el servidor confirma y el dispositivo empieza a usarla).",
+          "keyPoints": [
+            "DHCP Discover",
+            "DHCP Offer",
+            "DHCP Request",
+            "DHCP ACK"
+          ]
         }
       ],
       "glossary": [
@@ -1034,6 +1176,97 @@
           "term": "UTF-32",
           "tag": "",
           "definition": "Codificación de Unicode en la que cada punto de código usa exactamente 4 bytes, siendo la más simple pero también la más costosa en espacio."
+        },
+        {
+          "id": "ip-address-msfks3n9-ljsa",
+          "submodule": "Fundamentos",
+          "term": "IP Address",
+          "tag": "",
+          "definition": "Dirección compuesta por cuatro octetos que identifica a un dispositivo en una red durante un período de tiempo."
+        },
+        {
+          "id": "mac-address-msfks3n9-oiul",
+          "submodule": "Fundamentos",
+          "term": "MAC Address",
+          "tag": "",
+          "definition": "Dirección hexadecimal de doce caracteres asignada de fábrica a la interfaz de red física de un dispositivo, similar a un número de serie."
+        },
+        {
+          "id": "spoofing-msfks3n9-5je8",
+          "submodule": "Fundamentos",
+          "term": "Spoofing",
+          "tag": "",
+          "definition": "Proceso en el que un dispositivo en red se hace pasar por otro falsificando su dirección MAC."
+        },
+        {
+          "id": "ipv4-msfks3n9-e8gv",
+          "submodule": "Fundamentos",
+          "term": "IPv4",
+          "tag": "",
+          "definition": "Versión del protocolo de Internet que usa 2^32 direcciones posibles (4.29 mil millones)."
+        },
+        {
+          "id": "ipv6-msfks3n9-2utc",
+          "submodule": "Fundamentos",
+          "term": "IPv6",
+          "tag": "",
+          "definition": "Versión más reciente del protocolo de Internet que soporta hasta 2^128 direcciones (340 billones+), resolviendo la escasez de IPv4."
+        },
+        {
+          "id": "topologia-topology-msfks3n9-v3px",
+          "submodule": "Sistemas",
+          "term": "Topología (Topology)",
+          "tag": "",
+          "definition": "Diseño o disposición física/lógica de una red."
+        },
+        {
+          "id": "switch-msfks3n9-1qtl",
+          "submodule": "Sistemas",
+          "term": "Switch",
+          "tag": "",
+          "definition": "Dispositivo de red que conecta múltiples dispositivos y envía paquetes solo al puerto de destino correspondiente."
+        },
+        {
+          "id": "router-msfks3n9-ryrg",
+          "submodule": "Sistemas",
+          "term": "Router",
+          "tag": "",
+          "definition": "Dispositivo que conecta redes distintas y encamina datos entre ellas."
+        },
+        {
+          "id": "subnetting-msfks3n9-3ub5",
+          "submodule": "Sistemas",
+          "term": "Subnetting",
+          "tag": "",
+          "definition": "Proceso de dividir una red en redes más pequeñas dentro de sí misma."
+        },
+        {
+          "id": "default-gateway-msfks3n9-0lun",
+          "submodule": "Sistemas",
+          "term": "Default Gateway",
+          "tag": "",
+          "definition": "Dirección especial asignada a un dispositivo capaz de enviar información hacia otra red distinta a la propia."
+        },
+        {
+          "id": "arp-address-resolution-protocol-msfks3n9-efwq",
+          "submodule": "Sistemas",
+          "term": "ARP (Address Resolution Protocol)",
+          "tag": "",
+          "definition": "Protocolo que permite a un dispositivo asociar su dirección MAC con una dirección IP en la red."
+        },
+        {
+          "id": "dhcp-dynamic-host-configuration-protocol-msfks3n9-ht0e",
+          "submodule": "Sistemas",
+          "term": "DHCP (Dynamic Host Configuration Protocol)",
+          "tag": "",
+          "definition": "Servidor/protocolo que asigna direcciones IP automáticamente a los dispositivos que se conectan a la red."
+        },
+        {
+          "id": "isp-internet-service-provider-msfks3n9-0ue5",
+          "submodule": "Sistemas",
+          "term": "ISP (Internet Service Provider)",
+          "tag": "",
+          "definition": "Proveedor que otorga la dirección IP pública a un dispositivo o red, generalmente mediante una tarifa mensual."
         }
       ]
     }
