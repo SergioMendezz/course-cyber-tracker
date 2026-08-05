@@ -1036,6 +1036,85 @@
             "Puertos comunes: 0 a 1024",
             "Permiten estandarizar cómo distintas aplicaciones envían/reciben datos"
           ]
+        },
+        {
+          "id": "funcionamiento-de-un-firewall-msgq52up-dmfy",
+          "submodule": "Sistemas",
+          "title": "Funcionamiento de un firewall",
+          "explanation": "Un firewall es un dispositivo de red que determina qué tráfico puede entrar o salir de una red. Un administrador puede configurarlo para permitir o denegar tráfico según su origen, destino, puerto o protocolo (UDP, TCP, etc.). Los firewalls realizan inspección de paquetes para tomar estas decisiones. Existen en distintas formas: hardware dedicado, routers residenciales o software como Snort.",
+          "keyPoints": [
+            "Filtra tráfico según origen, destino, puerto y protocolo",
+            "Realiza inspección de paquetes",
+            "Puede ser hardware dedicado, router residencial o software"
+          ]
+        },
+        {
+          "id": "firewall-con-estado-stateful-msgq52up-g0ff",
+          "submodule": "Sistemas",
+          "title": "Firewall con estado (Stateful)",
+          "explanation": "Tipo de firewall que analiza la información completa de una conexión en lugar de inspeccionar paquetes individuales, determinando el comportamiento de un dispositivo según toda la conexión. Consume más recursos porque la toma de decisiones es dinámica. Si una conexión de un host es mala, bloquea todo el dispositivo.",
+          "keyPoints": [
+            "Analiza toda la conexión, no paquetes individuales",
+            "Consume más recursos que el stateless",
+            "Bloquea el dispositivo completo ante una conexión mala"
+          ]
+        },
+        {
+          "id": "firewall-sin-estado-stateless-msgq52up-hqk0",
+          "submodule": "Sistemas",
+          "title": "Firewall sin estado (Stateless)",
+          "explanation": "Tipo de firewall que utiliza un conjunto estático de reglas para determinar si los paquetes individuales son aceptables. Un paquete malo no implica que se bloquee todo el dispositivo. Usa menos recursos pero es menos inteligente, ya que solo es efectivo según las reglas exactas definidas. Es útil para grandes volúmenes de tráfico, como ataques DDoS.",
+          "keyPoints": [
+            "Usa reglas estáticas sobre paquetes individuales",
+            "Consume menos recursos que el stateful",
+            "Efectivo contra grandes volúmenes de tráfico como DDoS",
+            "Menos flexible: requiere coincidencia exacta de reglas"
+          ]
+        },
+        {
+          "id": "beneficios-de-una-vpn-msgq52up-7auh",
+          "submodule": "Sistemas",
+          "title": "Beneficios de una VPN",
+          "explanation": "Las VPN ofrecen conexión entre ubicaciones geográficas distintas, privacidad mediante encriptación de datos (protegiendo contra sniffing, especialmente en WiFi público) y anonimato, aunque este último depende de qué tan bien la red respeta la privacidad del usuario (por ejemplo, si registra el historial de datos).",
+          "keyPoints": [
+            "Conecta redes en distintas ubicaciones geográficas",
+            "Ofrece privacidad mediante encriptación",
+            "Ofrece anonimato, aunque limitado según el proveedor de la VPN",
+            "Útil en redes WiFi públicas sin encriptación"
+          ]
+        },
+        {
+          "id": "tecnologias-de-vpn-ppp-pptp-e-ipsec-msgq52up-gewn",
+          "submodule": "Sistemas",
+          "title": "Tecnologías de VPN: PPP, PPTP e IPSec",
+          "explanation": "PPP permite autenticación y encriptación de datos usando una clave privada y un certificado público, pero no puede salir de una red por sí solo (no enrutable). PPTP permite que los datos de PPP viajen y salgan de una red; es fácil de configurar pero tiene encriptación débil. IPSec encripta datos usando el framework existente de IP; es difícil de configurar pero ofrece encriptación fuerte y amplio soporte.",
+          "keyPoints": [
+            "PPP: autenticación y encriptación, no enrutable por sí solo",
+            "PPTP: permite que PPP salga de la red, fácil de configurar, encriptación débil",
+            "IPSec: usa el framework de IP, difícil de configurar, encriptación fuerte"
+          ]
+        },
+        {
+          "id": "enrutamiento-routing-msgq52up-hahi",
+          "submodule": "Sistemas",
+          "title": "Enrutamiento (Routing)",
+          "explanation": "El routing es el proceso de creación de un camino entre redes para que los datos viajen y sean entregados correctamente. Es útil cuando existen múltiples caminos posibles entre dispositivos, y distintos protocolos determinan qué camino tomar según factores como la distancia más corta, la confiabilidad o la velocidad del medio (cobre o fibra).",
+          "keyPoints": [
+            "Crea un camino entre redes para transportar datos",
+            "Los routers operan en la Capa 3 del modelo OSI",
+            "El protocolo elige el camino según distancia, confiabilidad o velocidad del medio"
+          ]
+        },
+        {
+          "id": "switches-de-capa-2-vs-capa-3-msgq52up-vooo",
+          "submodule": "Sistemas",
+          "title": "Switches de Capa 2 vs Capa 3",
+          "explanation": "Los switches de capa 2 envían tramas (frames) a los dispositivos conectados usando su dirección MAC, y no pueden operar en capa 3. Los switches de capa 3 son más sofisticados: además de enviar tramas, pueden enrutar paquetes a otros dispositivos usando el protocolo IP, cumpliendo parte de las funciones de un router.",
+          "keyPoints": [
+            "Switch capa 2: envía tramas según dirección MAC",
+            "Switch capa 3: además enruta paquetes usando IP",
+            "Ambas capas son excluyentes entre sí en un mismo switch"
+          ]
         }
       ],
       "glossary": [
@@ -1598,6 +1677,48 @@
           "term": "RDP (Remote Desktop Protocol)",
           "tag": "puerto 3389",
           "definition": "Protocolo seguro para iniciar sesión en un sistema mediante una interfaz de escritorio visual, a diferencia de la interfaz basada en texto de SSH."
+        },
+        {
+          "id": "firewall-msgq52up-sskb",
+          "submodule": "Sistemas",
+          "term": "Firewall",
+          "tag": "",
+          "definition": "Herramienta de seguridad, hardware o software, que filtra el tráfico de red bloqueando tráfico entrante y saliente no autorizado, actuando como frontera de seguridad de una red."
+        },
+        {
+          "id": "vpn-virtual-private-network-msgq52up-ks20",
+          "submodule": "Sistemas",
+          "term": "VPN (Virtual Private Network)",
+          "tag": "",
+          "definition": "Tecnología que permite a dispositivos en redes separadas comunicarse de forma segura creando un túnel dedicado a través de Internet, formando una red privada entre ellos."
+        },
+        {
+          "id": "ssh-secure-shell-msgq52up-cw0t",
+          "submodule": "Sistemas",
+          "term": "SSH (Secure Shell)",
+          "tag": "",
+          "definition": "Protocolo de red criptográfico usado para comunicación segura entre dispositivos. Encripta datos usando algoritmos criptográficos como AES, y se usa frecuentemente para iniciar sesión remota en una computadora o servidor."
+        },
+        {
+          "id": "router-msgq52up-wt14",
+          "submodule": "Hardware",
+          "term": "Router",
+          "tag": "",
+          "definition": "Dispositivo dedicado que conecta redes y pasa datos entre ellas mediante el proceso de enrutamiento (routing). Opera en la Capa 3 del modelo OSI."
+        },
+        {
+          "id": "switch-msgq52up-n2x5",
+          "submodule": "Hardware",
+          "term": "Switch",
+          "tag": "",
+          "definition": "Dispositivo de red dedicado que permite conectar múltiples dispositivos (entre 3 y 63) mediante cables Ethernet, operando en Capa 2 o Capa 3 del modelo OSI."
+        },
+        {
+          "id": "vlan-virtual-local-area-network-msgq52up-dtid",
+          "submodule": "Sistemas",
+          "term": "VLAN (Virtual Local Area Network)",
+          "tag": "",
+          "definition": "Tecnología que permite dividir virtualmente dispositivos específicos dentro de una red, permitiendo que compartan recursos como una conexión a Internet pero se traten por separado, brindando seguridad mediante reglas de comunicación entre dispositivos."
         }
       ]
     }
