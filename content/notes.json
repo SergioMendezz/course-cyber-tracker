@@ -1115,6 +1115,88 @@
             "Switch capa 3: además enruta paquetes usando IP",
             "Ambas capas son excluyentes entre sí en un mismo switch"
           ]
+        },
+        {
+          "id": "tipos-de-registros-dns-msjemu17-tl9o",
+          "submodule": "HTTP",
+          "title": "Tipos de registros DNS",
+          "explanation": "DNS no es solo para sitios web, existen múltiples tipos de registros que cumplen funciones distintas al resolver un nombre de dominio.",
+          "keyPoints": [
+            "A Record: resuelve a direcciones IPv4, ej: 104.26.10.229",
+            "AAAA Record: resuelve a direcciones IPv6, ej: 2606:4700:20::681a:be5",
+            "CNAME Record: resuelve a otro nombre de dominio, ej: store.tryhackme.com apunta a shops.shopify.com",
+            "MX Record: resuelve a los servidores que manejan el correo del dominio, incluye una prioridad para definir el orden de uso",
+            "TXT Record: campo de texto libre usado para verificar propiedad de dominio o listar servidores autorizados para enviar correo"
+          ]
+        },
+        {
+          "id": "proceso-de-una-consulta-dns-msjemu17-06h8",
+          "submodule": "HTTP",
+          "title": "Proceso de una consulta DNS",
+          "explanation": "Describe el recorrido que realiza una solicitud DNS desde que el usuario pide un dominio hasta que se obtiene la respuesta final.",
+          "keyPoints": [
+            "El equipo primero revisa su caché local antes de hacer una consulta",
+            "Si no está en caché, se consulta al Recursive DNS Server (usualmente del ISP)",
+            "Si el Recursive DNS Server no tiene la respuesta, consulta a los root DNS servers",
+            "Los root servers redirigen al servidor TLD correspondiente (ej: .com)",
+            "El servidor TLD indica el servidor autoritativo (nameserver) del dominio",
+            "El servidor autoritativo almacena y responde con el registro DNS solicitado",
+            "La respuesta se cachea en el Recursive DNS Server según su valor TTL (Time To Live)"
+          ]
+        },
+        {
+          "id": "estructura-de-una-url-msjemu17-kdvo",
+          "submodule": "HTTP",
+          "title": "Estructura de una URL",
+          "explanation": "Una URL (Uniform Resource Locator) es una instrucción sobre cómo acceder a un recurso en internet, compuesta por varias partes.",
+          "keyPoints": [
+            "Scheme: protocolo a usar, ej: HTTP, HTTPS, FTP",
+            "User: credenciales de autenticación opcionales dentro de la URL",
+            "Host: dominio o IP del servidor a acceder",
+            "Port: puerto de conexión, por defecto 80 (HTTP) o 443 (HTTPS)",
+            "Path: ubicación o nombre del recurso solicitado",
+            "Query String: información adicional enviada al path, ej: /blog?id=1",
+            "Fragment: referencia a una sección específica dentro de la página solicitada"
+          ]
+        },
+        {
+          "id": "estructura-de-una-peticion-y-respuesta-http-msjemu17-a8bl",
+          "submodule": "HTTP",
+          "title": "Estructura de una petición y respuesta HTTP",
+          "explanation": "Una petición HTTP puede ser tan simple como una línea, pero para una experiencia web completa se envían headers con información adicional. La respuesta del servidor también sigue una estructura definida.",
+          "keyPoints": [
+            "Petición: método, ruta y versión HTTP en la primera línea (ej: GET / HTTP/1.1)",
+            "Headers como Host, User-Agent y Referer envían información adicional al servidor",
+            "Las peticiones HTTP terminan con una línea en blanco",
+            "Respuesta: primera línea indica versión HTTP y código de estado (ej: 200 OK)",
+            "Headers de respuesta incluyen Server, Date, Content-Type y Content-Length",
+            "La respuesta también termina con una línea en blanco antes del contenido solicitado"
+          ]
+        },
+        {
+          "id": "metodos-http-msjemu17-n87h",
+          "submodule": "HTTP",
+          "title": "Métodos HTTP",
+          "explanation": "Los métodos HTTP indican la acción que el cliente desea realizar al hacer una petición a un servidor web.",
+          "keyPoints": [
+            "GET: obtener información de un servidor web",
+            "POST: enviar datos al servidor, potencialmente creando nuevos registros",
+            "PUT: enviar datos al servidor para actualizar información existente",
+            "DELETE: eliminar información o registros del servidor"
+          ]
+        },
+        {
+          "id": "codigos-de-estado-http-msjemu17-txkj",
+          "submodule": "HTTP",
+          "title": "Códigos de estado HTTP",
+          "explanation": "Cuando un servidor HTTP responde, la primera línea siempre contiene un código de estado que informa al cliente el resultado de su petición. Estos códigos se agrupan en 5 rangos según su significado.",
+          "keyPoints": [
+            "100-199: Información - la primera parte de la petición fue aceptada",
+            "200-299: Éxito - la petición se completó correctamente",
+            "300-399: Redirección - el cliente es redirigido a otro recurso",
+            "400-499: Errores del cliente - hubo un problema con la petición enviada",
+            "500-599: Errores del servidor - problema grave al procesar la petición del lado del servidor"
+          ]
         }
       ],
       "glossary": [
@@ -1719,6 +1801,104 @@
           "term": "VLAN (Virtual Local Area Network)",
           "tag": "",
           "definition": "Tecnología que permite dividir virtualmente dispositivos específicos dentro de una red, permitiendo que compartan recursos como una conexión a Internet pero se traten por separado, brindando seguridad mediante reglas de comunicación entre dispositivos."
+        },
+        {
+          "id": "tld-top-level-domain-msjemu17-ymk1",
+          "submodule": "HTTP",
+          "term": "TLD (Top-Level Domain)",
+          "tag": "DNS",
+          "definition": "Es la parte más a la derecha de un nombre de dominio, por ejemplo .com en tryhackme.com. Existen dos tipos: gTLD (genérico, como .com, .org, .edu, .gov) y ccTLD (código de país, como .ca, .co.uk)."
+        },
+        {
+          "id": "second-level-domain-msjemu17-1aei",
+          "submodule": "HTTP",
+          "term": "Second-Level Domain",
+          "tag": "DNS",
+          "definition": "Parte del dominio ubicada antes del TLD, por ejemplo tryhackme en tryhackme.com. Está limitado a 63 caracteres más el TLD, y solo puede usar a-z, 0-9 y guiones (sin empezar/terminar con guion ni guiones consecutivos)."
+        },
+        {
+          "id": "subdomain-msjemu17-m4rw",
+          "submodule": "HTTP",
+          "term": "Subdomain",
+          "tag": "DNS",
+          "definition": "Parte que se ubica a la izquierda del Second-Level Domain separada por un punto, por ejemplo admin en admin.tryhackme.com. Tiene las mismas restricciones de creación que el Second-Level Domain, y el nombre completo debe tener 253 caracteres o menos."
+        },
+        {
+          "id": "200-ok-msjemu17-83a4",
+          "submodule": "HTTP",
+          "term": "200 OK",
+          "tag": "Código de estado HTTP",
+          "definition": "La petición se completó exitosamente."
+        },
+        {
+          "id": "201-created-msjemu17-35ez",
+          "submodule": "HTTP",
+          "term": "201 Created",
+          "tag": "Código de estado HTTP",
+          "definition": "Se ha creado un recurso, por ejemplo un nuevo usuario o una nueva publicación."
+        },
+        {
+          "id": "301-moved-permanently-msjemu17-ssjl",
+          "submodule": "HTTP",
+          "term": "301 Moved Permanently",
+          "tag": "Código de estado HTTP",
+          "definition": "Redirige al navegador del cliente a una nueva página web de forma permanente, o indica a los motores de búsqueda que la página se movió."
+        },
+        {
+          "id": "302-found-msjemu17-ynft",
+          "submodule": "HTTP",
+          "term": "302 Found",
+          "tag": "Código de estado HTTP",
+          "definition": "Redirección similar a la permanente, pero es un cambio temporal que puede modificarse en el futuro cercano."
+        },
+        {
+          "id": "400-bad-request-msjemu17-uxg5",
+          "submodule": "HTTP",
+          "term": "400 Bad Request",
+          "tag": "Código de estado HTTP",
+          "definition": "Indica que algo estaba mal o faltaba en la petición del cliente, por ejemplo un parámetro esperado que no fue enviado."
+        },
+        {
+          "id": "401-not-authorised-msjemu17-sz2f",
+          "submodule": "HTTP",
+          "term": "401 Not Authorised",
+          "tag": "Código de estado HTTP",
+          "definition": "No se permite ver el recurso hasta autenticarse en la aplicación web, generalmente con usuario y contraseña."
+        },
+        {
+          "id": "403-forbidden-msjemu17-kb4z",
+          "submodule": "HTTP",
+          "term": "403 Forbidden",
+          "tag": "Código de estado HTTP",
+          "definition": "No se tiene permiso para ver el recurso, sin importar si se está autenticado o no."
+        },
+        {
+          "id": "405-method-not-allowed-msjemu17-eugz",
+          "submodule": "HTTP",
+          "term": "405 Method Not Allowed",
+          "tag": "Código de estado HTTP",
+          "definition": "El recurso no permite el método de petición usado, por ejemplo enviar GET a un recurso que espera POST."
+        },
+        {
+          "id": "404-page-not-found-msjemu17-rtha",
+          "submodule": "HTTP",
+          "term": "404 Page Not Found",
+          "tag": "Código de estado HTTP",
+          "definition": "El recurso o página solicitada no existe."
+        },
+        {
+          "id": "500-internal-service-error-msjemu17-nvhj",
+          "submodule": "HTTP",
+          "term": "500 Internal Service Error",
+          "tag": "Código de estado HTTP",
+          "definition": "El servidor encontró un error con la petición que no supo manejar correctamente."
+        },
+        {
+          "id": "503-service-unavailable-msjemu17-gevc",
+          "submodule": "HTTP",
+          "term": "503 Service Unavailable",
+          "tag": "Código de estado HTTP",
+          "definition": "El servidor no puede manejar la petición porque está sobrecargado o en mantenimiento."
         }
       ]
     }
