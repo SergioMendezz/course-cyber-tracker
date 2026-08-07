@@ -1197,6 +1197,135 @@
             "400-499: Errores del cliente - hubo un problema con la petición enviada",
             "500-599: Errores del servidor - problema grave al procesar la petición del lado del servidor"
           ]
+        },
+        {
+          "id": "headers-http-msjjactb-g1x9",
+          "submodule": "HTTP",
+          "title": "Headers HTTP",
+          "explanation": "Los headers son datos adicionales enviados entre cliente y servidor en una petición HTTP. No son estrictamente obligatorios, pero sin ellos es difícil ver un sitio web correctamente. Se dividen en request headers (enviados por el cliente) y response headers (devueltos por el servidor).",
+          "keyPoints": [
+            "Request headers: enviados por el navegador al servidor",
+            "Response headers: enviados por el servidor al cliente",
+            "Ayudan a formatear y procesar correctamente el contenido"
+          ]
+        },
+        {
+          "id": "cookies-msjjactb-5y5h",
+          "submodule": "HTTP",
+          "title": "Cookies",
+          "explanation": "Las cookies son pequeñas piezas de datos almacenadas en el equipo del usuario, guardadas al recibir un header Set-Cookie. En cada petición posterior se reenvían al servidor. Como HTTP es un protocolo sin estado (stateless), las cookies permiten recordar quién es el usuario, sus preferencias o si ya visitó el sitio. Se usan comúnmente para autenticación, generalmente mediante un token en vez de texto claro.",
+          "keyPoints": [
+            "HTTP es stateless",
+            "Se guardan con Set-Cookie y se reenvían con Cookie",
+            "Usadas comúnmente para autenticación mediante tokens"
+          ]
+        },
+        {
+          "id": "visualizacion-de-cookies-con-developer-tools-msjjactb-es9a",
+          "submodule": "HTTP",
+          "title": "Visualización de cookies con Developer Tools",
+          "explanation": "Se pueden ver las cookies enviadas por el navegador usando las herramientas de desarrollador, en la pestaña Network, seleccionando una petición y revisando la pestaña Cookies.",
+          "keyPoints": []
+        },
+        {
+          "id": "sensitive-data-exposure-msjjactb-s3t1",
+          "submodule": "Fundamentos",
+          "title": "Sensitive Data Exposure",
+          "explanation": "Ocurre cuando un sitio web no protege ni elimina adecuadamente información sensible en texto claro visible para el usuario final, usualmente encontrada en el código fuente frontend. Un desarrollador puede olvidar remover credenciales de login, enlaces ocultos a partes privadas del sitio u otros datos sensibles en HTML o JavaScript, que un atacante puede usar para escalar acceso.",
+          "keyPoints": [
+            "Se encuentra revisando el código fuente de la página",
+            "Puede incluir credenciales en comentarios HTML",
+            "Debe revisarse siempre al evaluar la seguridad de una web"
+          ]
+        },
+        {
+          "id": "html-injection-msjjactb-6ekn",
+          "submodule": "Fundamentos",
+          "title": "HTML Injection",
+          "explanation": "Vulnerabilidad que ocurre cuando la entrada de usuario sin filtrar se muestra en la página. Si un sitio no sanitiza el input del usuario, un atacante puede inyectar código HTML o JavaScript que el navegador ejecutará, permitiéndole controlar la apariencia o funcionalidad de la página.",
+          "keyPoints": [
+            "Es una vulnerabilidad del lado del cliente",
+            "Se previene sanitizando el input del usuario",
+            "Diferente de la inyección de base de datos, que es del lado del servidor"
+          ]
+        },
+        {
+          "id": "flujo-de-una-peticion-web-msjjactb-2oq0",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Flujo de una petición web",
+          "explanation": "Al solicitar un sitio web, el navegador primero usa DNS para conocer la IP del servidor, luego se comunica con el servidor usando el protocolo HTTP; el servidor responde con HTML, JavaScript, CSS, imágenes, etc., que el navegador usa para renderizar la web.",
+          "keyPoints": [
+            "DNS resuelve el dominio a una IP",
+            "HTTP es el protocolo de comunicación",
+            "El navegador renderiza el contenido recibido"
+          ]
+        },
+        {
+          "id": "load-balancers-msjjactb-6qzd",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Load Balancers",
+          "explanation": "Los balanceadores de carga distribuyen el tráfico entre múltiples servidores para manejar sitios con mucho tráfico o alta disponibilidad, y proporcionan failover si un servidor deja de responder. Usan algoritmos como round-robin o weighted para decidir a qué servidor enviar cada petición, y realizan health checks periódicos.",
+          "keyPoints": [
+            "Round-robin: distribuye en turnos",
+            "Weighted: envía al servidor menos ocupado",
+            "Health check: verificación periódica del estado de los servidores"
+          ]
+        },
+        {
+          "id": "bases-de-datos-en-servidores-web-msjjactb-oz8p",
+          "submodule": "Bases de datos",
+          "title": "Bases de datos en servidores web",
+          "explanation": "Los servidores web se comunican con bases de datos para almacenar y recuperar información de los usuarios. Las bases de datos pueden variar desde un simple archivo de texto plano hasta clústers complejos de múltiples servidores. Ejemplos comunes: MySQL, MSSQL, MongoDB, Postgres.",
+          "keyPoints": []
+        },
+        {
+          "id": "web-server-msjjactb-qwbp",
+          "submodule": "Sistemas",
+          "title": "Web Server",
+          "explanation": "Un web server es un software que escucha conexiones entrantes y utiliza el protocolo HTTP para entregar contenido web a sus clientes. Los más comunes son Apache, Nginx, IIS y NodeJS. Entrega archivos desde su directorio raíz definido en su configuración.",
+          "keyPoints": [
+            "Apache y Nginx usan /var/www/html por defecto en Linux",
+            "IIS usa C:\\inetpub\\wwwroot en Windows"
+          ]
+        },
+        {
+          "id": "virtual-hosts-msjjactb-1q8w",
+          "submodule": "Sistemas",
+          "title": "Virtual Hosts",
+          "explanation": "Permiten que un servidor web aloje múltiples sitios con diferentes dominios. El software revisa el hostname solicitado en los headers HTTP y lo compara contra archivos de configuración de virtual hosts; si hay coincidencia, entrega ese sitio, sino entrega el sitio por defecto. Cada virtual host puede tener su propio directorio raíz.",
+          "keyPoints": [
+            "Configurados mediante archivos de texto",
+            "Permiten mapear distintos dominios a distintos directorios"
+          ]
+        },
+        {
+          "id": "contenido-estatico-vs-dinamico-msjjactb-ydn3",
+          "submodule": "Fundamentos",
+          "title": "Contenido estático vs dinámico",
+          "explanation": "El contenido estático nunca cambia (imágenes, JS, CSS, HTML fijo) y se sirve directamente sin modificaciones. El contenido dinámico puede cambiar según la petición, generado en el Backend mediante programación, y el resultado visible es el Frontend.",
+          "keyPoints": [
+            "Estático: no cambia, servido directo",
+            "Dinámico: generado en el Backend según la petición",
+            "Frontend: lo que ve el usuario; Backend: procesamiento oculto"
+          ]
+        },
+        {
+          "id": "lenguajes-de-backend-y-scripting-msjjactb-avte",
+          "submodule": "Fundamentos",
+          "title": "Lenguajes de Backend y scripting",
+          "explanation": "Los lenguajes backend permiten que un sitio sea interactivo, procesando datos, interactuando con bases de datos y llamando servicios externos. Ejemplos: PHP, Python, Ruby, NodeJS, Perl.",
+          "keyPoints": []
+        },
+        {
+          "id": "cia-triad-msjjactb-g5c4",
+          "submodule": "Fundamentos",
+          "title": "CIA Triad",
+          "explanation": "En ciberseguridad, ser seguro implica asegurar ciertas condiciones sobre los datos digitales: Confidencialidad, Integridad y Disponibilidad. Juntas explican qué protege realmente la ciberseguridad, y toda defensa o ataque busca mantener o romper estos pilares.",
+          "keyPoints": [
+            "Confidentiality (Confidencialidad)",
+            "Integrity (Integridad)",
+            "Availability (Disponibilidad)"
+          ]
         }
       ],
       "glossary": [
@@ -1899,6 +2028,118 @@
           "term": "503 Service Unavailable",
           "tag": "Código de estado HTTP",
           "definition": "El servidor no puede manejar la petición porque está sobrecargado o en mantenimiento."
+        },
+        {
+          "id": "host-header-msjjactb-r0eo",
+          "submodule": "HTTP",
+          "term": "Host (header)",
+          "tag": "Request Header",
+          "definition": "Indica al servidor qué sitio web se requiere cuando este aloja múltiples websites; si no se especifica, se entrega el sitio por defecto."
+        },
+        {
+          "id": "user-agent-msjjactb-rf38",
+          "submodule": "HTTP",
+          "term": "User-Agent",
+          "tag": "Request Header",
+          "definition": "Informa al servidor el software y versión del navegador del cliente, ayudando a formatear correctamente la web para ese navegador."
+        },
+        {
+          "id": "content-length-msjjactb-62zf",
+          "submodule": "HTTP",
+          "term": "Content-Length",
+          "tag": "Request Header",
+          "definition": "Indica al servidor cuántos datos esperar en la petición, útil al enviar formularios, para asegurar que no falten datos."
+        },
+        {
+          "id": "accept-encoding-msjjactb-1i4u",
+          "submodule": "HTTP",
+          "term": "Accept-Encoding",
+          "tag": "Request Header",
+          "definition": "Indica al servidor qué métodos de compresión soporta el navegador para reducir el tamaño de los datos transmitidos."
+        },
+        {
+          "id": "cookie-header-msjjactb-jvza",
+          "submodule": "HTTP",
+          "term": "Cookie (header)",
+          "tag": "Request Header",
+          "definition": "Header que envía datos al servidor para recordar información del usuario en cada petición."
+        },
+        {
+          "id": "set-cookie-msjjactb-gi33",
+          "submodule": "HTTP",
+          "term": "Set-Cookie",
+          "tag": "Response Header",
+          "definition": "Header devuelto por el servidor con información que se guarda y se reenvía en cada petición posterior del cliente."
+        },
+        {
+          "id": "cache-control-msjjactb-g7fl",
+          "submodule": "HTTP",
+          "term": "Cache-Control",
+          "tag": "Response Header",
+          "definition": "Indica cuánto tiempo debe almacenarse el contenido de la respuesta en el caché del navegador antes de volver a solicitarlo."
+        },
+        {
+          "id": "content-type-msjjactb-3tdo",
+          "submodule": "HTTP",
+          "term": "Content-Type",
+          "tag": "Response Header",
+          "definition": "Indica al cliente qué tipo de datos se están devolviendo (HTML, CSS, JavaScript, imágenes, PDF, video, etc.) para que el navegador sepa procesarlos."
+        },
+        {
+          "id": "sanitizacion-de-input-msjjactb-g5pc",
+          "submodule": "Fundamentos",
+          "term": "Sanitización de input",
+          "tag": "",
+          "definition": "Proceso de filtrar texto potencialmente malicioso ingresado por un usuario antes de usarlo en una página, para prevenir vulnerabilidades como HTML injection."
+        },
+        {
+          "id": "cdn-msjjactb-t3wj",
+          "submodule": "Modelo cliente-servidor",
+          "term": "CDN",
+          "tag": "Content Delivery Network",
+          "definition": "Red de servidores distribuidos globalmente que aloja archivos estáticos (JS, CSS, imágenes, videos) y entrega el contenido desde el servidor físicamente más cercano al usuario, reduciendo el tráfico al servidor original."
+        },
+        {
+          "id": "waf-msjjactb-5l1f",
+          "submodule": "Fundamentos",
+          "term": "WAF",
+          "tag": "Web Application Firewall",
+          "definition": "Firewall que se ubica entre la petición web y el servidor, protegiéndolo de ataques de hacking o denegación de servicio. Analiza las peticiones buscando técnicas de ataque comunes y aplica rate limiting para limitar peticiones por IP."
+        },
+        {
+          "id": "backend-msjjactb-io28",
+          "submodule": "Fundamentos",
+          "term": "Backend",
+          "tag": "",
+          "definition": "Parte de una aplicación web donde ocurre el procesamiento oculto mediante lenguajes de programación y scripting, generando el contenido dinámico que se muestra en el Frontend."
+        },
+        {
+          "id": "frontend-msjjactb-7z33",
+          "submodule": "Fundamentos",
+          "term": "Frontend",
+          "tag": "",
+          "definition": "Todo lo que el usuario ve y con lo que interactúa directamente en su navegador."
+        },
+        {
+          "id": "confidentiality-msjjactb-vfsk",
+          "submodule": "Fundamentos",
+          "term": "Confidentiality",
+          "tag": "CIA Triad",
+          "definition": "Garantiza que los datos sensibles solo puedan ser accedidos por individuos autorizados; su falta puede causar pérdidas financieras, violaciones de privacidad o consecuencias legales."
+        },
+        {
+          "id": "integrity-msjjactb-bpqu",
+          "submodule": "Fundamentos",
+          "term": "Integrity",
+          "tag": "CIA Triad",
+          "definition": "Garantiza que individuos no autorizados no modifiquen los datos; sin integridad, los datos pueden alterarse y perder confiabilidad, con consecuencias potencialmente peligrosas."
+        },
+        {
+          "id": "availability-msjjactb-5ndf",
+          "submodule": "Fundamentos",
+          "term": "Availability",
+          "tag": "CIA Triad",
+          "definition": "Garantiza que los datos y servicios estén disponibles para los usuarios autorizados cuando los necesiten; incluso un breve tiempo de inactividad puede tener consecuencias serias para negocios y usuarios."
         }
       ]
     }
