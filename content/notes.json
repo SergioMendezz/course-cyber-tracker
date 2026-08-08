@@ -2430,6 +2430,194 @@
           "definition": "La probabilidad e impacto potencial de que una amenaza dañe exitosamente a una organización."
         }
       ]
+    },
+    {
+      "id": "linux-fundamentals-sec1",
+      "name": "Linux Fundamentals (SEC1)",
+      "commands": [
+        {
+          "id": "mostrar-texto-en-terminal-mskoxoie-od4e",
+          "submodule": "Comandos básicos",
+          "title": "Mostrar texto en terminal",
+          "command": "echo",
+          "explanation": "Muestra en pantalla cualquier texto que se le proporcione.",
+          "example": "echo Hello\necho \"Hello Friend!\""
+        },
+        {
+          "id": "ver-usuario-actual-mskoxoie-xqae",
+          "submodule": "Comandos básicos",
+          "title": "Ver usuario actual",
+          "command": "whoami",
+          "explanation": "Muestra el usuario con el que se está actualmente conectado en el sistema.",
+          "example": "whoami"
+        },
+        {
+          "id": "listar-contenido-de-un-directorio-mskoxoie-kc0w",
+          "submodule": "Comandos básicos",
+          "title": "Listar contenido de un directorio",
+          "command": "ls",
+          "explanation": "Lista los archivos y carpetas dentro del directorio actual.",
+          "example": "ls"
+        },
+        {
+          "id": "cambiar-de-directorio-mskoxoie-6umx",
+          "submodule": "Comandos básicos",
+          "title": "Cambiar de directorio",
+          "command": "cd",
+          "explanation": "Cambia el directorio de trabajo actual al especificado.",
+          "example": "cd Pictures"
+        },
+        {
+          "id": "ver-contenido-de-un-archivo-mskoxoie-3pli",
+          "submodule": "Comandos básicos",
+          "title": "Ver contenido de un archivo",
+          "command": "cat",
+          "explanation": "Muestra el contenido de un archivo (no solo archivos de texto). También puede usarse indicando la ruta completa sin necesidad de navegar hasta el directorio.",
+          "example": "cat todo.txt\ncat /home/ubuntu/Documents/todo.txt"
+        },
+        {
+          "id": "ver-ruta-del-directorio-actual-mskoxoie-b729",
+          "submodule": "Comandos básicos",
+          "title": "Ver ruta del directorio actual",
+          "command": "pwd",
+          "explanation": "Muestra la ruta completa (path) del directorio de trabajo actual dentro del sistema de archivos.",
+          "example": "pwd"
+        },
+        {
+          "id": "buscar-un-archivo-por-nombre-mskoxoie-h0ew",
+          "submodule": "Búsqueda de archivos",
+          "title": "Buscar un archivo por nombre",
+          "command": "find -name",
+          "explanation": "Busca en todas las carpetas del directorio actual un archivo con el nombre especificado. Se puede usar el comodín (*) para buscar por extensión u otro patrón.",
+          "example": "find -name passwords.txt\nfind -name *.txt"
+        },
+        {
+          "id": "contar-lineas-de-un-archivo-mskoxoie-hih3",
+          "submodule": "Búsqueda de archivos",
+          "title": "Contar líneas de un archivo",
+          "command": "wc -l",
+          "explanation": "Cuenta el número de líneas (entradas) que tiene un archivo.",
+          "example": "wc -l access.log"
+        },
+        {
+          "id": "buscar-contenido-dentro-de-un-archivo-mskoxoie-1to1",
+          "submodule": "Búsqueda de archivos",
+          "title": "Buscar contenido dentro de un archivo",
+          "command": "grep",
+          "explanation": "Busca dentro del contenido de un archivo valores específicos, permitiendo filtrar información sin revisar manualmente todo el archivo.",
+          "example": "grep \"81.143.211.90\" access.log"
+        },
+        {
+          "id": "busqueda-recursiva-con-grep-mskoxoie-1y0r",
+          "submodule": "Búsqueda de archivos",
+          "title": "Búsqueda recursiva con grep",
+          "command": "grep -R",
+          "explanation": "Busca un valor de forma recursiva en todos los archivos y subdirectorios de una ruta dada, en lugar de revisar cada archivo individualmente.",
+          "example": "grep -R \"PRETTY_NAME\" /etc/"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "que-es-linux-y-donde-se-usa-mskoxoie-f4zc",
+          "submodule": "Introducción a Linux",
+          "title": "¿Qué es Linux y dónde se usa?",
+          "explanation": "Linux es un sistema operativo muy popular que impulsa autos inteligentes, dispositivos Android, supercomputadoras, electrodomésticos, servidores empresariales y más. Es más liviano que otros sistemas operativos como Windows y se usa en sitios web, paneles de control de autos, sistemas de punto de venta (PoS), infraestructuras críticas (semáforos, sensores industriales) y teléfonos.",
+          "keyPoints": [
+            "Impulsa sitios web, autos, PoS, infraestructuras críticas y teléfonos",
+            "Más liviano que Windows",
+            "Se usa a diario sin que el usuario lo note"
+          ]
+        },
+        {
+          "id": "distribuciones-flavours-de-linux-mskoxoie-4eoa",
+          "submodule": "Introducción a Linux",
+          "title": "Distribuciones (flavours) de Linux",
+          "explanation": "Linux es un término genérico para múltiples sistemas operativos basados en UNIX. Al ser de código abierto, existen muchas variantes (distribuciones) adaptadas a distintos usos. Ubuntu y Debian son de las más comunes por ser muy extensibles, pudiendo usarse tanto como servidor (para sitios web y aplicaciones) como escritorio completo.",
+          "keyPoints": [
+            "Linux se basa en UNIX",
+            "Open-source permite múltiples distribuciones",
+            "Ubuntu y Debian son muy extensibles",
+            "Ubuntu puede usarse como servidor o escritorio"
+          ]
+        },
+        {
+          "id": "operador-ejecucion-en-segundo-plano-mskoxoie-jpf5",
+          "submodule": "Operadores de terminal",
+          "title": "Operador & (ejecución en segundo plano)",
+          "explanation": "Permite ejecutar un comando en segundo plano del terminal, de forma que el usuario pueda seguir realizando otras tareas mientras el comando se ejecuta (por ejemplo, copiar un archivo grande).",
+          "keyPoints": [
+            "Ejecuta comandos en background",
+            "Útil para tareas largas como copiar archivos grandes"
+          ]
+        },
+        {
+          "id": "operador-encadenar-comandos-mskoxoie-i3jo",
+          "submodule": "Operadores de terminal",
+          "title": "Operador && (encadenar comandos)",
+          "explanation": "Permite combinar múltiples comandos en una sola línea, donde el segundo comando solo se ejecuta si el primero fue exitoso.",
+          "keyPoints": [
+            "Encadena comandos: command1 && command2",
+            "command2 solo corre si command1 tuvo éxito"
+          ]
+        },
+        {
+          "id": "operador-redireccion-de-salida-mskoxoie-9uwb",
+          "submodule": "Operadores de terminal",
+          "title": "Operador > (redirección de salida)",
+          "explanation": "Redirige la salida de un comando hacia otro lugar, como un archivo, sobrescribiendo su contenido si ya existía.",
+          "keyPoints": [
+            "Redirige salida de un comando",
+            "Sobrescribe el contenido del archivo destino"
+          ]
+        },
+        {
+          "id": "operador-append-de-salida-mskoxoie-8sc6",
+          "submodule": "Operadores de terminal",
+          "title": "Operador >> (append de salida)",
+          "explanation": "Funciona igual que el operador >, pero en lugar de sobrescribir el contenido del archivo, agrega (append) la salida al final del mismo sin borrar lo anterior.",
+          "keyPoints": [
+            "Agrega contenido al final del archivo",
+            "No sobrescribe el contenido existente"
+          ]
+        }
+      ],
+      "glossary": [
+        {
+          "id": "ls-mskoxoie-4s2t",
+          "submodule": "Terminología Linux",
+          "term": "ls",
+          "tag": "comando",
+          "definition": "Abreviatura de 'listing'; comando usado para listar el contenido de un directorio."
+        },
+        {
+          "id": "cd-mskoxoie-3nev",
+          "submodule": "Terminología Linux",
+          "term": "cd",
+          "tag": "comando",
+          "definition": "Abreviatura de 'change directory'; comando usado para cambiar de directorio."
+        },
+        {
+          "id": "cat-mskoxoie-j6zj",
+          "submodule": "Terminología Linux",
+          "term": "cat",
+          "tag": "comando",
+          "definition": "Abreviatura de 'concatenate'; comando usado para mostrar el contenido de archivos."
+        },
+        {
+          "id": "pwd-mskoxoie-vmpc",
+          "submodule": "Terminología Linux",
+          "term": "pwd",
+          "tag": "comando",
+          "definition": "Abreviatura de 'print working directory'; comando que muestra la ruta completa del directorio actual."
+        },
+        {
+          "id": "wildcard-mskoxoie-e6qe",
+          "submodule": "Terminología Linux",
+          "term": "wildcard",
+          "tag": "",
+          "definition": "Símbolo (*) usado en comandos como find para representar cualquier valor, permitiendo búsquedas de patrones como extensiones de archivo."
+        }
+      ]
     }
   ]
 }
