@@ -251,6 +251,22 @@
           "command": "ORDER BY",
           "explanation": "Ordena los resultados de una consulta SQL.",
           "example": ""
+        },
+        {
+          "id": "enumeracion-de-directorios-con-gobuster-mskm4zep-ofhw",
+          "submodule": "Reconocimiento web",
+          "title": "Enumeración de directorios con Gobuster",
+          "command": "gobuster dir --url http://www.onlineshop.thm/ -w /usr/share/wordlists/dirbuster/directory-list.txt",
+          "explanation": "gobuster es la herramienta de línea de comandos para descubrir contenido web. dir especifica el modo de enumeración de directorios y archivos ocultos. --url define el sitio objetivo a escanear. -w especifica la wordlist que Gobuster usará para adivinar nombres de directorios y archivos.",
+          "example": ""
+        },
+        {
+          "id": "ataque-de-diccionario-con-hydra-mskm4zep-5id8",
+          "submodule": "Reconocimiento web",
+          "title": "Ataque de diccionario con Hydra",
+          "command": "hydra -l admin -P passlist.txt www.onlineshop.thm http-post-form \"/login:username=^USER^&password=^PASS^:F=incorrect\" -V",
+          "explanation": "hydra es la herramienta de línea de comandos para realizar ataques de diccionario. -l admin intenta iniciar sesión con el usuario admin. -P passlist.txt especifica la lista de contraseñas a probar. www.onlineshop.thm define el sitio objetivo. http-post-form indica que es un formulario de solicitud HTTP POST. La cadena entre comillas especifica cómo se envía la solicitud de login y cómo Hydra determina si un intento falló. -V habilita la salida detallada mostrando cada intento de usuario y contraseña.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -1326,6 +1342,145 @@
             "Integrity (Integridad)",
             "Availability (Disponibilidad)"
           ]
+        },
+        {
+          "id": "por-que-importa-la-criptografia-mskm4zep-la25",
+          "submodule": "Fundamentos",
+          "title": "Por qué importa la criptografía",
+          "explanation": "La tríada CIA (confidencialidad, integridad y disponibilidad) son los tres pilares de la ciberseguridad. Los atacantes intentan romperlos mediante divulgación, alteración y destrucción. La criptografía es la herramienta práctica para proteger secretos y detectar manipulaciones en el mundo real.",
+          "keyPoints": [
+            "Confidencialidad, integridad y disponibilidad",
+            "Disclosure, alteration, destruction",
+            "La criptografía protege secretos y detecta tampering"
+          ]
+        },
+        {
+          "id": "conceptos-basicos-de-criptografia-mskm4zep-i0xi",
+          "submodule": "Fundamentos",
+          "title": "Conceptos básicos de criptografía",
+          "explanation": "Plaintext es un mensaje legible normalmente. Ciphertext es una versión revuelta que no debería tener sentido. Key es el ingrediente secreto que controla el revuelto y desrevuelto, como una contraseña que usa el algoritmo. Algorithm es la receta pública, el conjunto de pasos que explican cómo usar la key sobre el mensaje; todos pueden conocer el algoritmo, la seguridad viene de mantener la key en secreto.",
+          "keyPoints": [
+            "Plaintext: mensaje legible",
+            "Ciphertext: mensaje revuelto",
+            "Key: secreto que controla el cifrado",
+            "Algorithm: receta pública, la seguridad está en la key"
+          ]
+        },
+        {
+          "id": "analogia-de-la-caja-fuerte-lockbox-mskm4zep-7dct",
+          "submodule": "Fundamentos",
+          "title": "Analogía de la caja fuerte (lockbox)",
+          "explanation": "El algoritmo es cómo funciona la cerradura, es público. La key es la llave metálica específica, solo quien la tiene puede abrir la caja. El plaintext es la carta dentro de la caja. El ciphertext es la caja cerrada viajando por el sistema postal. La seguridad viene de mantener la key privada, no de ocultar cómo funciona el algoritmo. Ejemplo: Alice escribe su mensaje, lo pone en una caja fuerte, la cierra con su key y la envía; Bob usa su copia de la misma key para abrirla y leer el mensaje. Quien intercepte la caja sin la key no puede hacer nada. Esto es cifrado simétrico: una key cierra la caja, la misma key la abre.",
+          "keyPoints": [
+            "Algoritmo público, key secreta",
+            "Ejemplo Alice y Bob con caja fuerte",
+            "Cifrado simétrico: misma key para cerrar y abrir"
+          ]
+        },
+        {
+          "id": "plaintext-versus-ciphertext-ejemplo-practico-mskm4zep-ue3u",
+          "submodule": "Fundamentos",
+          "title": "Plaintext versus Ciphertext (ejemplo práctico)",
+          "explanation": "Ejemplo con texto: Alice quiere enviar HELLO (plaintext). Usando un algoritmo y una key secreta lo scrambla y se convierte en KHOOR (ciphertext), que es ininteligible sin la key. Bob recibe KHOOR y usando la misma key y algoritmo lo desrevuelve de vuelta a HELLO.",
+          "keyPoints": [
+            "HELLO como plaintext",
+            "KHOOR como ciphertext",
+            "El ciphertext debe verse como ruido aleatorio sin la key"
+          ]
+        },
+        {
+          "id": "uso-real-https-mskm4zep-6nrw",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Uso real: HTTPS",
+          "explanation": "HTTPS es el uso más común del cifrado asimétrico en el día a día, representado por el candado en el navegador. Al visitar un sitio: el navegador pide la public key del sitio, el sitio envía su public key envuelta en un certificado, navegador y sitio usan cifrado asimétrico para acordar un secreto compartido (symmetric key) sin que nadie más lo vea, y luego cambian a cifrado simétrico rápido para el resto de la sesión. Es un enfoque híbrido: el cifrado asimétrico resuelve la distribución de keys, y el simétrico hace el trabajo pesado por ser más rápido.",
+          "keyPoints": [
+            "Enfoque híbrido: asimétrico + simétrico",
+            "Asimétrico resuelve distribución de keys",
+            "Simétrico es más rápido para el resto de la sesión"
+          ]
+        },
+        {
+          "id": "certificados-digitales-y-certificate-authority-mskm4zep-jm34",
+          "submodule": "Modelo cliente-servidor",
+          "title": "Certificados digitales y Certificate Authority",
+          "explanation": "Un certificado es un documento digital que contiene la public key de alguien, indica a quién pertenece esa key (como example.com), y es firmado digitalmente por una autoridad confiable llamada Certificate Authority (CA). El navegador y el sistema operativo vienen precargados con una lista de CAs confiables. Cuando un sitio entrega un certificado, el navegador verifica que fue firmado por una CA confiable y que sigue siendo válido (no expirado ni revocado). Si todo está bien, se muestra el candado; si algo falla, se muestra una advertencia y puede rechazarse la conexión.",
+          "keyPoints": [
+            "Certificado contiene public key + identidad + firma de CA",
+            "CAs confiables precargadas en navegador/OS",
+            "Verificación de validez y expiración"
+          ]
+        },
+        {
+          "id": "el-problema-de-la-distribucion-de-claves-mskm4zep-97wx",
+          "submodule": "Fundamentos",
+          "title": "El problema de la distribución de claves",
+          "explanation": "En el cifrado simétrico, Alice y Bob usan la misma key tanto para cifrar como para descifrar, lo cual es rápido y eficiente. Sin embargo, surge el problema de cómo compartir esa key de forma segura: si la envían en texto plano un atacante la puede robar, y si la cifran necesitan otra key, volviendo al mismo problema. Esto lleva a la necesidad del cifrado asimétrico.",
+          "keyPoints": [
+            "Cifrado simétrico usa la misma key",
+            "Problema: cómo compartir la key de forma segura",
+            "Lleva al cifrado asimétrico"
+          ]
+        },
+        {
+          "id": "cifrado-asimetrico-dos-claves-en-lugar-de-una-mskm4zep-nfxt",
+          "submodule": "Fundamentos",
+          "title": "Cifrado asimétrico: dos claves en lugar de una",
+          "explanation": "El cifrado asimétrico usa dos keys matemáticamente vinculadas: una public key que cualquiera puede conocer y usar, y una private key que solo una persona mantiene en secreto. Si se cifra algo con la public key de alguien, solo su private key puede descifrarlo. Si se cifra con la private key propia, cualquiera con la public key correspondiente puede descifrarlo (usado principalmente para firmas digitales). Las dos keys están conectadas por matemática compleja que haría tardar a una computadora común cientos o miles de años en recuperar la private key desde la public key, lo cual hace seguro este esquema.",
+          "keyPoints": [
+            "Public key y private key matemáticamente vinculadas",
+            "Cifrar con public key → descifra solo private key",
+            "Cifrar con private key → usado para firmas digitales",
+            "Seguridad basada en dificultad computacional"
+          ]
+        },
+        {
+          "id": "mentalidad-del-ethical-hacker-mskm4zep-15su",
+          "submodule": "Fundamentos",
+          "title": "Mentalidad del ethical hacker",
+          "explanation": "Puntos clave a tener en cuenta: hacer preguntas en lugar de asumir que una función funciona como se pretende, probar lo inesperado con acciones e inputs no considerados por los desarrolladores, encadenar debilidades pequeñas que juntas pueden generar un impacto mayor, y pensar como un adversario preguntándose cómo un actor malicioso abordaría el objetivo.",
+          "keyPoints": [
+            "Hacer preguntas",
+            "Probar lo inesperado",
+            "Encadenar debilidades pequeñas",
+            "Pensar como un adversario"
+          ]
+        },
+        {
+          "id": "que-se-vuelve-accesible-tras-obtener-credenciales-validas-mskm4zep-t8mr",
+          "submodule": "Fundamentos",
+          "title": "Qué se vuelve accesible tras obtener credenciales válidas",
+          "explanation": "Los atacantes buscan credenciales válidas porque el acceso puede desbloquear áreas privadas de una aplicación y aumentar sus capacidades. Una vez dentro, pueden acceder a: funcionalidad sensible (acciones esenciales como modificar datos o ver contenido restringido), datos de usuarios (información personal o privada), funciones administrativas (funcionalidad de alto privilegio para gestionar usuarios o configuraciones), y oportunidades de ataque adicionales (acceso autenticado que puede exponer otras vulnerabilidades).",
+          "keyPoints": [
+            "Sensitive functionality",
+            "User data",
+            "Administrative features",
+            "Further attack opportunities"
+          ]
+        },
+        {
+          "id": "conceptos-fundamentales-de-defensa-mskm4zep-n0f2",
+          "submodule": "Fundamentos",
+          "title": "Conceptos fundamentales de defensa",
+          "explanation": "Los defensores organizan su trabajo alrededor de conceptos de seguridad fundamentales que aplican en casi todos los entornos: Prevention (poner controles de seguridad para detener ataques antes de que ocurran, como firewalls, antivirus y parches regulares), Detection (monitorear sistemas y redes para identificar actividad sospechosa mediante logs, alertas y herramientas de seguridad), Mitigation (tomar acción durante un incidente para limitar el daño, como bloquear tráfico o aislar sistemas afectados), Analysis (investigar qué pasó, cómo pasó y qué sistemas fueron afectados revisando logs y evidencia), y Response and Improvement (recuperarse del incidente y mejorar las defensas para reducir el riesgo de ataques similares en el futuro).",
+          "keyPoints": [
+            "Prevention",
+            "Detection",
+            "Mitigation",
+            "Analysis",
+            "Response and Improvement"
+          ]
+        },
+        {
+          "id": "principios-clave-del-defensor-mskm4zep-rg4t",
+          "submodule": "Fundamentos",
+          "title": "Principios clave del defensor",
+          "explanation": "Threat anticipation: revisar los sistemas a proteger y preguntarse 'qué pasaría si', imaginando rutas realistas que un atacante podría tomar. Attack awareness: los ataques suelen seguir etapas reconocibles, estudiar cadenas de ataque y frameworks es útil para defensores. Risk prioritization: no todas las partes del sistema tienen el mismo riesgo, hay que identificar sistemas y objetivos de alto valor. Continuous adaptation: la defensa no es una configuración única, las amenazas y técnicas evolucionan constantemente.",
+          "keyPoints": [
+            "Threat anticipation",
+            "Attack awareness",
+            "Risk prioritization",
+            "Continuous adaptation"
+          ]
         }
       ],
       "glossary": [
@@ -2140,6 +2295,139 @@
           "term": "Availability",
           "tag": "CIA Triad",
           "definition": "Garantiza que los datos y servicios estén disponibles para los usuarios autorizados cuando los necesiten; incluso un breve tiempo de inactividad puede tener consecuencias serias para negocios y usuarios."
+        },
+        {
+          "id": "plaintext-mskm4zep-wyea",
+          "submodule": "Fundamentos",
+          "term": "Plaintext",
+          "tag": "criptografía",
+          "definition": "El mensaje original y legible antes de ser cifrado."
+        },
+        {
+          "id": "ciphertext-mskm4zep-kp12",
+          "submodule": "Fundamentos",
+          "term": "Ciphertext",
+          "tag": "criptografía",
+          "definition": "El mensaje encriptado y revuelto después de aplicar el cifrado."
+        },
+        {
+          "id": "key-mskm4zep-wna4",
+          "submodule": "Fundamentos",
+          "term": "Key",
+          "tag": "criptografía",
+          "definition": "Un valor secreto que controla cómo el cifrado transforma el mensaje."
+        },
+        {
+          "id": "caesar-cipher-mskm4zep-ifyu",
+          "submodule": "Fundamentos",
+          "term": "Caesar Cipher",
+          "tag": "criptografía",
+          "definition": "Un cifrado por sustitución que desplaza cada letra un número fijo de posiciones."
+        },
+        {
+          "id": "brute-force-mskm4zep-8x20",
+          "submodule": "Fundamentos",
+          "term": "Brute Force",
+          "tag": "criptografía",
+          "definition": "Probar todas las claves posibles hasta encontrar la correcta."
+        },
+        {
+          "id": "red-teaming-mskm4zep-2qdd",
+          "submodule": "Fundamentos",
+          "term": "Red Teaming",
+          "tag": "seguridad ofensiva",
+          "definition": "Metodología de ataque estructurada y autorizada que simula un adversario real para probar la efectividad de las defensas y encontrar vulnerabilidades dentro de un alcance definido."
+        },
+        {
+          "id": "penetration-test-mskm4zep-mgtw",
+          "submodule": "Fundamentos",
+          "term": "Penetration Test",
+          "tag": "seguridad ofensiva",
+          "definition": "Evaluación de seguridad estructurada donde un tester autorizado intenta identificar y explotar vulnerabilidades dentro de un alcance definido para entender el riesgo real."
+        },
+        {
+          "id": "vulnerability-mskm4zep-6gug",
+          "submodule": "Fundamentos",
+          "term": "Vulnerability",
+          "tag": "seguridad ofensiva",
+          "definition": "Una debilidad o falla en un sistema, aplicación o configuración que un atacante podría abusar."
+        },
+        {
+          "id": "exploit-mskm4zep-qd4z",
+          "submodule": "Fundamentos",
+          "term": "Exploit",
+          "tag": "seguridad ofensiva",
+          "definition": "Una técnica o método usado para aprovechar una vulnerabilidad y lograr un resultado específico, como acceder a funcionalidad o datos restringidos."
+        },
+        {
+          "id": "scope-mskm4zep-am0n",
+          "submodule": "Fundamentos",
+          "term": "Scope",
+          "tag": "seguridad ofensiva",
+          "definition": "Los límites de lo permitido para testear durante un engagement, definiendo qué sistemas, aplicaciones y acciones están permitidas y cuáles no."
+        },
+        {
+          "id": "enumeration-mskm4zep-j1p4",
+          "submodule": "Fundamentos",
+          "term": "Enumeration",
+          "tag": "seguridad ofensiva",
+          "definition": "Recolectar detalles sobre un sistema, usuarios y servicios para encontrar puntos débiles."
+        },
+        {
+          "id": "credentials-mskm4zep-ilnw",
+          "submodule": "Fundamentos",
+          "term": "Credentials",
+          "tag": "seguridad ofensiva",
+          "definition": "Datos de inicio de sesión como usuarios y contraseñas que desbloquean el acceso."
+        },
+        {
+          "id": "authentication-mskm4zep-cfcp",
+          "submodule": "Fundamentos",
+          "term": "Authentication",
+          "tag": "seguridad ofensiva",
+          "definition": "El paso que verifica si alguien o algo es realmente quien dice ser al iniciar sesión."
+        },
+        {
+          "id": "dictionary-attack-mskm4zep-8zwr",
+          "submodule": "Fundamentos",
+          "term": "Dictionary attack",
+          "tag": "seguridad ofensiva",
+          "definition": "Intentar una wordlist predefinida para adivinar una contraseña o nombre de usuario."
+        },
+        {
+          "id": "blue-team-mskm4zep-oh0z",
+          "submodule": "Fundamentos",
+          "term": "Blue Team",
+          "tag": "seguridad defensiva",
+          "definition": "Grupo de defensores de ciberseguridad encargados de proteger sistemas y responder a amenazas."
+        },
+        {
+          "id": "client-infrastructure-mskm4zep-0lz3",
+          "submodule": "Fundamentos",
+          "term": "Client Infrastructure",
+          "tag": "seguridad defensiva",
+          "definition": "Las redes, servidores, dispositivos y aplicaciones que pertenecen a una organización y necesitan protección."
+        },
+        {
+          "id": "visibility-mskm4zep-xo91",
+          "submodule": "Fundamentos",
+          "term": "Visibility",
+          "tag": "seguridad defensiva",
+          "definition": "La capacidad de ver y monitorear actividad a través de los sistemas para detectar posibles problemas."
+        },
+        {
+          "id": "threat-mskm4zep-hmdd",
+          "submodule": "Fundamentos",
+          "term": "Threat",
+          "tag": "seguridad defensiva",
+          "definition": "Un peligro potencial, como un hacker o malware, que podría dañar sistemas o datos."
+        },
+        {
+          "id": "risk-mskm4zep-yhho",
+          "submodule": "Fundamentos",
+          "term": "Risk",
+          "tag": "seguridad defensiva",
+          "definition": "La probabilidad e impacto potencial de que una amenaza dañe exitosamente a una organización."
         }
       ]
     }
