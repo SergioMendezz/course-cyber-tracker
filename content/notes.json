@@ -2514,6 +2514,182 @@
           "command": "grep -R",
           "explanation": "Busca un valor de forma recursiva en todos los archivos y subdirectorios de una ruta dada, en lugar de revisar cada archivo individualmente.",
           "example": "grep -R \"PRETTY_NAME\" /etc/"
+        },
+        {
+          "id": "conectarse-por-ssh-msmt9egv-c2sh",
+          "submodule": "Comandos básicos",
+          "title": "Conectarse por SSH",
+          "command": "ssh usuario@direccion_ip",
+          "explanation": "Permite iniciar sesión de forma remota en otra máquina usando el protocolo SSH, indicando el usuario y la IP del host remoto. Al ejecutarlo se pide confiar en el host y luego ingresar la contraseña.",
+          "example": "ssh tryhackme@10.67.155.224"
+        },
+        {
+          "id": "listar-contenido-de-un-directorio-msmt9egw-0cwu",
+          "submodule": "Comandos básicos",
+          "title": "Listar contenido de un directorio",
+          "command": "ls",
+          "explanation": "Muestra el contenido del directorio actual, listando archivos y carpetas.",
+          "example": "ls"
+        },
+        {
+          "id": "listar-archivos-ocultos-msmt9egw-vz4t",
+          "submodule": "Comandos básicos",
+          "title": "Listar archivos ocultos",
+          "command": "ls -a",
+          "explanation": "Muestra todos los archivos, incluidos los ocultos que empiezan con un punto.",
+          "example": "ls -a"
+        },
+        {
+          "id": "listar-en-formato-detallado-msmt9egw-or1e",
+          "submodule": "Comandos básicos",
+          "title": "Listar en formato detallado",
+          "command": "ls -l",
+          "explanation": "Presenta una lista detallada con permisos, propietario, tamaño y fecha.",
+          "example": "ls -l"
+        },
+        {
+          "id": "listar-con-tamanos-legibles-msmt9egw-atcr",
+          "submodule": "Comandos básicos",
+          "title": "Listar con tamaños legibles",
+          "command": "ls -h",
+          "explanation": "Muestra los tamaños de archivo en un formato fácil de leer (como KB, MB).",
+          "example": "ls -h"
+        },
+        {
+          "id": "listar-ordenado-por-fecha-de-modificacion-msmt9egw-i1wq",
+          "submodule": "Comandos básicos",
+          "title": "Listar ordenado por fecha de modificación",
+          "command": "ls -t",
+          "explanation": "Ordena los archivos por la fecha de modificación más reciente.",
+          "example": "ls -t"
+        },
+        {
+          "id": "invertir-orden-del-listado-msmt9egw-3ocn",
+          "submodule": "Comandos básicos",
+          "title": "Invertir orden del listado",
+          "command": "ls -r",
+          "explanation": "Invierte el orden del listado de archivos.",
+          "example": "ls -r"
+        },
+        {
+          "id": "ver-el-manual-de-un-comando-msmt9egw-0tlt",
+          "submodule": "Comandos básicos",
+          "title": "Ver el manual de un comando",
+          "command": "man comando",
+          "explanation": "Muestra las páginas del manual (documentación) de un comando específico, tanto para comandos del sistema como aplicaciones disponibles en la máquina Linux.",
+          "example": "man ls"
+        },
+        {
+          "id": "crear-un-archivo-msmt9egw-f1rh",
+          "submodule": "Comandos básicos",
+          "title": "Crear un archivo",
+          "command": "touch nombre",
+          "explanation": "Crea un nuevo archivo vacío con el nombre indicado.",
+          "example": "touch note"
+        },
+        {
+          "id": "crear-un-directorio-msmt9egw-kleb",
+          "submodule": "Comandos básicos",
+          "title": "Crear un directorio",
+          "command": "mkdir nombre",
+          "explanation": "Crea una nueva carpeta con el nombre indicado.",
+          "example": "mkdir mydirectory"
+        },
+        {
+          "id": "eliminar-un-archivo-msmt9egw-jkqc",
+          "submodule": "Comandos básicos",
+          "title": "Eliminar un archivo",
+          "command": "rm nombre",
+          "explanation": "Elimina un archivo. Para eliminar un directorio se debe usar el switch -R junto con el nombre del directorio.",
+          "example": "rm note"
+        },
+        {
+          "id": "eliminar-un-directorio-recursivamente-msmt9egw-dq5l",
+          "submodule": "Comandos básicos",
+          "title": "Eliminar un directorio recursivamente",
+          "command": "rm -R nombre",
+          "explanation": "Elimina un directorio y todo su contenido de forma recursiva.",
+          "example": "rm -R mydirectory"
+        },
+        {
+          "id": "copiar-un-archivo-msmt9egw-pq3u",
+          "submodule": "Comandos básicos",
+          "title": "Copiar un archivo",
+          "command": "cp archivo_origen archivo_destino",
+          "explanation": "Copia el contenido completo de un archivo existente hacia un nuevo archivo, tomando como argumentos el nombre del archivo existente y el nombre a asignar al nuevo archivo.",
+          "example": "cp note note2"
+        },
+        {
+          "id": "mover-o-renombrar-un-archivo-msmt9egw-bdcu",
+          "submodule": "Comandos básicos",
+          "title": "Mover o renombrar un archivo",
+          "command": "mv archivo_origen archivo_destino",
+          "explanation": "Mueve o renombra un archivo o carpeta. En lugar de copiar, mv modifica o fusiona el segundo archivo indicado como argumento.",
+          "example": "mv note2 note3"
+        },
+        {
+          "id": "cambiar-de-usuario-msmt9egw-7wxx",
+          "submodule": "Comandos básicos",
+          "title": "Cambiar de usuario",
+          "command": "su usuario",
+          "explanation": "Permite cambiar entre usuarios en un sistema Linux, siempre que se conozca el nombre del usuario y su contraseña.",
+          "example": "su user2"
+        },
+        {
+          "id": "cambiar-de-usuario-con-sesion-de-login-msmt9egw-j25v",
+          "submodule": "Comandos básicos",
+          "title": "Cambiar de usuario con sesión de login",
+          "command": "su -l usuario",
+          "explanation": "Inicia una shell más similar a la del usuario real que inicia sesión en el sistema, heredando más propiedades del nuevo usuario como variables de entorno, y ubicando en su directorio home.",
+          "example": "su -l user2"
+        },
+        {
+          "id": "cambiar-permisos-con-chmod-msmt9egw-fgxz",
+          "submodule": "Comandos básicos",
+          "title": "Cambiar permisos con chmod",
+          "command": "chmod valor_numerico archivo",
+          "explanation": "Cambia los permisos de un archivo usando el valor numérico correspondiente a los permisos deseados para propietario, grupo y otros.",
+          "example": "chmod 750 system_overview.txt"
+        },
+        {
+          "id": "editar-archivo-con-nano-msmt9egw-l9qh",
+          "submodule": "Comandos básicos",
+          "title": "Editar archivo con Nano",
+          "command": "nano nombre_archivo",
+          "explanation": "Crea o edita un archivo usando el editor de texto Nano, reemplazando 'nombre_archivo' por el nombre del archivo que se desea editar.",
+          "example": "nano myfile"
+        },
+        {
+          "id": "descargar-archivos-con-wget-msmt9egw-v323",
+          "submodule": "Comandos básicos",
+          "title": "Descargar archivos con wget",
+          "command": "wget url",
+          "explanation": "Permite descargar archivos desde la web vía HTTP, como si se accediera al archivo desde el navegador, proporcionando la dirección del recurso a descargar.",
+          "example": "wget https://assets.tryhackme.com/additional/linux-fundamentals/part3/myfile.txt"
+        },
+        {
+          "id": "copiar-archivo-local-a-remoto-con-scp-msmt9egw-zsxv",
+          "submodule": "Comandos básicos",
+          "title": "Copiar archivo local a remoto con SCP",
+          "command": "scp archivo_local usuario@ip:/ruta/destino",
+          "explanation": "Copia un archivo desde el sistema local hacia un sistema remoto usando SCP, especificando el usuario, la IP y la ruta de destino.",
+          "example": "scp important.txt ubuntu@192.168.1.30:/home/ubuntu/transferred.txt"
+        },
+        {
+          "id": "copiar-archivo-remoto-a-local-con-scp-msmt9egw-cz36",
+          "submodule": "Comandos básicos",
+          "title": "Copiar archivo remoto a local con SCP",
+          "command": "scp usuario@ip:/ruta/archivo destino_local",
+          "explanation": "Copia un archivo desde un sistema remoto hacia el sistema local usando SCP, especificando el usuario, la IP y la ruta del archivo remoto.",
+          "example": "scp ubuntu@192.168.1.30:/home/ubuntu/documents.txt notes.txt"
+        },
+        {
+          "id": "iniciar-servidor-web-con-python-msmt9egw-sfa7",
+          "submodule": "Comandos básicos",
+          "title": "Iniciar servidor web con Python",
+          "command": "python3 -m http.server",
+          "explanation": "Inicia un servidor web ligero usando el módulo HTTPServer de Python3, sirviendo los archivos del directorio donde se ejecuta el comando, por defecto en el puerto 8000.",
+          "example": "python3 -m http.server"
         }
       ],
       "concepts": [
@@ -2579,6 +2755,147 @@
             "Agrega contenido al final del archivo",
             "No sobrescribe el contenido existente"
           ]
+        },
+        {
+          "id": "secure-shell-ssh-msmt9egv-ov1n",
+          "submodule": "Introducción a Linux",
+          "title": "Secure Shell (SSH)",
+          "explanation": "SSH es un protocolo de red criptográfico usado para la comunicación segura entre dispositivos. Cifra los datos usando algoritmos criptográficos como AES y se usa a menudo para iniciar sesión de forma remota en una computadora o servidor. Los datos que enviamos en formato legible por humanos se cifran para viajar por la red y se descifran al llegar a la máquina remota.",
+          "keyPoints": [
+            "Usa cifrado AES",
+            "Permite login remoto seguro",
+            "Los datos viajan cifrados por la red"
+          ]
+        },
+        {
+          "id": "ingreso-de-contrasena-en-ssh-msmt9egw-17my",
+          "submodule": "Introducción a Linux",
+          "title": "Ingreso de contraseña en SSH",
+          "explanation": "Al escribir la contraseña en un prompt de login SSH no hay retroalimentación visible: no se ven caracteres ni símbolos mientras se escribe, pero sigue funcionando. Solo hay que escribir la contraseña y presionar Enter.",
+          "keyPoints": []
+        },
+        {
+          "id": "opcion-help-msmt9egw-95g3",
+          "submodule": "Introducción a Linux",
+          "title": "Opción --help",
+          "explanation": "Los comandos que aceptan opciones o flags suelen tener una opción --help que lista las posibles opciones que acepta el comando, junto con una breve descripción y ejemplo de uso.",
+          "keyPoints": []
+        },
+        {
+          "id": "columnas-de-ls-l-msmt9egw-7w81",
+          "submodule": "Introducción a Linux",
+          "title": "Columnas de ls -l",
+          "explanation": "Al usar el switch -l con ls, se muestran diez columnas, pero las primeras tres son las más relevantes para determinar permisos y características de acceso de un archivo o carpeta, tales como lectura, escritura y ejecución.",
+          "keyPoints": [
+            "Read (lectura)",
+            "Write (escritura)",
+            "Execute (ejecución)"
+          ]
+        },
+        {
+          "id": "permisos-de-archivos-en-formato-simbolico-msmt9egw-4x84",
+          "submodule": "Introducción a Linux",
+          "title": "Permisos de archivos en formato simbólico",
+          "explanation": "En Linux, cada archivo y directorio tiene un conjunto de permisos que controlan quién puede leer, escribir o ejecutar. Se muestran en formato simbólico dividido en tres grupos de tres caracteres: propietario, grupo y otros. Cada letra representa un permiso: r (read/lectura), w (write/escritura), x (execute/ejecución).",
+          "keyPoints": [
+            "Primeros 3 caracteres: propietario",
+            "Siguientes 3: grupo",
+            "Últimos 3: otros",
+            "r=lectura, w=escritura, x=ejecución"
+          ]
+        },
+        {
+          "id": "conversion-de-permisos-simbolicos-a-numericos-msmt9egw-ij41",
+          "submodule": "Introducción a Linux",
+          "title": "Conversión de permisos simbólicos a numéricos",
+          "explanation": "Cada permiso tiene un valor numérico: read=4, write=2, execute=1. Para calcular el valor numérico de un grupo de permisos se suman los valores correspondientes. Por ejemplo, rwxrwxrwx equivale a 777, rwxr-xr-x equivale a 755, rw-r--r-- equivale a 644 y rwx------ equivale a 700.",
+          "keyPoints": [
+            "r=4, w=2, x=1",
+            "rwxrwxrwx = 777",
+            "rwxr-xr-x = 755",
+            "rw-r--r-- = 644",
+            "rwx------ = 700"
+          ]
+        },
+        {
+          "id": "directorio-etc-msmt9egw-e9sd",
+          "submodule": "Introducción a Linux",
+          "title": "Directorio /etc",
+          "explanation": "Es uno de los directorios raíz más importantes del sistema. Almacena archivos de sistema usados por el sistema operativo, como sudoers (lista de usuarios y grupos con permiso para ejecutar sudo), passwd y shadow (donde se almacenan las contraseñas de los usuarios cifradas en formato sha512).",
+          "keyPoints": [
+            "Contiene sudoers, passwd y shadow",
+            "Las contraseñas se almacenan cifradas en sha512"
+          ]
+        },
+        {
+          "id": "directorio-var-msmt9egw-gw5e",
+          "submodule": "Introducción a Linux",
+          "title": "Directorio /var",
+          "explanation": "Es uno de los directorios raíz principales de una instalación Linux, y almacena datos variables que son frecuentemente accedidos o escritos por servicios o aplicaciones en ejecución, como archivos de log (/var/log) o datos no asociados a un usuario específico.",
+          "keyPoints": []
+        },
+        {
+          "id": "directorio-root-msmt9egw-k70k",
+          "submodule": "Introducción a Linux",
+          "title": "Directorio /root",
+          "explanation": "A diferencia del directorio /home, /root es el directorio home del usuario 'root' del sistema. No tiene mayor complejidad más allá de ser el hogar del usuario root.",
+          "keyPoints": []
+        },
+        {
+          "id": "directorio-tmp-msmt9egw-0trq",
+          "submodule": "Introducción a Linux",
+          "title": "Directorio /tmp",
+          "explanation": "Es un directorio raíz único, volátil, usado para almacenar datos que solo se necesitan acceder una o dos veces. Se limpia al reiniciar la computadora. Cualquier usuario puede escribir en esta carpeta por defecto, por lo que es útil en pentesting para guardar scripts de enumeración.",
+          "keyPoints": [
+            "Volátil, se borra al reiniciar",
+            "Cualquier usuario puede escribir por defecto",
+            "Útil para scripts de enumeración en pentesting"
+          ]
+        },
+        {
+          "id": "editor-de-texto-nano-msmt9egw-vru3",
+          "submodule": "Introducción a Linux",
+          "title": "Editor de texto Nano",
+          "explanation": "Nano es un editor de texto sencillo que permite buscar texto, copiar y pegar, saltar a un número de línea y averiguar en qué línea se está. Se usan combinaciones con la tecla Ctrl (representada como ^) y una letra para activar funciones, como Ctrl+X para salir.",
+          "keyPoints": [
+            "Búsqueda de texto",
+            "Copiar y pegar",
+            "Saltar a número de línea",
+            "Ctrl+X para salir"
+          ]
+        },
+        {
+          "id": "editor-de-texto-vim-msmt9egw-uiya",
+          "submodule": "Introducción a Linux",
+          "title": "Editor de texto VIM",
+          "explanation": "VIM es un editor de texto mucho más avanzado que Nano. Entre sus beneficios están ser personalizable (se pueden modificar los atajos de teclado), tener resaltado de sintaxis (útil para desarrollo de software), y funcionar en todas las terminales, incluso donde Nano no está instalado.",
+          "keyPoints": [
+            "Personalizable",
+            "Resaltado de sintaxis",
+            "Funciona en todas las terminales"
+          ]
+        },
+        {
+          "id": "transferencia-segura-de-archivos-con-scp-msmt9egw-e00a",
+          "submodule": "Introducción a Linux",
+          "title": "Transferencia segura de archivos con SCP",
+          "explanation": "SCP (Secure Copy) permite copiar archivos de forma segura entre dos computadoras utilizando el protocolo SSH para autenticación y cifrado. A diferencia de cp, funciona bajo un modelo de SOURCE y DESTINATION, permitiendo copiar archivos y directorios desde el sistema actual a uno remoto o viceversa.",
+          "keyPoints": [
+            "Usa el protocolo SSH",
+            "Modelo SOURCE y DESTINATION",
+            "Permite copiar en ambas direcciones"
+          ]
+        },
+        {
+          "id": "servir-archivos-con-python-httpserver-msmt9egw-jm29",
+          "submodule": "Introducción a Linux",
+          "title": "Servir archivos con Python HTTPServer",
+          "explanation": "Python3 incluye un módulo llamado HTTPServer que convierte la computadora en un servidor web rápido y sencillo para servir archivos propios, los cuales pueden descargarse desde otra computadora usando comandos como curl y wget. Una limitación es que no permite indexar, por lo que se debe conocer el nombre y ubicación exacta del archivo.",
+          "keyPoints": [
+            "No permite indexar archivos",
+            "Se debe conocer el nombre exacto del archivo",
+            "Alternativa más avanzada: Updog"
+          ]
         }
       ],
       "glossary": [
@@ -2616,6 +2933,48 @@
           "term": "wildcard",
           "tag": "",
           "definition": "Símbolo (*) usado en comandos como find para representar cualquier valor, permitiendo búsquedas de patrones como extensiones de archivo."
+        },
+        {
+          "id": "ssh-msmt9egw-e9ol",
+          "submodule": "Terminología Linux",
+          "term": "SSH",
+          "tag": "",
+          "definition": "Secure Shell, protocolo de red criptográfico usado para la comunicación segura entre dispositivos, cifrando los datos con algoritmos como AES."
+        },
+        {
+          "id": "man-page-msmt9egw-i65m",
+          "submodule": "Terminología Linux",
+          "term": "man page",
+          "tag": "",
+          "definition": "Páginas de manual que contienen documentación sobre comandos y aplicaciones disponibles en un sistema Linux."
+        },
+        {
+          "id": "sudoers-msmt9egw-fae6",
+          "submodule": "Terminología Linux",
+          "term": "sudoers",
+          "tag": "",
+          "definition": "Archivo dentro de /etc que contiene la lista de usuarios y grupos con permiso para ejecutar sudo o un conjunto de comandos como usuario root."
+        },
+        {
+          "id": "shadow-msmt9egw-6gbc",
+          "submodule": "Terminología Linux",
+          "term": "shadow",
+          "tag": "",
+          "definition": "Archivo dentro de /etc donde se almacenan las contraseñas de los usuarios en formato cifrado sha512."
+        },
+        {
+          "id": "scp-msmt9egw-v9oz",
+          "submodule": "Terminología Linux",
+          "term": "SCP",
+          "tag": "",
+          "definition": "Secure Copy, comando que permite transferir archivos de forma segura entre dos computadoras usando el protocolo SSH."
+        },
+        {
+          "id": "updog-msmt9egw-ob1e",
+          "submodule": "Terminología Linux",
+          "term": "Updog",
+          "tag": "",
+          "definition": "Servidor web ligero y más avanzado que el HTTPServer de Python, que permite indexar archivos."
         }
       ]
     }
