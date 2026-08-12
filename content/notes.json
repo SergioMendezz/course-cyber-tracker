@@ -3641,6 +3641,43 @@
             "Un usuario puede ser asignado a múltiples grupos",
             "Hacer clic en 'Add someone else to this PC' desde Other users abre Local Users and Management"
           ]
+        },
+        {
+          "id": "riesgo-de-usuarios-con-privilegios-elevados-msqg1l1j-8pcm",
+          "submodule": "Cuentas de Usuario",
+          "title": "Riesgo de usuarios con privilegios elevados",
+          "explanation": "La gran mayoría de usuarios domésticos inician sesión en sus sistemas Windows como administradores locales. Cualquier usuario cuyo tipo de cuenta sea administrador puede hacer cambios en el sistema. Sin embargo, un usuario no necesita privilegios elevados para tareas cotidianas como navegar por Internet o trabajar en un documento de Word. Ejecutar con privilegios elevados innecesariamente aumenta el riesgo de compromiso del sistema, ya que facilita que el malware infecte el equipo, corriendo en el contexto del usuario que inició sesión (que tiene permisos de administrador).",
+          "keyPoints": [
+            "La mayoría de usuarios domésticos usan cuentas de administrador local",
+            "No se necesitan privilegios elevados para tareas comunes",
+            "Los privilegios elevados innecesarios aumentan el riesgo de compromiso",
+            "El malware ejecutado por un usuario administrador corre con esos mismos privilegios"
+          ]
+        },
+        {
+          "id": "user-account-control-uac-msqg1l1j-7g2d",
+          "submodule": "Cuentas de Usuario",
+          "title": "User Account Control (UAC)",
+          "explanation": "Para proteger a los usuarios locales con privilegios de administrador, Microsoft introdujo User Account Control (UAC), presentado por primera vez en Windows Vista y continuado en versiones posteriores de Windows. Por defecto, UAC no aplica a la cuenta de administrador local integrada (built-in). Cuando un usuario con tipo de cuenta administrador inicia sesión, la sesión actual no corre con permisos elevados. Cuando una operación requiere privilegios de nivel superior, se le solicita al usuario que confirme si permite que la operación se ejecute. Esta característica reduce la probabilidad de que el malware comprometa exitosamente el sistema.",
+          "keyPoints": [
+            "Introducido en Windows Vista y continuado en versiones posteriores",
+            "No aplica por defecto a la cuenta de administrador local integrada",
+            "La sesión de un administrador no corre elevada por defecto",
+            "Se solicita confirmación del usuario para operaciones que requieren privilegios elevados",
+            "Reduce la probabilidad de compromiso del sistema por malware"
+          ]
+        },
+        {
+          "id": "instalacion-de-un-programa-como-usuario-estandar-msqg1l1j-q9w1",
+          "submodule": "Cuentas de Usuario",
+          "title": "Instalación de un programa como usuario estándar",
+          "explanation": "Al intentar instalar un programa como usuario estándar (por ejemplo, mediante escritorio remoto), se puede notar que el ícono del programa muestra un escudo superpuesto sobre el ícono predeterminado. Este ícono de escudo indica que UAC solicitará permisos de nivel superior para instalar el programa. Al hacer doble clic en el programa, aparece el prompt de UAC, que ya tiene configurado el nombre de usuario de la cuenta de administrador integrada y solicita su contraseña. Si no se ingresa una contraseña después de un tiempo, el prompt de UAC desaparece y el programa no se instala.",
+          "keyPoints": [
+            "El ícono de escudo indica que se requerirán privilegios elevados vía UAC",
+            "El usuario estándar no aparece listado en los permisos de seguridad del archivo",
+            "El prompt de UAC muestra el nombre de la cuenta de administrador integrada y pide su contraseña",
+            "Si no se ingresa contraseña a tiempo, el prompt desaparece y la instalación no se realiza"
+          ]
         }
       ],
       "glossary": [
@@ -3790,6 +3827,27 @@
           "term": "Run Dialog Box",
           "tag": "",
           "definition": "Cuadro de diálogo de Windows que permite abrir programas o herramientas rápidamente escribiendo su nombre o comando."
+        },
+        {
+          "id": "user-account-control-uac-msqg1l1k-lh3y",
+          "submodule": "Cuentas de Usuario",
+          "term": "User Account Control (UAC)",
+          "tag": "",
+          "definition": "Función de seguridad de Windows introducida en Windows Vista que solicita confirmación al usuario cuando una operación requiere privilegios de nivel superior (elevados), reduciendo el riesgo de que el malware comprometa el sistema."
+        },
+        {
+          "id": "elevated-privileges-msqg1l1k-qqfy",
+          "submodule": "Cuentas de Usuario",
+          "term": "Elevated privileges",
+          "tag": "",
+          "definition": "Privilegios de alto nivel que permiten realizar cambios significativos en el sistema; su uso innecesario aumenta el riesgo de que el malware comprometa el equipo."
+        },
+        {
+          "id": "shield-icon-msqg1l1k-5d5g",
+          "submodule": "Cuentas de Usuario",
+          "term": "Shield icon",
+          "tag": "",
+          "definition": "Ícono con forma de escudo que se superpone al ícono predeterminado de un programa, indicando que UAC solicitará privilegios elevados para ejecutarlo."
         }
       ]
     }
