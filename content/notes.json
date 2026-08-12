@@ -3540,6 +3540,19 @@
             "Usado por malware para ocultar datos",
             "También usado legítimamente, como marcar archivos descargados de internet"
           ]
+        },
+        {
+          "id": "encrypted-file-system-efs-msqffv6v-qy02",
+          "submodule": "Sistemas de Archivos",
+          "title": "Encrypted File System (EFS)",
+          "explanation": "EFS proporciona un nivel adicional de seguridad para archivos y directorios. Ofrece protección criptográfica de archivos individuales en volúmenes con sistema de archivos NTFS mediante un sistema de clave pública. Aunque el control de acceso del modelo de seguridad de Windows suele ser suficiente para proteger información sensible, si una laptop con datos sensibles se pierde o es robada, esa protección puede verse comprometida. Cifrar los archivos aumenta la seguridad en estos casos.",
+          "keyPoints": [
+            "Protección criptográfica de archivos individuales",
+            "Requiere sistema de archivos NTFS",
+            "Utiliza un sistema de clave pública",
+            "Complementa el control de acceso del modelo de seguridad de Windows",
+            "Útil ante pérdida o robo de dispositivos con datos sensibles"
+          ]
         }
       ],
       "glossary": [
@@ -3626,6 +3639,20 @@
           "term": "ADS",
           "tag": "",
           "definition": "Alternate Data Streams. Atributo de archivo específico de NTFS que permite a los archivos contener más de un stream de datos, usado a veces para ocultar información."
+        },
+        {
+          "id": "efs-encrypted-file-system-msqffv6v-e07k",
+          "submodule": "Sistemas de Archivos",
+          "term": "EFS (Encrypted File System)",
+          "tag": "",
+          "definition": "Sistema que provee cifrado de archivos individuales en volúmenes NTFS usando un sistema de clave pública, añadiendo un nivel adicional de seguridad."
+        },
+        {
+          "id": "ntfs-msqffv6v-by3u",
+          "submodule": "Sistemas de Archivos",
+          "term": "NTFS",
+          "tag": "",
+          "definition": "Sistema de archivos de Windows que soporta funciones avanzadas como el cifrado mediante EFS."
         }
       ]
     }
