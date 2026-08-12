@@ -2690,6 +2690,86 @@
           "command": "python3 -m http.server",
           "explanation": "Inicia un servidor web ligero usando el módulo HTTPServer de Python3, sirviendo los archivos del directorio donde se ejecuta el comando, por defecto en el puerto 8000.",
           "example": "python3 -m http.server"
+        },
+        {
+          "id": "ver-direccion-ip-msqd3ykr-907s",
+          "submodule": "Comandos básicos",
+          "title": "Ver dirección IP",
+          "command": "ip addr",
+          "explanation": "Muestra las direcciones IP y la configuración de red de las interfaces del sistema.",
+          "example": ""
+        },
+        {
+          "id": "ver-configuracion-de-red-legacy-msqd3ykr-gspe",
+          "submodule": "Comandos básicos",
+          "title": "Ver configuración de red (legacy)",
+          "command": "ifconfig",
+          "explanation": "Comando clásico para mostrar y configurar las interfaces de red del sistema.",
+          "example": ""
+        },
+        {
+          "id": "ver-procesos-en-ejecucion-msqd3ykr-34wa",
+          "submodule": "Gestión de procesos",
+          "title": "Ver procesos en ejecución",
+          "command": "ps",
+          "explanation": "Muestra una lista de los procesos en ejecución de la sesión del usuario actual, incluyendo código de estado, sesión, uso de CPU y nombre del programa.",
+          "example": ""
+        },
+        {
+          "id": "ver-todos-los-procesos-del-sistema-msqd3ykr-q7vq",
+          "submodule": "Gestión de procesos",
+          "title": "Ver todos los procesos del sistema",
+          "command": "ps aux",
+          "explanation": "Muestra los procesos ejecutados por todos los usuarios, incluidos los procesos del sistema que no corren desde una sesión.",
+          "example": ""
+        },
+        {
+          "id": "ver-procesos-en-tiempo-real-msqd3ykr-uv4p",
+          "submodule": "Gestión de procesos",
+          "title": "Ver procesos en tiempo real",
+          "command": "top",
+          "explanation": "Muestra estadísticas en tiempo real de los procesos en ejecución, refrescándose automáticamente cada 10 segundos o al usar las flechas del teclado.",
+          "example": ""
+        },
+        {
+          "id": "matar-un-proceso-msqd3yks-qqvr",
+          "submodule": "Gestión de procesos",
+          "title": "Matar un proceso",
+          "command": "kill [PID]",
+          "explanation": "Envía una señal para terminar un proceso específico identificado por su PID.",
+          "example": "kill 1337"
+        },
+        {
+          "id": "controlar-servicios-con-systemd-msqd3yks-c4lt",
+          "submodule": "Gestión de procesos",
+          "title": "Controlar servicios con systemd",
+          "command": "systemctl [option] [service]",
+          "explanation": "Permite interactuar con el proceso/daemon systemd para iniciar, detener, habilitar, deshabilitar o ver el estado de un servicio.",
+          "example": "systemctl start apache2"
+        },
+        {
+          "id": "traer-un-proceso-al-primer-plano-msqd3yks-p0no",
+          "submodule": "Gestión de procesos",
+          "title": "Traer un proceso al primer plano",
+          "command": "fg",
+          "explanation": "Trae de vuelta al primer plano (foreground) un proceso que estaba corriendo en segundo plano (background).",
+          "example": ""
+        },
+        {
+          "id": "editar-el-crontab-msqd3yks-acxs",
+          "submodule": "Gestión de procesos",
+          "title": "Editar el crontab",
+          "command": "crontab -e",
+          "explanation": "Permite editar el archivo crontab del usuario, seleccionando un editor (como Nano) para modificar las tareas programadas.",
+          "example": ""
+        },
+        {
+          "id": "ejecutar-comando-en-segundo-plano-msqd3yks-ck0y",
+          "submodule": "Gestión de procesos",
+          "title": "Ejecutar comando en segundo plano",
+          "command": "comando &",
+          "explanation": "Agregar el operador & al final de un comando hace que este se ejecute en segundo plano, devolviendo el PID del proceso en lugar de su salida.",
+          "example": "echo \"Hi THM\" &"
         }
       ],
       "concepts": [
@@ -2896,6 +2976,74 @@
             "Se debe conocer el nombre exacto del archivo",
             "Alternativa más avanzada: Updog"
           ]
+        },
+        {
+          "id": "que-es-un-proceso-msqd3yks-xb5j",
+          "submodule": "Gestión de procesos",
+          "title": "¿Qué es un proceso?",
+          "explanation": "Los procesos son los programas que se están ejecutando en la máquina. Son gestionados por el kernel, y cada proceso tiene un ID asociado conocido como PID. El PID se incrementa según el orden en que se inicia el proceso.",
+          "keyPoints": [
+            "Gestionados por el kernel",
+            "Cada proceso tiene un PID único",
+            "El PID se incrementa según el orden de inicio"
+          ]
+        },
+        {
+          "id": "senales-para-terminar-procesos-msqd3yks-imrr",
+          "submodule": "Gestión de procesos",
+          "title": "Señales para terminar procesos",
+          "explanation": "Existen distintas señales que se pueden enviar a un proceso para terminarlo, dependiendo de qué tan 'limpiamente' se maneje por el kernel.",
+          "keyPoints": [
+            "SIGTERM: mata el proceso pero permite tareas de limpieza previas",
+            "SIGKILL: mata el proceso sin ninguna limpieza",
+            "SIGSTOP: detiene o suspende un proceso"
+          ]
+        },
+        {
+          "id": "namespaces-y-como-inician-los-procesos-msqd3yks-5p9z",
+          "submodule": "Gestión de procesos",
+          "title": "Namespaces y cómo inician los procesos",
+          "explanation": "El sistema operativo usa namespaces para dividir los recursos disponibles (CPU, RAM, prioridad) entre procesos, aislándolos entre sí por seguridad. El proceso con PID 0 se inicia al arrancar el sistema y es el init del sistema (como systemd en Ubuntu), que gestiona los procesos de usuario y actúa entre el sistema operativo y el usuario. Cualquier programa que se inicie será un proceso hijo de systemd.",
+          "keyPoints": [
+            "Los namespaces dividen recursos entre procesos (CPU, RAM, prioridad)",
+            "Aíslan procesos por seguridad; solo procesos del mismo namespace se ven entre sí",
+            "El proceso con PID 0 es el init del sistema (systemd en Ubuntu)",
+            "Los programas nuevos corren como procesos hijos de systemd"
+          ]
+        },
+        {
+          "id": "iniciar-servicios-en-el-arranque-msqd3yks-4toz",
+          "submodule": "Gestión de procesos",
+          "title": "Iniciar servicios en el arranque",
+          "explanation": "Algunas aplicaciones críticas (como servidores web, de bases de datos o de transferencia de archivos) pueden configurarse para iniciarse automáticamente durante el arranque del sistema, gestionadas mediante systemctl.",
+          "keyPoints": [
+            "systemctl permite start, stop, enable, disable y status de servicios",
+            "Usado para gestionar servicios críticos que deben iniciar en el boot"
+          ]
+        },
+        {
+          "id": "backgrounding-y-foregrounding-en-linux-msqd3yks-7m3l",
+          "submodule": "Gestión de procesos",
+          "title": "Backgrounding y Foregrounding en Linux",
+          "explanation": "Los procesos pueden ejecutarse en primer plano (foreground) o en segundo plano (background). En foreground, la salida del comando se devuelve directamente a la terminal. Usando el operador & o Ctrl+Z se puede enviar un proceso a background, liberando la terminal para ejecutar otros comandos mientras el proceso continúa corriendo.",
+          "keyPoints": [
+            "Foreground: la salida se devuelve directamente a la terminal",
+            "Background: se usa & al final del comando o Ctrl+Z para pausar/enviar a background",
+            "fg trae de vuelta un proceso backgrounded al primer plano",
+            "Útil para tareas largas como copiar archivos sin bloquear la terminal"
+          ]
+        },
+        {
+          "id": "crontab-y-cron-jobs-msqd3yks-5a4i",
+          "submodule": "Cron y tareas programadas",
+          "title": "Crontab y cron jobs",
+          "explanation": "Cron es un proceso que se inicia durante el arranque del sistema, responsable de facilitar y gestionar tareas programadas (cron jobs) mediante archivos especiales llamados crontabs. Un crontab define cuándo ejecutar un comando usando 6 valores específicos, y soporta el uso de asteriscos como wildcard para no especificar un valor.",
+          "keyPoints": [
+            "Crontab requiere 6 valores: MIN, HOUR, DOM, MON, DOW y CMD",
+            "El asterisco (*) actúa como wildcard para no especificar un valor",
+            "Existen herramientas online como Crontab Generator y Cron Guru para generar el formato",
+            "Ejemplo: '0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/' ejecuta un backup cada 12 horas"
+          ]
         }
       ],
       "glossary": [
@@ -2975,6 +3123,41 @@
           "term": "Updog",
           "tag": "",
           "definition": "Servidor web ligero y más avanzado que el HTTPServer de Python, que permite indexar archivos."
+        },
+        {
+          "id": "pid-msqd3yks-suoo",
+          "submodule": "Terminología Linux",
+          "term": "PID",
+          "tag": "",
+          "definition": "Process ID; identificador único asignado a cada proceso, que se incrementa según el orden en que se inicia."
+        },
+        {
+          "id": "namespace-msqd3yks-4hxi",
+          "submodule": "Terminología Linux",
+          "term": "namespace",
+          "tag": "",
+          "definition": "Mecanismo del sistema operativo para dividir los recursos disponibles (CPU, RAM, prioridad) y aislar procesos entre sí por seguridad."
+        },
+        {
+          "id": "systemd-msqd3yks-ii9t",
+          "submodule": "Terminología Linux",
+          "term": "systemd",
+          "tag": "",
+          "definition": "Proceso init del sistema en Ubuntu, con PID 0, que gestiona los procesos de usuario y actúa entre el sistema operativo y el usuario."
+        },
+        {
+          "id": "child-process-msqd3yks-f0df",
+          "submodule": "Terminología Linux",
+          "term": "child process",
+          "tag": "",
+          "definition": "Proceso que es iniciado y controlado por otro proceso (como systemd), pero que se ejecuta de forma independiente compartiendo recursos."
+        },
+        {
+          "id": "crontab-msqd3yks-1q5b",
+          "submodule": "Terminología Linux",
+          "term": "crontab",
+          "tag": "",
+          "definition": "Archivo especial con formato reconocido por el proceso cron para ejecutar tareas programadas paso a paso."
         }
       ]
     }
