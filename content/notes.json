@@ -3476,6 +3476,70 @@
             "Muestra fecha, hora, volumen, red, entre otros",
             "Se configura desde Taskbar settings"
           ]
+        },
+        {
+          "id": "ntfs-new-technology-file-system-msqfdrxv-9vet",
+          "submodule": "Sistemas de Archivos",
+          "title": "NTFS (New Technology File System)",
+          "explanation": "NTFS es el sistema de archivos utilizado en las versiones modernas de Windows. Es un sistema de archivos con journaling, lo que significa que en caso de fallo, puede repararse automáticamente usando información almacenada en un archivo de log, algo que FAT no puede hacer. NTFS soluciona muchas limitaciones de los sistemas de archivos anteriores.",
+          "keyPoints": [
+            "Soporta archivos mayores a 4GB",
+            "Permite establecer permisos específicos en carpetas y archivos",
+            "Soporta compresión de archivos y carpetas",
+            "Soporta cifrado mediante Encryption File System (EFS)",
+            "Es un sistema de archivos con journaling (auto-reparación mediante log)"
+          ]
+        },
+        {
+          "id": "sistemas-de-archivos-previos-a-ntfs-msqfdrxv-odim",
+          "submodule": "Sistemas de Archivos",
+          "title": "Sistemas de archivos previos a NTFS",
+          "explanation": "Antes de NTFS existían FAT16/FAT32 (File Allocation Table) y HPFS (High Performance File System). Las particiones FAT todavía se usan hoy en día, típicamente en dispositivos USB y tarjetas MicroSD, pero tradicionalmente no en computadoras personales o servidores Windows.",
+          "keyPoints": [
+            "FAT16/FAT32: File Allocation Table",
+            "HPFS: High Performance File System",
+            "FAT se usa comúnmente en USB y MicroSD",
+            "FAT no soporta journaling"
+          ]
+        },
+        {
+          "id": "permisos-ntfs-msqfdrxv-6ffk",
+          "submodule": "Sistemas de Archivos",
+          "title": "Permisos NTFS",
+          "explanation": "En volúmenes NTFS se pueden establecer permisos que otorgan o deniegan acceso a archivos y carpetas. Estos permisos determinan qué acciones puede realizar un usuario, computadora o grupo sobre un archivo o carpeta.",
+          "keyPoints": [
+            "Full control",
+            "Modify",
+            "Read & Execute",
+            "List folder contents",
+            "Read",
+            "Write"
+          ]
+        },
+        {
+          "id": "como-ver-permisos-de-un-archivo-o-carpeta-msqfdrxw-hhh6",
+          "submodule": "Sistemas de Archivos",
+          "title": "Cómo ver permisos de un archivo o carpeta",
+          "explanation": "Para ver los permisos NTFS de un archivo o carpeta, se debe hacer clic derecho sobre el elemento, seleccionar Properties, ir a la pestaña Security, y en la lista de Group or user names seleccionar el usuario, computadora o grupo cuyos permisos se quieren ver.",
+          "keyPoints": [
+            "Clic derecho sobre el archivo/carpeta",
+            "Seleccionar Properties",
+            "Ir a la pestaña Security",
+            "Seleccionar el usuario/grupo en la lista"
+          ]
+        },
+        {
+          "id": "alternate-data-streams-ads-msqfdrxw-wo15",
+          "submodule": "Sistemas de Archivos",
+          "title": "Alternate Data Streams (ADS)",
+          "explanation": "ADS es un atributo de archivo específico de NTFS. Cada archivo tiene al menos un stream de datos ($DATA), y ADS permite que los archivos contengan más de un stream de datos. Windows Explorer no muestra ADS de forma nativa, pero existen ejecutables de terceros y PowerShell para verlos. Desde una perspectiva de seguridad, los autores de malware han usado ADS para ocultar datos, aunque no todos sus usos son maliciosos (por ejemplo, identificar archivos descargados de internet).",
+          "keyPoints": [
+            "Cada archivo tiene al menos un stream $DATA",
+            "Windows Explorer no muestra ADS nativamente",
+            "PowerShell y herramientas de terceros permiten ver ADS",
+            "Usado por malware para ocultar datos",
+            "También usado legítimamente, como marcar archivos descargados de internet"
+          ]
         }
       ],
       "glossary": [
@@ -3520,6 +3584,48 @@
           "term": "Notification Area",
           "tag": "",
           "definition": "Sección de la barra de tareas, generalmente en la esquina inferior derecha, donde se muestran la fecha, hora y otros iconos como volumen o red."
+        },
+        {
+          "id": "ntfs-msqfdrxw-w04u",
+          "submodule": "Sistemas de Archivos",
+          "term": "NTFS",
+          "tag": "",
+          "definition": "New Technology File System. Sistema de archivos moderno de Windows con journaling, soporte de permisos, compresión y cifrado."
+        },
+        {
+          "id": "fat16-fat32-msqfdrxw-foqs",
+          "submodule": "Sistemas de Archivos",
+          "term": "FAT16/FAT32",
+          "tag": "",
+          "definition": "File Allocation Table. Sistema de archivos anterior a NTFS, usado hoy típicamente en dispositivos USB y MicroSD."
+        },
+        {
+          "id": "hpfs-msqfdrxw-2fvu",
+          "submodule": "Sistemas de Archivos",
+          "term": "HPFS",
+          "tag": "",
+          "definition": "High Performance File System. Sistema de archivos anterior a NTFS."
+        },
+        {
+          "id": "journaling-file-system-msqfdrxw-3834",
+          "submodule": "Sistemas de Archivos",
+          "term": "Journaling file system",
+          "tag": "",
+          "definition": "Sistema de archivos que puede repararse automáticamente en caso de fallo usando información almacenada en un archivo de log."
+        },
+        {
+          "id": "efs-msqfdrxw-8h6b",
+          "submodule": "Sistemas de Archivos",
+          "term": "EFS",
+          "tag": "",
+          "definition": "Encryption File System. Función de NTFS que permite cifrar archivos y carpetas."
+        },
+        {
+          "id": "ads-msqfdrxw-vm8i",
+          "submodule": "Sistemas de Archivos",
+          "term": "ADS",
+          "tag": "",
+          "definition": "Alternate Data Streams. Atributo de archivo específico de NTFS que permite a los archivos contener más de un stream de datos, usado a veces para ocultar información."
         }
       ]
     }
