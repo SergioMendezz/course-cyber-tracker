@@ -3553,6 +3553,43 @@
             "Complementa el control de acceso del modelo de seguridad de Windows",
             "Útil ante pérdida o robo de dispositivos con datos sensibles"
           ]
+        },
+        {
+          "id": "carpeta-windows-c-windows-msqfmu9t-xk57",
+          "submodule": "Sistemas de Archivos",
+          "title": "Carpeta Windows (C:\\Windows)",
+          "explanation": "La carpeta Windows es tradicionalmente conocida como la carpeta que contiene el sistema operativo Windows. No necesariamente reside en la unidad C; puede residir en cualquier otra unidad y técnicamente en una carpeta diferente.",
+          "keyPoints": [
+            "Contiene el sistema operativo Windows",
+            "No tiene que estar en la unidad C necesariamente",
+            "Puede residir en otra unidad o carpeta",
+            "Contiene muchas subcarpetas, entre ellas System32"
+          ]
+        },
+        {
+          "id": "variables-de-entorno-del-sistema-msqfmu9t-8ouo",
+          "submodule": "Sistemas de Archivos",
+          "title": "Variables de entorno del sistema",
+          "explanation": "Las variables de entorno almacenan información sobre el entorno del sistema operativo, incluyendo detalles como la ruta del sistema operativo, la cantidad de procesadores usados y la ubicación de carpetas temporales. La variable de entorno del sistema para el directorio de Windows es %windir%.",
+          "keyPoints": [
+            "Definición según Microsoft",
+            "Incluyen la ruta del sistema operativo",
+            "Incluyen la cantidad de procesadores usados por el sistema operativo",
+            "Incluyen la ubicación de carpetas temporales",
+            "%windir% es la variable de entorno del directorio de Windows"
+          ]
+        },
+        {
+          "id": "carpeta-system32-msqfmu9t-1g6o",
+          "submodule": "Sistemas de Archivos",
+          "title": "Carpeta System32",
+          "explanation": "System32 es una de las muchas carpetas dentro de la carpeta Windows. Contiene archivos importantes y críticos para el funcionamiento del sistema operativo. Se debe proceder con extrema precaución al interactuar con ella, ya que eliminar accidentalmente archivos o carpetas puede dejar inoperable el sistema operativo Windows.",
+          "keyPoints": [
+            "Ubicada dentro de la carpeta Windows",
+            "Contiene archivos críticos para el sistema operativo",
+            "Eliminar archivos por accidente puede volver inoperable el sistema",
+            "Muchas herramientas de Windows Fundamentals residen en esta carpeta"
+          ]
         }
       ],
       "glossary": [
@@ -3653,6 +3690,27 @@
           "term": "NTFS",
           "tag": "",
           "definition": "Sistema de archivos de Windows que soporta funciones avanzadas como el cifrado mediante EFS."
+        },
+        {
+          "id": "windir-msqfmu9t-3xlo",
+          "submodule": "Sistemas de Archivos",
+          "term": "%windir%",
+          "tag": "variable de entorno",
+          "definition": "Variable de entorno del sistema que representa la ubicación del directorio de Windows."
+        },
+        {
+          "id": "environment-variable-msqfmu9t-69by",
+          "submodule": "Sistemas de Archivos",
+          "term": "Environment variable",
+          "tag": "sistema operativo",
+          "definition": "Almacena información sobre el entorno del sistema operativo, como la ruta del sistema, la cantidad de procesadores usados y la ubicación de carpetas temporales."
+        },
+        {
+          "id": "system32-msqfmu9t-z6ms",
+          "submodule": "Sistemas de Archivos",
+          "term": "System32",
+          "tag": "carpeta",
+          "definition": "Carpeta dentro de Windows que contiene archivos críticos para el funcionamiento del sistema operativo."
         }
       ]
     }
