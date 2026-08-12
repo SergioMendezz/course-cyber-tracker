@@ -2770,6 +2770,54 @@
           "command": "comando &",
           "explanation": "Agregar el operador & al final de un comando hace que este se ejecute en segundo plano, devolviendo el PID del proceso en lugar de su salida.",
           "example": "echo \"Hi THM\" &"
+        },
+        {
+          "id": "agregar-un-repositorio-automaticamente-msqdqei5-bt3n",
+          "submodule": "Gestión de paquetes",
+          "title": "Agregar un repositorio automáticamente",
+          "command": "add-apt-repository ppa:PPA_Name/ppa",
+          "explanation": "Agrega un repositorio adicional (por ejemplo un PPA) a la lista de fuentes de apt de forma automática.",
+          "example": ""
+        },
+        {
+          "id": "descargar-y-confiar-en-una-clave-gpg-msqdqei5-soxw",
+          "submodule": "Gestión de paquetes",
+          "title": "Descargar y confiar en una clave GPG",
+          "command": "wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -",
+          "explanation": "Descarga la clave GPG de los desarrolladores de Sublime Text y la agrega a la lista de claves de confianza del sistema usando apt-key.",
+          "example": ""
+        },
+        {
+          "id": "actualizar-la-lista-de-paquetes-de-apt-msqdqei5-ffry",
+          "submodule": "Gestión de paquetes",
+          "title": "Actualizar la lista de paquetes de apt",
+          "command": "apt update",
+          "explanation": "Actualiza la información de apt para que reconozca nuevas entradas de repositorios agregadas manualmente o mediante archivos .list.",
+          "example": ""
+        },
+        {
+          "id": "instalar-un-paquete-con-apt-msqdqei5-c5sy",
+          "submodule": "Gestión de paquetes",
+          "title": "Instalar un paquete con apt",
+          "command": "apt install sublime-text",
+          "explanation": "Instala el software especificado (en este caso Sublime Text) una vez que su repositorio fue agregado y confiado.",
+          "example": ""
+        },
+        {
+          "id": "eliminar-un-repositorio-agregado-msqdqei5-7t3f",
+          "submodule": "Gestión de paquetes",
+          "title": "Eliminar un repositorio agregado",
+          "command": "add-apt-repository --remove ppa:PPA_Name/ppa",
+          "explanation": "Elimina un repositorio PPA agregado previamente al sistema. También se puede lograr borrando manualmente el archivo correspondiente en /etc/apt/sources.list.d.",
+          "example": ""
+        },
+        {
+          "id": "eliminar-un-paquete-instalado-msqdqei5-1qoo",
+          "submodule": "Gestión de paquetes",
+          "title": "Eliminar un paquete instalado",
+          "command": "apt remove sublime-text",
+          "explanation": "Elimina el software especificado que fue instalado previamente mediante apt.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -3044,6 +3092,39 @@
             "Existen herramientas online como Crontab Generator y Cron Guru para generar el formato",
             "Ejemplo: '0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/' ejecuta un backup cada 12 horas"
           ]
+        },
+        {
+          "id": "repositorios-apt-y-software-msqdqei4-lt6w",
+          "submodule": "Gestión de paquetes",
+          "title": "Repositorios apt y software",
+          "explanation": "Cuando los desarrolladores quieren compartir software con la comunidad, lo suben a un repositorio 'apt'. Si es aprobado, se libera al público. Esto refleja dos ventajas de Linux: la accesibilidad para el usuario y el valor de las herramientas open source. Los proveedores del sistema operativo mantienen sus propios repositorios, pero también se pueden agregar repositorios comunitarios para extender las capacidades del sistema, por ejemplo repositorios más cercanos geográficamente al proveedor.",
+          "keyPoints": [
+            "Los repositorios apt son la vía para distribuir software aprobado por la comunidad",
+            "Se pueden agregar repositorios de terceros además de los oficiales del proveedor del SO",
+            "Permite extender las capacidades del sistema operativo"
+          ]
+        },
+        {
+          "id": "herramienta-apt-y-gestion-de-repositorios-msqdqei5-n45j",
+          "submodule": "Gestión de paquetes",
+          "title": "Herramienta apt y gestión de repositorios",
+          "explanation": "El comando apt se usa normalmente para instalar software en sistemas Ubuntu y forma parte del paquete de gestión de software llamado apt. Apt incluye un conjunto de herramientas para administrar paquetes y fuentes de software, e instalar o eliminar software. A diferencia de instaladores de paquetes como dpkg, la ventaja de apt es que al actualizar el sistema también se revisan actualizaciones de los repositorios agregados.",
+          "keyPoints": [
+            "apt permite instalar, actualizar y eliminar software",
+            "apt gestiona tanto paquetes como fuentes/repositorios",
+            "dpkg es un instalador de paquetes pero no gestiona actualizaciones de repositorios automáticamente"
+          ]
+        },
+        {
+          "id": "verificacion-de-integridad-con-claves-gpg-msqdqei5-6wjr",
+          "submodule": "Gestión de paquetes",
+          "title": "Verificación de integridad con claves GPG",
+          "explanation": "Al agregar software de un repositorio externo, la integridad de lo que se descarga se garantiza mediante claves GPG (Gnu Privacy Guard). Estas claves funcionan como una verificación de seguridad de parte de los desarrolladores. Si las claves no coinciden con lo que el sistema confía y lo que usaron los desarrolladores, el software no se descargará.",
+          "keyPoints": [
+            "GPG significa Gnu Privacy Guard",
+            "Las claves GPG verifican que el software provenga de una fuente confiable",
+            "Si la clave no coincide, la descarga falla"
+          ]
         }
       ],
       "glossary": [
@@ -3158,6 +3239,34 @@
           "term": "crontab",
           "tag": "",
           "definition": "Archivo especial con formato reconocido por el proceso cron para ejecutar tareas programadas paso a paso."
+        },
+        {
+          "id": "apt-msqdqei5-8ilk",
+          "submodule": "Terminología Linux",
+          "term": "apt",
+          "tag": "",
+          "definition": "Sistema de gestión de paquetes en Ubuntu/Debian que permite instalar, actualizar y eliminar software, así como gestionar repositorios de fuentes."
+        },
+        {
+          "id": "gpg-gnu-privacy-guard-msqdqei5-bpd0",
+          "submodule": "Terminología Linux",
+          "term": "GPG (Gnu Privacy Guard)",
+          "tag": "",
+          "definition": "Sistema de claves criptográficas usado para verificar la integridad y autenticidad del software descargado desde repositorios externos."
+        },
+        {
+          "id": "dpkg-msqdqei5-x1d4",
+          "submodule": "Terminología Linux",
+          "term": "dpkg",
+          "tag": "",
+          "definition": "Instalador de paquetes de bajo nivel en sistemas Debian/Ubuntu, usado para instalar software directamente sin la gestión avanzada de repositorios que ofrece apt."
+        },
+        {
+          "id": "ppa-msqdqei5-ah0h",
+          "submodule": "Terminología Linux",
+          "term": "PPA",
+          "tag": "",
+          "definition": "Personal Package Archive, un tipo de repositorio de terceros que puede agregarse al sistema para instalar software adicional no incluido en los repositorios oficiales."
         }
       ]
     }
