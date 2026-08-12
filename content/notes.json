@@ -3125,6 +3125,40 @@
             "Las claves GPG verifican que el software provenga de una fuente confiable",
             "Si la clave no coincide, la descarga falla"
           ]
+        },
+        {
+          "id": "archivos-de-log-en-linux-msqdvop1-gzdp",
+          "submodule": "Gestión de logs",
+          "title": "Archivos de log en Linux",
+          "explanation": "Los archivos de log se ubican en el directorio /var/log y contienen información de registro de aplicaciones y servicios que corren en el sistema. El sistema operativo gestiona automáticamente estos logs mediante un proceso conocido como 'rotating' (rotación de logs).",
+          "keyPoints": [
+            "Ubicados en /var/log",
+            "Contienen información de aplicaciones y servicios",
+            "El OS los gestiona automáticamente mediante 'rotating'"
+          ]
+        },
+        {
+          "id": "utilidad-de-los-logs-de-servicios-msqdvop1-vmiy",
+          "submodule": "Gestión de logs",
+          "title": "Utilidad de los logs de servicios",
+          "explanation": "Los logs de servicios como servidores web, fail2ban o firewalls son útiles para monitorear la salud del sistema y protegerlo. Los logs de un servidor web, por ejemplo, contienen información sobre cada solicitud recibida, lo que permite a desarrolladores o administradores diagnosticar problemas de rendimiento o investigar la actividad de un intruso.",
+          "keyPoints": [
+            "Permiten monitorear la salud del sistema",
+            "Ayudan a proteger el sistema",
+            "Registran cada solicitud recibida por un servicio",
+            "Útiles para diagnosticar rendimiento o investigar intrusiones"
+          ]
+        },
+        {
+          "id": "logs-del-sistema-operativo-msqdvop1-xjy2",
+          "submodule": "Gestión de logs",
+          "title": "Logs del sistema operativo",
+          "explanation": "Además de los logs de servicios específicos, existen logs que almacenan información sobre el funcionamiento del propio sistema operativo y las acciones realizadas por los usuarios, como los intentos de autenticación.",
+          "keyPoints": [
+            "Registran el funcionamiento del OS",
+            "Registran acciones de usuarios",
+            "Incluyen intentos de autenticación"
+          ]
         }
       ],
       "glossary": [
@@ -3267,6 +3301,41 @@
           "term": "PPA",
           "tag": "",
           "definition": "Personal Package Archive, un tipo de repositorio de terceros que puede agregarse al sistema para instalar software adicional no incluido en los repositorios oficiales."
+        },
+        {
+          "id": "rotating-rotacion-de-logs-msqdvop2-8zii",
+          "submodule": "Terminología Linux",
+          "term": "rotating (rotación de logs)",
+          "tag": "",
+          "definition": "Proceso mediante el cual el sistema operativo gestiona automáticamente los archivos de log, evitando que crezcan indefinidamente."
+        },
+        {
+          "id": "access-log-msqdvop2-i7m5",
+          "submodule": "Terminología Linux",
+          "term": "access log",
+          "tag": "",
+          "definition": "Tipo de archivo de log que registra información sobre cada solicitud recibida por un servicio, como un servidor web."
+        },
+        {
+          "id": "error-log-msqdvop2-bbt1",
+          "submodule": "Terminología Linux",
+          "term": "error log",
+          "tag": "",
+          "definition": "Tipo de archivo de log que registra los errores ocurridos en un servicio o aplicación."
+        },
+        {
+          "id": "fail2ban-msqdvop2-87k5",
+          "submodule": "Terminología Linux",
+          "term": "fail2ban",
+          "tag": "",
+          "definition": "Servicio utilizado para monitorear y prevenir intentos de fuerza bruta, entre otros ataques."
+        },
+        {
+          "id": "ufw-msqdvop2-5geg",
+          "submodule": "Terminología Linux",
+          "term": "UFW",
+          "tag": "",
+          "definition": "Servicio utilizado como firewall en sistemas Linux, especialmente en Ubuntu."
         }
       ]
     }
