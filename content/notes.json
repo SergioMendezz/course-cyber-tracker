@@ -3342,7 +3342,16 @@
     {
       "id": "windows-fundamentals-cmd-sec1",
       "name": "Windows Fundamentals/CMD(SEC1)",
-      "commands": [],
+      "commands": [
+        {
+          "id": "abrir-gestion-de-usuarios-y-grupos-locales-msqfxpjl-9p93",
+          "submodule": "Cuentas de Usuario",
+          "title": "Abrir gestión de usuarios y grupos locales",
+          "command": "lusrmgr.msc",
+          "explanation": "Comando que se ejecuta desde el cuadro de diálogo Run (accesible con clic derecho en el Menú Inicio > Run) para abrir la herramienta Local User and Group Management.",
+          "example": ""
+        }
+      ],
       "concepts": [
         {
           "id": "evolucion-del-sistema-operativo-windows-msqel1mp-suts",
@@ -3590,6 +3599,48 @@
             "Eliminar archivos por accidente puede volver inoperable el sistema",
             "Muchas herramientas de Windows Fundamentals residen en esta carpeta"
           ]
+        },
+        {
+          "id": "tipos-de-cuentas-de-usuario-en-windows-msqfxpjk-sy25",
+          "submodule": "Cuentas de Usuario",
+          "title": "Tipos de cuentas de usuario en Windows",
+          "explanation": "En un sistema Windows local típico, las cuentas de usuario pueden ser de dos tipos: Administrador y Usuario Estándar. El tipo de cuenta determina qué acciones puede realizar el usuario en ese sistema específico.",
+          "keyPoints": [
+            "Un Administrador puede realizar cambios en el sistema: agregar usuarios, eliminar usuarios, modificar grupos, modificar configuraciones del sistema, etc.",
+            "Un Usuario Estándar solo puede modificar carpetas/archivos que le pertenecen y no puede realizar cambios a nivel de sistema, como instalar programas."
+          ]
+        },
+        {
+          "id": "ver-cuentas-de-usuario-existentes-msqfxpjk-toxk",
+          "submodule": "Cuentas de Usuario",
+          "title": "Ver cuentas de usuario existentes",
+          "explanation": "Existen varias formas de determinar qué cuentas de usuario existen en el sistema. Una forma es hacer clic en el Menú Inicio y escribir 'Other User', lo que muestra un acceso directo a System Settings > Other users. Al hacer clic, aparece una ventana de Configuración donde, si se está logueado como Administrador, se ve la opción 'Add someone else to this PC'. Un Usuario Estándar no verá esta opción. Al hacer clic en una cuenta de usuario local, aparecen más opciones: 'Change account type' y 'Remove'.",
+          "keyPoints": [
+            "El valor mostrado en el cuadro desplegable de 'Change account type' indica el tipo de cuenta actual",
+            "Un Usuario Estándar no ve la opción 'Add someone else to this PC'"
+          ]
+        },
+        {
+          "id": "perfiles-de-usuario-msqfxpjk-d267",
+          "submodule": "Cuentas de Usuario",
+          "title": "Perfiles de usuario",
+          "explanation": "Cuando se crea una cuenta de usuario, se crea un perfil para ese usuario. La ubicación de cada carpeta de perfil de usuario está bajo C:\\Users. Por ejemplo, la carpeta de perfil del usuario Max será C:\\Users\\Max. La creación del perfil ocurre durante el primer inicio de sesión.",
+          "keyPoints": [
+            "Al iniciar sesión por primera vez, aparece el mensaje 'User Profile Service' mientras se crea el perfil",
+            "Cada perfil de usuario incluye las mismas carpetas: Desktop, Documents, Downloads, Music, Pictures"
+          ]
+        },
+        {
+          "id": "local-user-and-group-management-msqfxpjk-2klf",
+          "submodule": "Cuentas de Usuario",
+          "title": "Local User and Group Management",
+          "explanation": "Otra forma de acceder a la información de cuentas de usuario (y más) es usando Local User and Group Management, accesible mediante el comando lusrmgr.msc desde el cuadro de diálogo Run. Muestra dos carpetas: Users y Groups. En Groups se pueden ver todos los grupos locales con una breve descripción de cada uno.",
+          "keyPoints": [
+            "Cada grupo tiene permisos asignados, y los usuarios son asignados a grupos por el Administrador",
+            "Cuando un usuario es asignado a un grupo, hereda los permisos de ese grupo",
+            "Un usuario puede ser asignado a múltiples grupos",
+            "Hacer clic en 'Add someone else to this PC' desde Other users abre Local Users and Management"
+          ]
         }
       ],
       "glossary": [
@@ -3711,6 +3762,34 @@
           "term": "System32",
           "tag": "carpeta",
           "definition": "Carpeta dentro de Windows que contiene archivos críticos para el funcionamiento del sistema operativo."
+        },
+        {
+          "id": "administrator-msqfxpjl-7hbu",
+          "submodule": "Cuentas de Usuario",
+          "term": "Administrator",
+          "tag": "",
+          "definition": "Tipo de cuenta de usuario en Windows que puede realizar cambios en el sistema: agregar usuarios, eliminar usuarios, modificar grupos y configuraciones del sistema."
+        },
+        {
+          "id": "standard-user-msqfxpjl-shpx",
+          "submodule": "Cuentas de Usuario",
+          "term": "Standard User",
+          "tag": "",
+          "definition": "Tipo de cuenta de usuario en Windows que solo puede modificar carpetas/archivos propios y no puede realizar cambios a nivel de sistema, como instalar programas."
+        },
+        {
+          "id": "user-profile-msqfxpjl-6a06",
+          "submodule": "Cuentas de Usuario",
+          "term": "User Profile",
+          "tag": "",
+          "definition": "Conjunto de carpetas y configuraciones creadas para un usuario al iniciar sesión por primera vez en un sistema, ubicado en C:\\Users\\[nombre de usuario]."
+        },
+        {
+          "id": "run-dialog-box-msqfxpjl-yf68",
+          "submodule": "Cuentas de Usuario",
+          "term": "Run Dialog Box",
+          "tag": "",
+          "definition": "Cuadro de diálogo de Windows que permite abrir programas o herramientas rápidamente escribiendo su nombre o comando."
         }
       ]
     }
