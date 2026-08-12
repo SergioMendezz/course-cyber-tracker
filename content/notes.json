@@ -3338,6 +3338,47 @@
           "definition": "Servicio utilizado como firewall en sistemas Linux, especialmente en Ubuntu."
         }
       ]
+    },
+    {
+      "id": "windows-fundamentals-cmd-sec1",
+      "name": "Windows Fundamentals/CMD(SEC1)",
+      "commands": [],
+      "concepts": [
+        {
+          "id": "evolucion-del-sistema-operativo-windows-msqel1mp-suts",
+          "submodule": "Historia de Windows",
+          "title": "Evolución del sistema operativo Windows",
+          "explanation": "Windows es un sistema operativo con historia desde 1985, siendo actualmente el más utilizado tanto en el hogar como en redes corporativas. Debido a su popularidad, siempre ha sido un objetivo frecuente de hackers y creadores de malware. A lo largo de los años pasó por varias versiones: Windows XP (muy popular y usado por mucho tiempo), Windows Vista (un rediseño completo que tuvo muchos problemas y fue mal recibido, por lo que se discontinuó rápidamente), Windows 7 (versión muy esperada tras el fin de soporte de XP, que generó una carrera de vendors para adaptar hardware y software), Windows 8.x (de corta vida, similar a Vista), y finalmente Windows 10 y Windows 11, siendo este último la versión actual para computadoras de escritorio.",
+          "keyPoints": [
+            "Windows existe desde 1985 y es el SO dominante en hogares y empresas",
+            "Es un objetivo frecuente de malware y hackers por su popularidad",
+            "Windows Vista fue un rediseño completo mal recibido y de corta duración",
+            "El fin de soporte de Windows XP generó una migración masiva a Windows 7",
+            "Windows 8.x tuvo corta vida, similar a Vista",
+            "Windows 10 y Windows 11 son las versiones más recientes",
+            "Windows 11 es la versión actual para escritorio"
+          ]
+        },
+        {
+          "id": "versiones-de-windows-11-y-windows-server-msqel1mp-2d8g",
+          "submodule": "Historia de Windows",
+          "title": "Versiones de Windows 11 y Windows Server",
+          "explanation": "Windows 11 está disponible en dos ediciones: Home y Pro, que se diferencian en las características ofrecidas. Además, para el ámbito de servidores, la versión actual del sistema operativo Windows es Windows Server 2025.",
+          "keyPoints": [
+            "Windows 11 tiene 2 versiones: Home y Pro",
+            "Windows Server 2025 es la versión actual de Windows para servidores"
+          ]
+        }
+      ],
+      "glossary": [
+        {
+          "id": "end-of-life-eol-msqel1mp-b7v7",
+          "submodule": "Historia de Windows",
+          "term": "End-of-life (EOL)",
+          "tag": "",
+          "definition": "Fecha en la que Microsoft deja de dar soporte a una versión de Windows, lo que obliga a usuarios y empresas a migrar a una versión más nueva."
+        }
+      ]
     }
   ]
 }
