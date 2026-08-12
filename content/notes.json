@@ -3368,6 +3368,114 @@
             "Windows 11 tiene 2 versiones: Home y Pro",
             "Windows Server 2025 es la versión actual de Windows para servidores"
           ]
+        },
+        {
+          "id": "el-escritorio-desktop-msqeowme-dziy",
+          "submodule": "Interfaz de Windows",
+          "title": "El Escritorio (Desktop)",
+          "explanation": "El escritorio es donde se encuentran accesos directos a programas, carpetas y archivos, organizados en carpetas o dispersos sin orden específico, para acceso rápido. Se puede personalizar haciendo clic derecho en cualquier parte vacía del escritorio, lo cual abre un menú contextual que permite cambiar el tamaño de los iconos, organizarlos, copiar/pegar elementos y crear nuevos ítems como carpetas, accesos directos o documentos de texto.",
+          "keyPoints": [
+            "Los iconos pueden estar organizados en carpetas o dispersos",
+            "Clic derecho abre un menú contextual con opciones de personalización",
+            "Permite crear nuevas carpetas, accesos directos o documentos"
+          ]
+        },
+        {
+          "id": "configuracion-de-pantalla-display-settings-msqeowme-t7yf",
+          "submodule": "Interfaz de Windows",
+          "title": "Configuración de Pantalla (Display Settings)",
+          "explanation": "En Display settings se pueden modificar la resolución y orientación de la pantalla. Si hay múltiples monitores, también se puede configurar la disposición multi-pantalla desde aquí. En una sesión de Escritorio Remoto, algunas de estas opciones estarán deshabilitadas.",
+          "keyPoints": [
+            "Permite cambiar resolución y orientación",
+            "Soporta configuración multi-monitor",
+            "Algunas opciones se deshabilitan en sesiones de Escritorio Remoto"
+          ]
+        },
+        {
+          "id": "personalize-personalizacion-msqeowme-ttxq",
+          "submodule": "Interfaz de Windows",
+          "title": "Personalize (Personalización)",
+          "explanation": "Desde la opción Personalize se puede cambiar la imagen de fondo del escritorio, las fuentes, los temas y el esquema de colores del sistema.",
+          "keyPoints": [
+            "Permite cambiar el wallpaper",
+            "Permite cambiar fuentes, temas y colores"
+          ]
+        },
+        {
+          "id": "el-menu-inicio-start-menu-msqeowme-xzx1",
+          "submodule": "Menú Inicio",
+          "title": "El Menú Inicio (Start Menu)",
+          "explanation": "En versiones anteriores de Windows la palabra 'Start' era visible en la esquina inferior izquierda, mientras que en versiones modernas como Windows 10 se muestra el logo de Windows en su lugar. Su propósito sigue siendo el mismo: dar acceso a todas las apps, programas, archivos y herramientas más utilizadas. Al hacer clic en el logo de Windows se abre el Menú Inicio, dividido en varias secciones.",
+          "keyPoints": [
+            "En versiones modernas se muestra el logo de Windows en lugar de la palabra 'Start'",
+            "Da acceso a apps, programas, archivos y herramientas",
+            "Está dividido en secciones"
+          ]
+        },
+        {
+          "id": "seccion-de-cuenta-de-usuario-en-el-menu-inicio-msqeowme-efew",
+          "submodule": "Menú Inicio",
+          "title": "Sección de cuenta de usuario en el Menú Inicio",
+          "explanation": "Esta sección del Menú Inicio ofrece accesos rápidos a acciones relacionadas con la cuenta o sesión de usuario, como modificar la cuenta, bloquear la pantalla o cerrar sesión. También incluye accesos a las carpetas Documents y Pictures, un icono de engranaje para ir a Settings, y un icono de encendido para desconectarse de una sesión de Escritorio Remoto, apagar o reiniciar la computadora.",
+          "keyPoints": [
+            "Accesos a cuenta, bloqueo de pantalla y cierre de sesión",
+            "Accesos directos a Documents y Pictures",
+            "Icono de Settings y opciones de apagado/reinicio/desconexión remota"
+          ]
+        },
+        {
+          "id": "lista-de-aplicaciones-instaladas-msqeowme-963i",
+          "submodule": "Menú Inicio",
+          "title": "Lista de aplicaciones instaladas",
+          "explanation": "Esta sección del Menú Inicio muestra las apps/programas agregados recientemente en la parte superior, y todas las apps/programas instaladas en orden alfabético, cada letra con su propia sección. Si la lista es muy larga, se puede saltar a una sección específica haciendo clic en los encabezados de letra para abrir una cuadrícula alfabética.",
+          "keyPoints": [
+            "Muestra apps recientes y todas las instaladas",
+            "Organización alfabética por secciones de letras",
+            "Cuadrícula alfabética para saltar rápidamente a una letra"
+          ]
+        },
+        {
+          "id": "tiles-mosaicos-del-menu-inicio-msqeowme-anjs",
+          "submodule": "Menú Inicio",
+          "title": "Tiles (mosaicos) del Menú Inicio",
+          "explanation": "El lado derecho del Menú Inicio contiene iconos de apps/programas o utilidades específicas llamados 'tiles'. Algunos tiles se agregan por defecto. Al hacer clic derecho sobre un tile aparece un menú con más acciones, como redimensionarlo, desanclarlo del Menú Inicio o ver sus propiedades. También se pueden agregar apps a esta sección haciendo clic derecho sobre la app y seleccionando 'Pin to Start'.",
+          "keyPoints": [
+            "Los tiles están en el lado derecho del Menú Inicio",
+            "Clic derecho permite redimensionar, desanclar o ver propiedades",
+            "Se pueden anclar nuevas apps con 'Pin to Start'"
+          ]
+        },
+        {
+          "id": "la-barra-de-tareas-taskbar-msqeowme-7wy8",
+          "submodule": "Barra de Tareas",
+          "title": "La Barra de Tareas (Taskbar)",
+          "explanation": "Algunos componentes de la barra de tareas están habilitados y visibles por defecto, como el Toolbar. Se puede hacer clic derecho en la barra de tareas para abrir un menú contextual que permite deshabilitar o modificar estos componentes. Cualquier app, programa, carpeta o archivo que se abra aparecerá en la barra de tareas, y al cerrarlo desaparecerá (salvo que esté anclado explícitamente).",
+          "keyPoints": [
+            "Muestra apps y archivos abiertos",
+            "Clic derecho permite habilitar/deshabilitar componentes",
+            "Los elementos anclados no desaparecen al cerrarse"
+          ]
+        },
+        {
+          "id": "vista-previa-con-miniatura-en-la-barra-de-tareas-msqeowme-v5mz",
+          "submodule": "Barra de Tareas",
+          "title": "Vista previa con miniatura en la Barra de Tareas",
+          "explanation": "Al pasar el mouse sobre un icono de la barra de tareas se muestra una miniatura de vista previa junto con un tooltip, útil para identificar qué instancia de una app (por ejemplo, Google Chrome) se necesita traer al frente cuando hay muchas ventanas abiertas.",
+          "keyPoints": [
+            "Hover muestra miniatura y tooltip",
+            "Útil para identificar instancias específicas de una app abierta"
+          ]
+        },
+        {
+          "id": "el-area-de-notificaciones-notification-area-msqeowme-oynz",
+          "submodule": "Barra de Tareas",
+          "title": "El Área de Notificaciones (Notification Area)",
+          "explanation": "El Área de Notificaciones, ubicada generalmente en la esquina inferior derecha de la pantalla, muestra la fecha y hora, así como otros iconos como el de volumen o el de red/wifi. Los iconos que aparecen en esta área se pueden agregar o quitar desde la configuración de la Taskbar, en la sección de Notification Area.",
+          "keyPoints": [
+            "Ubicada en la esquina inferior derecha",
+            "Muestra fecha, hora, volumen, red, entre otros",
+            "Se configura desde Taskbar settings"
+          ]
         }
       ],
       "glossary": [
@@ -3377,6 +3485,41 @@
           "term": "End-of-life (EOL)",
           "tag": "",
           "definition": "Fecha en la que Microsoft deja de dar soporte a una versión de Windows, lo que obliga a usuarios y empresas a migrar a una versión más nueva."
+        },
+        {
+          "id": "desktop-msqeowme-32b3",
+          "submodule": "Interfaz de Windows",
+          "term": "Desktop",
+          "tag": "",
+          "definition": "Pantalla principal de Windows donde se colocan accesos directos a programas, carpetas y archivos para acceso rápido."
+        },
+        {
+          "id": "start-menu-msqeowme-2sbc",
+          "submodule": "Menú Inicio",
+          "term": "Start Menu",
+          "tag": "",
+          "definition": "Menú accesible desde el logo de Windows que da acceso a apps, programas, archivos y herramientas más utilizadas."
+        },
+        {
+          "id": "tile-msqeowme-e2oa",
+          "submodule": "Menú Inicio",
+          "term": "Tile",
+          "tag": "",
+          "definition": "Icono de una app, programa o utilidad que aparece en el lado derecho del Menú Inicio."
+        },
+        {
+          "id": "taskbar-msqeowme-f26d",
+          "submodule": "Barra de Tareas",
+          "term": "Taskbar",
+          "tag": "",
+          "definition": "Barra que muestra los iconos de apps, programas, carpetas o archivos abiertos, además de componentes como el área de notificaciones."
+        },
+        {
+          "id": "notification-area-msqeowme-ytdo",
+          "submodule": "Barra de Tareas",
+          "term": "Notification Area",
+          "tag": "",
+          "definition": "Sección de la barra de tareas, generalmente en la esquina inferior derecha, donde se muestran la fecha, hora y otros iconos como volumen o red."
         }
       ]
     }
