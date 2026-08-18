@@ -3809,6 +3809,122 @@
             "El deslizador tiene cuatro niveles de seguridad",
             "Controla cómo Windows alerta sobre cambios a nivel del sistema"
           ]
+        },
+        {
+          "id": "panes-de-event-viewer-msy5tyfc-sdlw",
+          "submodule": "Event Viewer",
+          "title": "Panes de Event Viewer",
+          "explanation": "Event Viewer tiene tres paneles: el panel izquierdo muestra un árbol jerárquico de los proveedores de logs de eventos; el panel central muestra una vista general y resumen de los eventos específicos del proveedor seleccionado; y el panel derecho es el panel de acciones.",
+          "keyPoints": [
+            "Panel izquierdo: árbol de proveedores",
+            "Panel central: resumen de eventos",
+            "Panel derecho: acciones"
+          ]
+        },
+        {
+          "id": "tipos-de-eventos-en-event-viewer-msy5tyfc-crkr",
+          "submodule": "Event Viewer",
+          "title": "Tipos de eventos en Event Viewer",
+          "explanation": "Existen cinco tipos de eventos que pueden registrarse en Event Viewer: Error, Warning, Information, Success Audit y Failure Audit, cada uno indicando distintas situaciones del sistema o de seguridad.",
+          "keyPoints": [
+            "Error: problema significativo, como pérdida de datos o funcionalidad",
+            "Warning: posible problema futuro, no necesariamente grave",
+            "Information: operación exitosa de una aplicación, driver o servicio",
+            "Success Audit: intento de acceso de seguridad auditado que fue exitoso",
+            "Failure Audit: intento de acceso de seguridad auditado que falló"
+          ]
+        },
+        {
+          "id": "shared-folders-msy5tyfc-abka",
+          "submodule": "Shared Folders",
+          "title": "Shared Folders",
+          "explanation": "Shared Folders muestra una lista completa de recursos compartidos y carpetas a las que otros pueden conectarse. Incluye los shares por defecto de Windows, como C$ y ADMIN$, creados automáticamente para administración remota.",
+          "keyPoints": [
+            "C$ es el share por defecto de Windows",
+            "ADMIN$ es un share de administración remota creado por Windows"
+          ]
+        },
+        {
+          "id": "permisos-de-carpetas-compartidas-msy5tyfc-7etx",
+          "submodule": "Shared Folders",
+          "title": "Permisos de carpetas compartidas",
+          "explanation": "Al igual que con cualquier objeto en Windows, se puede hacer clic derecho sobre una carpeta para ver sus propiedades, como los permisos que determinan quién puede acceder al recurso compartido.",
+          "keyPoints": []
+        },
+        {
+          "id": "sessions-y-open-files-msy5tyfc-hdo5",
+          "submodule": "Shared Folders",
+          "title": "Sessions y Open Files",
+          "explanation": "En Sessions se muestra una lista de los usuarios conectados actualmente a los recursos compartidos. En Open Files se listan todas las carpetas y/o archivos que los usuarios conectados están accediendo.",
+          "keyPoints": []
+        },
+        {
+          "id": "local-users-and-groups-msy5tyfc-fyoj",
+          "submodule": "Cuentas de Usuario",
+          "title": "Local Users and Groups",
+          "explanation": "La sección Local Users and Groups corresponde a lusrmgr.msc, ya conocida de Windows Fundamentals 1, y permite gestionar usuarios y grupos locales.",
+          "keyPoints": []
+        },
+        {
+          "id": "performance-monitor-perfmon-msy5tyfc-2oh9",
+          "submodule": "Performance Monitor",
+          "title": "Performance Monitor (perfmon)",
+          "explanation": "Perfmon es una utilidad usada para ver datos de rendimiento en tiempo real o desde un archivo de log. Es útil para solucionar problemas de rendimiento en un sistema, ya sea local o remoto.",
+          "keyPoints": []
+        },
+        {
+          "id": "device-manager-msy5tyfc-639z",
+          "submodule": "Device Manager",
+          "title": "Device Manager",
+          "explanation": "Device Manager permite ver y configurar el hardware conectado a la computadora, incluyendo la posibilidad de deshabilitar dispositivos.",
+          "keyPoints": []
+        },
+        {
+          "id": "disk-management-msy5tyfc-u5ft",
+          "submodule": "Disk Management",
+          "title": "Disk Management",
+          "explanation": "Disk Management es una utilidad de sistema en Windows que permite realizar tareas avanzadas de almacenamiento. Bajo Storage también se encuentra Windows Server Backup, pero solo se estudia Disk Management en este contexto.",
+          "keyPoints": [
+            "Configurar una nueva unidad",
+            "Extender una partición",
+            "Reducir una partición",
+            "Asignar o cambiar la letra de unidad (ej. E:)"
+          ]
+        },
+        {
+          "id": "servicios-en-windows-msy5tyfc-qt72",
+          "submodule": "Services and Applications",
+          "title": "Servicios en Windows",
+          "explanation": "Un servicio es un tipo especial de aplicación que se ejecuta en segundo plano. Se pueden ver todos los servicios y sus estados haciendo clic en el botón Services dentro de la sección Services and Applications.",
+          "keyPoints": []
+        },
+        {
+          "id": "propiedades-de-un-servicio-msy5tyfc-tcxc",
+          "submodule": "Services and Applications",
+          "title": "Propiedades de un servicio",
+          "explanation": "Al hacer clic derecho sobre un servicio y seleccionar propiedades, se puede ver información adicional como el nombre real del servicio (distinto del nombre para mostrar), la ruta a su ejecutable, su tipo de inicio y otra información relevante.",
+          "keyPoints": []
+        },
+        {
+          "id": "startup-type-de-un-servicio-msy5tyfc-c69s",
+          "submodule": "Services and Applications",
+          "title": "Startup type de un servicio",
+          "explanation": "El campo Startup type en las propiedades de un servicio determina cómo y cuándo se configura para iniciar: Automatic (inicia con cada arranque del sistema), Manual (inicia solo cuando otro proceso o usuario lo activa), o Disabled (no se ejecuta).",
+          "keyPoints": [
+            "Automatic: inicia con el sistema",
+            "Manual: inicia bajo demanda",
+            "Disabled: no se ejecuta"
+          ]
+        },
+        {
+          "id": "wmi-control-msy5tyfc-4k5e",
+          "submodule": "WMI Control",
+          "title": "WMI Control",
+          "explanation": "WMI Control configura y controla el servicio Windows Management Instrumentation (WMI), que permite a lenguajes de scripting como VBScript o Windows PowerShell administrar computadoras y servidores Windows, tanto local como remotamente.",
+          "keyPoints": [
+            "Microsoft ofrece WMIC como interfaz de línea de comandos para WMI",
+            "WMIC está deprecado desde Windows 10 versión 21H1, reemplazado por PowerShell"
+          ]
         }
       ],
       "glossary": [
@@ -4049,6 +4165,69 @@
           "term": "Secure Desktop",
           "tag": "UAC",
           "definition": "Efecto de atenuación del escritorio que ocurre cuando UAC notifica al usuario en el nivel de seguridad 'Always notify'."
+        },
+        {
+          "id": "event-viewer-msy5tyfc-ohgo",
+          "submodule": "Event Viewer",
+          "term": "Event Viewer",
+          "tag": "",
+          "definition": "Herramienta de Windows compuesta por tres paneles que permite visualizar los logs de eventos del sistema organizados por proveedor."
+        },
+        {
+          "id": "shared-folders-msy5tyfc-2v6z",
+          "submodule": "Shared Folders",
+          "term": "Shared Folders",
+          "tag": "",
+          "definition": "Sección de administración que muestra los recursos compartidos, sesiones activas y archivos abiertos por usuarios conectados a la red."
+        },
+        {
+          "id": "admin-msy5tyfc-ri24",
+          "submodule": "Shared Folders",
+          "term": "ADMIN$",
+          "tag": "",
+          "definition": "Recurso compartido predeterminado creado automáticamente por Windows para tareas de administración remota."
+        },
+        {
+          "id": "lusrmgr-msc-msy5tyfc-9xrd",
+          "submodule": "Cuentas de Usuario",
+          "term": "lusrmgr.msc",
+          "tag": "",
+          "definition": "Consola de administración de Local Users and Groups en Windows."
+        },
+        {
+          "id": "perfmon-msy5tyfc-gbh0",
+          "submodule": "Performance Monitor",
+          "term": "perfmon",
+          "tag": "",
+          "definition": "Utilidad de Windows llamada Performance Monitor, usada para ver datos de rendimiento en tiempo real o desde un log."
+        },
+        {
+          "id": "device-manager-msy5tyfc-mcm9",
+          "submodule": "Device Manager",
+          "term": "Device Manager",
+          "tag": "",
+          "definition": "Herramienta de Windows que permite ver y configurar el hardware conectado a la computadora."
+        },
+        {
+          "id": "disk-management-msy5tyfc-hdyz",
+          "submodule": "Disk Management",
+          "term": "Disk Management",
+          "tag": "",
+          "definition": "Utilidad de sistema en Windows para realizar tareas avanzadas de almacenamiento, como crear, extender o reducir particiones."
+        },
+        {
+          "id": "wmi-msy5tyfc-zt01",
+          "submodule": "WMI Control",
+          "term": "WMI",
+          "tag": "",
+          "definition": "Windows Management Instrumentation, tecnología que permite administrar computadoras y servidores Windows local o remotamente mediante scripting."
+        },
+        {
+          "id": "wmic-msy5tyfc-7hwq",
+          "submodule": "WMI Control",
+          "term": "WMIC",
+          "tag": "",
+          "definition": "Windows Management Instrumentation Command-line, interfaz de línea de comandos para WMI, deprecada desde Windows 10 versión 21H1 en favor de PowerShell."
         }
       ]
     }
