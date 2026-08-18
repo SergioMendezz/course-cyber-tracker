@@ -3374,6 +3374,70 @@
           "command": "control.exe",
           "explanation": "Comando (nombre del ejecutable) que abre el Panel de Control de Windows.",
           "example": ""
+        },
+        {
+          "id": "mostrar-el-nombre-del-equipo-msy6olae-4a9b",
+          "submodule": "System Configuration",
+          "title": "Mostrar el nombre del equipo",
+          "command": "hostname",
+          "explanation": "Muestra el nombre del equipo (computer name).",
+          "example": ""
+        },
+        {
+          "id": "mostrar-el-usuario-conectado-msy6olae-kxp9",
+          "submodule": "System Configuration",
+          "title": "Mostrar el usuario conectado",
+          "command": "whoami",
+          "explanation": "Muestra el nombre del usuario que ha iniciado sesión.",
+          "example": ""
+        },
+        {
+          "id": "mostrar-configuracion-de-red-msy6olae-xhpa",
+          "submodule": "System Configuration",
+          "title": "Mostrar configuración de red",
+          "command": "ipconfig",
+          "explanation": "Muestra la configuración de direcciones de red del equipo. Es un comando útil para tareas de troubleshooting.",
+          "example": ""
+        },
+        {
+          "id": "ver-el-manual-de-ayuda-de-un-comando-msy6olae-ldb5",
+          "submodule": "System Configuration",
+          "title": "Ver el manual de ayuda de un comando",
+          "command": "ipconfig /?",
+          "explanation": "El parámetro /? muestra el manual de ayuda de un comando, explicando la sintaxis esperada y los parámetros adicionales disponibles para ampliar su ejecución.",
+          "example": "ipconfig /?"
+        },
+        {
+          "id": "limpiar-la-pantalla-del-command-prompt-msy6olae-aj4d",
+          "submodule": "System Configuration",
+          "title": "Limpiar la pantalla del command prompt",
+          "command": "cls",
+          "explanation": "Limpia la pantalla del símbolo del sistema (command prompt).",
+          "example": ""
+        },
+        {
+          "id": "mostrar-estadisticas-de-protocolo-y-conexiones-de-red-msy6olae-i067",
+          "submodule": "System Configuration",
+          "title": "Mostrar estadísticas de protocolo y conexiones de red",
+          "command": "netstat",
+          "explanation": "Muestra estadísticas de protocolo y las conexiones de red TCP/IP actuales. Puede ejecutarse solo o con parámetros como -a, -b, -e, entre otros, que cambian la salida del comando.",
+          "example": "netstat -a"
+        },
+        {
+          "id": "gestionar-recursos-de-red-msy6olae-ecfs",
+          "submodule": "System Configuration",
+          "title": "Gestionar recursos de red",
+          "command": "net",
+          "explanation": "Se utiliza principalmente para administrar recursos de red. Este comando admite subcomandos. Si se escribe sin un subcomando, muestra la sintaxis del comando raíz junto con algunos de los subcomandos disponibles.",
+          "example": ""
+        },
+        {
+          "id": "ver-ayuda-de-subcomandos-de-net-msy6olae-lilt",
+          "submodule": "System Configuration",
+          "title": "Ver ayuda de subcomandos de net",
+          "command": "net help",
+          "explanation": "Para el comando net, el parámetro /? no funciona para obtener ayuda; en su lugar se debe usar 'net help'. Por ejemplo, para ver la ayuda de 'net user', el comando es 'net help user'. La misma sintaxis sirve para otros subcomandos útiles como localgroup, use, share y session.",
+          "example": "net help user"
         }
       ],
       "concepts": [
@@ -3952,6 +4016,17 @@
             "También se pueden ver en Control Panel > System and Security > System > Advanced system settings > Environment Variables",
             "O en Settings > System > About > system info > Advanced system settings > Environment Variables"
           ]
+        },
+        {
+          "id": "evolucion-de-la-interaccion-con-el-sistema-operativo-msy6olae-3uqu",
+          "submodule": "System Configuration",
+          "title": "Evolución de la interacción con el sistema operativo",
+          "explanation": "En los primeros sistemas operativos, la línea de comandos era la única forma de interactuar con el sistema operativo. Con la introducción de la GUI (interfaz gráfica de usuario), los usuarios pudieron realizar tareas complejas con unos pocos clics en lugar de escribir comandos. Aunque la GUI es hoy la forma principal de interactuar con el sistema operativo, el usuario todavía puede interactuar mediante el símbolo del sistema (command prompt).",
+          "keyPoints": [
+            "La línea de comandos fue la única interfaz en los primeros sistemas operativos",
+            "La GUI simplificó tareas complejas mediante clics",
+            "El command prompt sigue disponible como método de interacción alternativo"
+          ]
         }
       ],
       "glossary": [
@@ -4269,6 +4344,27 @@
           "term": "Environment Variables",
           "tag": "",
           "definition": "Datos que almacenan información sobre el entorno del sistema operativo, como la ruta del sistema, el número de procesadores y la ubicación de carpetas temporales, utilizados por el sistema operativo y otros programas."
+        },
+        {
+          "id": "gui-msy6olae-zw43",
+          "submodule": "System Configuration",
+          "term": "GUI",
+          "tag": "",
+          "definition": "Graphical User Interface (interfaz gráfica de usuario), permite a los usuarios realizar tareas complejas con clics en lugar de escribir comandos."
+        },
+        {
+          "id": "netstat-msy6olae-nwry",
+          "submodule": "System Configuration",
+          "term": "netstat",
+          "tag": "comando",
+          "definition": "Comando que muestra estadísticas de protocolo y las conexiones de red TCP/IP actuales."
+        },
+        {
+          "id": "net-msy6olae-0x4i",
+          "submodule": "System Configuration",
+          "term": "net",
+          "tag": "comando",
+          "definition": "Comando usado principalmente para administrar recursos de red, que admite subcomandos como user, localgroup, use, share y session."
         }
       ]
     }
