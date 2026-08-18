@@ -3797,6 +3797,18 @@
             "Complete memory dump",
             "None"
           ]
+        },
+        {
+          "id": "user-account-control-uac-msy5k3i8-2mn4",
+          "submodule": "System Configuration",
+          "title": "User Account Control (UAC)",
+          "explanation": "UAC es una función de Windows que controla y alerta al usuario cuando aplicaciones o usuarios intentan realizar cambios a nivel del sistema. Se puede acceder a su configuración a través del panel de System Configuration, y sus ajustes pueden modificarse o incluso desactivarse por completo, aunque esto no es recomendado. La configuración se ajusta mediante un deslizador con cuatro niveles de seguridad.",
+          "keyPoints": [
+            "Fue cubierto en detalle en Windows Fundamentals 1",
+            "Se puede desactivar por completo, pero no es recomendado",
+            "El deslizador tiene cuatro niveles de seguridad",
+            "Controla cómo Windows alerta sobre cambios a nivel del sistema"
+          ]
         }
       ],
       "glossary": [
@@ -3995,6 +4007,48 @@
           "term": "Crash Dump",
           "tag": "",
           "definition": "Archivo que Windows crea cuando ocurre un error crítico (como un Blue Screen of Death), útil para que administradores o analistas entiendan qué falló."
+        },
+        {
+          "id": "uac-user-account-control-msy5k3i8-q14w",
+          "submodule": "System Configuration",
+          "term": "UAC (User Account Control)",
+          "tag": "",
+          "definition": "Función de Windows que alerta al usuario cuando aplicaciones o usuarios intentan realizar cambios a nivel del sistema, con distintos niveles de seguridad configurables."
+        },
+        {
+          "id": "always-notify-msy5k3i8-a346",
+          "submodule": "System Configuration",
+          "term": "Always notify",
+          "tag": "UAC",
+          "definition": "Nivel de seguridad más alto de UAC. Windows notifica siempre que apps o el usuario intentan hacer cambios, y el escritorio se atenúa (Secure Desktop)."
+        },
+        {
+          "id": "notify-for-apps-msy5k3i8-sp3m",
+          "submodule": "System Configuration",
+          "term": "Notify for apps",
+          "tag": "UAC",
+          "definition": "Nivel de UAC donde Windows notifica solo cuando las apps intentan hacer cambios, pero no cuando el usuario cambia configuraciones de Windows. Es la opción habilitada por defecto."
+        },
+        {
+          "id": "notify-without-dimming-msy5k3i8-zhsw",
+          "submodule": "System Configuration",
+          "term": "Notify without dimming",
+          "tag": "UAC",
+          "definition": "Nivel de UAC igual a 'Notify for apps', pero sin que la pantalla se atenúe."
+        },
+        {
+          "id": "never-notify-msy5k3i8-pv81",
+          "submodule": "System Configuration",
+          "term": "Never notify",
+          "tag": "UAC",
+          "definition": "Nivel de UAC donde las notificaciones están desactivadas. Windows no advierte sobre ningún cambio hecho por el usuario o por apps."
+        },
+        {
+          "id": "secure-desktop-msy5k3i8-2bz2",
+          "submodule": "System Configuration",
+          "term": "Secure Desktop",
+          "tag": "UAC",
+          "definition": "Efecto de atenuación del escritorio que ocurre cuando UAC notifica al usuario en el nivel de seguridad 'Always notify'."
         }
       ]
     }
