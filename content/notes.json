@@ -3925,6 +3925,33 @@
             "Microsoft ofrece WMIC como interfaz de línea de comandos para WMI",
             "WMIC está deprecado desde Windows 10 versión 21H1, reemplazado por PowerShell"
           ]
+        },
+        {
+          "id": "system-information-msinfo32-msy63oqy-1luc",
+          "submodule": "System Configuration",
+          "title": "System Information (msinfo32)",
+          "explanation": "Msinfo32.exe es una herramienta incluida en Windows que recopila información sobre la computadora y muestra una vista completa del hardware, los componentes del sistema y el entorno de software, útil para diagnosticar problemas de la computadora.",
+          "keyPoints": [
+            "La información en System Summary se divide en tres secciones: Hardware Resources, Components y Software Environment",
+            "System Summary muestra especificaciones técnicas generales, como marca y modelo del procesador",
+            "Hardware Resources contiene información avanzada, no orientada al usuario promedio",
+            "Components muestra información específica sobre dispositivos de hardware instalados (algunas secciones no muestran datos, otras sí, como Display e Input)",
+            "Software Environment muestra información sobre software integrado en el sistema operativo y software instalado, incluyendo Environment Variables y Network Connections",
+            "Incluye una barra de búsqueda en la parte inferior para buscar información específica, por ejemplo una dirección IP dentro de Components"
+          ]
+        },
+        {
+          "id": "environment-variables-msy63oqy-f6hb",
+          "submodule": "System Configuration",
+          "title": "Environment Variables",
+          "explanation": "Las variables de entorno almacenan información sobre el entorno del sistema operativo, incluyendo detalles como la ruta del sistema operativo, la cantidad de procesadores usados y la ubicación de carpetas temporales. Estos datos son utilizados por el sistema operativo y otros programas.",
+          "keyPoints": [
+            "La variable WINDIR contiene la ubicación del directorio de instalación de Windows",
+            "Los programas pueden consultar el valor de esta variable para determinar dónde están los archivos del sistema operativo",
+            "Se pueden ver en msinfo32 dentro de Software Environment",
+            "También se pueden ver en Control Panel > System and Security > System > Advanced system settings > Environment Variables",
+            "O en Settings > System > About > system info > Advanced system settings > Environment Variables"
+          ]
         }
       ],
       "glossary": [
@@ -4228,6 +4255,20 @@
           "term": "WMIC",
           "tag": "",
           "definition": "Windows Management Instrumentation Command-line, interfaz de línea de comandos para WMI, deprecada desde Windows 10 versión 21H1 en favor de PowerShell."
+        },
+        {
+          "id": "msinfo32-msy63oqy-x0sq",
+          "submodule": "System Configuration",
+          "term": "Msinfo32",
+          "tag": "",
+          "definition": "Herramienta de Windows (System Information) que gathering información del hardware, componentes del sistema y entorno de software para diagnosticar problemas de la computadora."
+        },
+        {
+          "id": "environment-variables-msy63oqy-breb",
+          "submodule": "System Configuration",
+          "term": "Environment Variables",
+          "tag": "",
+          "definition": "Datos que almacenan información sobre el entorno del sistema operativo, como la ruta del sistema, el número de procesadores y la ubicación de carpetas temporales, utilizados por el sistema operativo y otros programas."
         }
       ]
     }
