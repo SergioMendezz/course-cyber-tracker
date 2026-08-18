@@ -3350,6 +3350,30 @@
           "command": "lusrmgr.msc",
           "explanation": "Comando que se ejecuta desde el cuadro de diálogo Run (accesible con clic derecho en el Menú Inicio > Run) para abrir la herramienta Local User and Group Management.",
           "example": ""
+        },
+        {
+          "id": "abrir-carpeta-de-startup-msy5hrkj-ana4",
+          "submodule": "System Configuration",
+          "title": "Abrir carpeta de Startup",
+          "command": "shell:startup",
+          "explanation": "Comando ejecutado desde el Run Dialog (Win + R) para abrir la carpeta Startup y ver los programas configurados para ejecutarse automáticamente al iniciar sesión.",
+          "example": ""
+        },
+        {
+          "id": "windows-troubleshooting-msy5hrkj-e4d0",
+          "submodule": "System Configuration",
+          "title": "Windows Troubleshooting",
+          "command": "C:\\Windows\\System32\\control.exe /name Microsoft.Troubleshooting",
+          "explanation": "Comando para abrir la herramienta de Windows Troubleshooting desde la pestaña Tools de MSConfig.",
+          "example": ""
+        },
+        {
+          "id": "abrir-control-panel-msy5hrkj-u2p5",
+          "submodule": "System Configuration",
+          "title": "Abrir Control Panel",
+          "command": "control.exe",
+          "explanation": "Comando (nombre del ejecutable) que abre el Panel de Control de Windows.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -3678,6 +3702,101 @@
             "El prompt de UAC muestra el nombre de la cuenta de administrador integrada y pide su contraseña",
             "Si no se ingresa contraseña a tiempo, el prompt desaparece y la instalación no se realiza"
           ]
+        },
+        {
+          "id": "system-configuration-msconfig-msy5hrki-uhpn",
+          "submodule": "System Configuration",
+          "title": "System Configuration (MSConfig)",
+          "explanation": "El utilitario System Configuration (MSConfig) se usa para troubleshooting avanzado, principalmente para diagnosticar problemas de arranque (startup). Se necesitan derechos de administrador local para abrirlo. Tiene cinco pestañas: General, Boot, Services, Startup y Tools.",
+          "keyPoints": [
+            "Requiere derechos de administrador local",
+            "Su propósito principal es diagnosticar problemas de startup",
+            "Cinco pestañas: General, Boot, Services, Startup, Tools"
+          ]
+        },
+        {
+          "id": "pestana-general-msy5hrkj-52xp",
+          "submodule": "System Configuration",
+          "title": "Pestaña General",
+          "explanation": "Permite seleccionar qué dispositivos y servicios cargará Windows al iniciar. Las opciones son: Normal, Diagnostic o Selective.",
+          "keyPoints": [
+            "Normal",
+            "Diagnostic",
+            "Selective"
+          ]
+        },
+        {
+          "id": "pestana-boot-msy5hrkj-p3oa",
+          "submodule": "System Configuration",
+          "title": "Pestaña Boot",
+          "explanation": "Permite definir varias opciones de arranque para el sistema operativo.",
+          "keyPoints": []
+        },
+        {
+          "id": "pestana-services-msy5hrkj-z5do",
+          "submodule": "System Configuration",
+          "title": "Pestaña Services",
+          "explanation": "Lista todos los servicios configurados en el sistema sin importar su estado (corriendo o detenido). Un servicio es un tipo especial de aplicación que corre en segundo plano.",
+          "keyPoints": []
+        },
+        {
+          "id": "pestana-startup-en-msconfig-msy5hrkj-ljxq",
+          "submodule": "System Configuration",
+          "title": "Pestaña Startup en MSConfig",
+          "explanation": "Microsoft recomienda usar el Administrador de Tareas (taskmgr) para gestionar (habilitar/deshabilitar) elementos de inicio, ya que MSConfig no es un programa de gestión de startup. En servidores Windows, la pestaña Startup no muestra nada y el Task Manager tampoco muestra pestaña Startup, a diferencia de Windows 10/11.",
+          "keyPoints": [
+            "Usar Task Manager (taskmgr) para gestionar startup items",
+            "MSConfig no gestiona el startup",
+            "Windows Server maneja el startup distinto a Windows client"
+          ]
+        },
+        {
+          "id": "carpeta-de-startup-en-servidores-windows-msy5hrkj-3zf8",
+          "submodule": "System Configuration",
+          "title": "Carpeta de Startup en servidores Windows",
+          "explanation": "En máquinas Windows Server, la única forma confiable de ver los elementos de inicio a nivel usuario es a través de la carpeta Startup, accesible con shell:startup desde el Run Dialog (Win + R). Muestra los programas configurados como accesos directos o ejecutables que se lanzan al iniciar sesión.",
+          "keyPoints": [
+            "Acceso: Win + R -> shell:startup",
+            "Muestra shortcuts/ejecutables de inicio automático"
+          ]
+        },
+        {
+          "id": "pestana-tools-msy5hrkj-09dd",
+          "submodule": "System Configuration",
+          "title": "Pestaña Tools",
+          "explanation": "Contiene una lista de utilidades (tools) que se pueden ejecutar para configurar más el sistema operativo, cada una con una breve descripción. La sección 'Selected command' muestra el comando correspondiente a la herramienta seleccionada, que puede lanzarse desde run prompt, command prompt o el botón Launch.",
+          "keyPoints": []
+        },
+        {
+          "id": "advanced-system-settings-msy5hrkj-ucw4",
+          "submodule": "Advanced System Settings",
+          "title": "Advanced System Settings",
+          "explanation": "Windows ofrece configuraciones adicionales para controlar el rendimiento y la recuperación del sistema. Se accede buscando 'View advanced system settings', lo cual abre el panel System Properties.",
+          "keyPoints": []
+        },
+        {
+          "id": "page-file-archivo-de-paginacion-msy5hrkj-7avt",
+          "submodule": "Advanced System Settings",
+          "title": "Page File (archivo de paginación)",
+          "explanation": "Windows usa un page file como espacio extra de memoria virtual cuando la RAM física se llena, previniendo lentitud o cierres de aplicaciones por falta de memoria. Se puede ver o modificar desde Advanced > Settings (Performance tab) > Advanced > Virtual Memory. Muestra la unidad donde está el page file, tamaño inicial, tamaño máximo y si Windows lo administra automáticamente.",
+          "keyPoints": [
+            "Extra de memoria virtual cuando la RAM se llena",
+            "Configurable en Performance Options > Advanced",
+            "Muestra unidad, tamaño inicial, tamaño máximo y gestión automática"
+          ]
+        },
+        {
+          "id": "startup-and-recovery-crash-dump-msy5hrkj-scex",
+          "submodule": "Advanced System Settings",
+          "title": "Startup and Recovery / Crash Dump",
+          "explanation": "Windows puede crear un archivo de volcado de memoria (crash dump) cuando ocurre un error crítico como un Blue Screen of Death, para ayudar a analistas o administradores a entender la causa. Se configura en Advanced > Settings bajo Startup and Recovery. El dropdown 'Write debugging information' define el tipo de dump y cuánta información se guarda.",
+          "keyPoints": [
+            "Automatic memory dump",
+            "Kernel memory dump",
+            "Small memory dump (256 KB)",
+            "Complete memory dump",
+            "None"
+          ]
         }
       ],
       "glossary": [
@@ -3848,6 +3967,34 @@
           "term": "Shield icon",
           "tag": "",
           "definition": "Ícono con forma de escudo que se superpone al ícono predeterminado de un programa, indicando que UAC solicitará privilegios elevados para ejecutarlo."
+        },
+        {
+          "id": "msconfig-msy5hrkj-n3zd",
+          "submodule": "System Configuration",
+          "term": "MSConfig",
+          "tag": "",
+          "definition": "System Configuration utility usada para troubleshooting avanzado, especialmente para diagnosticar problemas de arranque."
+        },
+        {
+          "id": "service-msy5hrkj-bhy3",
+          "submodule": "System Configuration",
+          "term": "Service",
+          "tag": "",
+          "definition": "Un tipo especial de aplicación que corre en segundo plano en el sistema."
+        },
+        {
+          "id": "page-file-msy5hrkj-uk5a",
+          "submodule": "Advanced System Settings",
+          "term": "Page File",
+          "tag": "",
+          "definition": "Espacio de memoria virtual extra que usa Windows cuando la RAM física se llena, para prevenir lentitud o crashes de aplicaciones."
+        },
+        {
+          "id": "crash-dump-msy5hrkj-tfbi",
+          "submodule": "Advanced System Settings",
+          "term": "Crash Dump",
+          "tag": "",
+          "definition": "Archivo que Windows crea cuando ocurre un error crítico (como un Blue Screen of Death), útil para que administradores o analistas entiendan qué falló."
         }
       ]
     }
