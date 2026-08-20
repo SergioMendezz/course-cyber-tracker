@@ -3454,6 +3454,22 @@
           "command": "WF.msc",
           "explanation": "Comando para abrir directamente la consola de Windows Defender Firewall con configuración avanzada.",
           "example": ""
+        },
+        {
+          "id": "resetear-contrasena-de-un-usuario-delegado-mt14ccve-huzv",
+          "submodule": "Cuentas de Usuario",
+          "title": "Resetear contraseña de un usuario delegado",
+          "command": "Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose",
+          "explanation": "Permite a un usuario con control delegado (como Phillip) resetear la contraseña de otro usuario (Sophie) usando PowerShell, sin necesidad de acceder a Active Directory Users and Computers.",
+          "example": ""
+        },
+        {
+          "id": "forzar-cambio-de-contrasena-en-el-proximo-inicio-de-sesion-mt14ccve-j8h0",
+          "submodule": "Cuentas de Usuario",
+          "title": "Forzar cambio de contraseña en el próximo inicio de sesión",
+          "command": "Set-ADUser -ChangePasswordAtLogon $true -Identity sophie -Verbose",
+          "explanation": "Fuerza a que el usuario especificado (Sophie) deba cambiar su contraseña la próxima vez que inicie sesión, útil después de un reset de contraseña realizado por otro usuario delegado.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -4472,6 +4488,30 @@
             "Security Groups: otorgar permisos sobre recursos",
             "Un usuario solo puede estar en una OU, pero puede estar en múltiples grupos"
           ]
+        },
+        {
+          "id": "proteccion-contra-eliminacion-accidental-de-ous-mt14ccve-6ttu",
+          "submodule": "Cuentas de Usuario",
+          "title": "Protección contra eliminación accidental de OUs",
+          "explanation": "Por defecto, las OUs en Active Directory están protegidas contra eliminación accidental. Para poder eliminarlas, primero hay que habilitar 'Advanced Features' en el menú View de Active Directory Users and Computers, lo cual muestra contenedores adicionales. Luego, en las propiedades de la OU, pestaña Object, hay que desmarcar la casilla de protección contra eliminación accidental antes de poder borrarla.",
+          "keyPoints": [
+            "Las OUs están protegidas por defecto contra borrado accidental",
+            "Hay que habilitar Advanced Features en el menú View",
+            "La opción para desproteger está en Properties > pestaña Object",
+            "Al eliminar una OU protegida se eliminan también sus usuarios, grupos y sub-OUs"
+          ]
+        },
+        {
+          "id": "delegacion-de-control-sobre-ous-mt14ccve-z0fm",
+          "submodule": "Cuentas de Usuario",
+          "title": "Delegación de control sobre OUs",
+          "explanation": "La delegación permite otorgar a usuarios específicos privilegios para realizar tareas administrativas avanzadas sobre ciertas OUs, sin necesidad de que un administrador de dominio intervenga. Un caso común es delegar a soporte de IT la capacidad de resetear contraseñas de usuarios de bajo privilegio en departamentos específicos. Se realiza haciendo clic derecho en la OU y seleccionando 'Delegate Control', luego especificando el usuario y la tarea a delegar (por ejemplo, reset de contraseñas).",
+          "keyPoints": [
+            "Se accede con clic derecho en la OU > Delegate Control",
+            "Se especifica el usuario a quien se delega el control",
+            "Se elige la tarea específica, por ejemplo reset de passwords",
+            "Permite dar privilegios granulares sin hacer al usuario Domain Administrator"
+          ]
         }
       ],
       "glossary": [
@@ -5146,6 +5186,20 @@
           "term": "Organizational Unit (OU)",
           "tag": "",
           "definition": "Objeto contenedor en Active Directory usado para clasificar usuarios y máquinas, principalmente para aplicar políticas consistentes según su rol o departamento. Un usuario solo puede pertenecer a una OU a la vez."
+        },
+        {
+          "id": "delegation-delegacion-de-control-mt14ccve-r2sx",
+          "submodule": "Cuentas de Usuario",
+          "term": "Delegation (Delegación de control)",
+          "tag": "",
+          "definition": "Mecanismo de Active Directory que permite otorgar a usuarios específicos privilegios para realizar tareas administrativas sobre OUs sin necesidad de ser Domain Administrator."
+        },
+        {
+          "id": "advanced-features-mt14ccve-646p",
+          "submodule": "Cuentas de Usuario",
+          "term": "Advanced Features",
+          "tag": "",
+          "definition": "Opción del menú View en Active Directory Users and Computers que muestra contenedores adicionales y habilita opciones avanzadas, como desactivar la protección contra eliminación accidental de OUs."
         }
       ]
     }
