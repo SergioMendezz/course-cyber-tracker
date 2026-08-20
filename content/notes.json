@@ -4059,6 +4059,88 @@
             "Desde Windows 10 solo se puede posponer, no evitar, la actualización",
             "Existen opciones para programar el reinicio requerido"
           ]
+        },
+        {
+          "id": "virus-threat-protection-mt10rcmo-w87w",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Virus & Threat Protection",
+          "explanation": "Virus & threat protection en Windows Security se divide en dos partes: Current threats y Virus & threat protection settings. Permite gestionar escaneos, revisar el historial de amenazas y configurar opciones de protección contra malware.",
+          "keyPoints": [
+            "Se divide en 'Current threats' y 'Virus & threat protection settings'",
+            "Permite realizar escaneos manuales y ver el historial de amenazas",
+            "Incluye configuración de protección en tiempo real y en la nube"
+          ]
+        },
+        {
+          "id": "scan-options-mt10rcmo-0hnz",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Scan Options",
+          "explanation": "Dentro de Current threats, existen tres tipos de escaneo disponibles según la necesidad del usuario.",
+          "keyPoints": [
+            "Quick scan: revisa carpetas donde comúnmente se encuentran amenazas",
+            "Full scan: revisa todos los archivos y programas en ejecución en el disco duro; puede tardar más de una hora",
+            "Custom scan: permite elegir qué archivos y ubicaciones revisar"
+          ]
+        },
+        {
+          "id": "threat-history-mt10rcmo-zax9",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Threat History",
+          "explanation": "Threat history muestra el estado de las amenazas detectadas por Windows Defender Antivirus, incluyendo el último escaneo realizado y las amenazas puestas en cuarentena o permitidas.",
+          "keyPoints": [
+            "Last scan: muestra el último escaneo automático realizado por el antivirus",
+            "Quarantined threats: amenazas aisladas y bloqueadas para no ejecutarse, eliminadas periódicamente",
+            "Allowed threats: elementos identificados como amenazas que el usuario permitió ejecutar",
+            "Advertencia: solo permitir amenazas si se está 100% seguro de lo que se está haciendo"
+          ]
+        },
+        {
+          "id": "manage-settings-virus-threat-protection-settings-mt10rcmo-ncwk",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Manage Settings (Virus & Threat Protection Settings)",
+          "explanation": "Sección donde se configuran las distintas funciones de protección de Windows Defender Antivirus.",
+          "keyPoints": [
+            "Real-time protection: localiza y detiene malware antes de que se instale o ejecute",
+            "Cloud-delivered protection: brinda protección más rápida usando datos actualizados en la nube",
+            "Automatic sample submission: envía muestras de archivos a Microsoft para mejorar la protección",
+            "Controlled folder access: protege archivos, carpetas y áreas de memoria de cambios no autorizados por apps maliciosas o desconocidas",
+            "Exclusions: permite excluir archivos o carpetas del escaneo para reducir falsos positivos",
+            "Notifications: envía notificaciones sobre el estado de salud y seguridad del dispositivo",
+            "Advertencia: los elementos excluidos podrían contener amenazas que vuelvan vulnerable al dispositivo"
+          ]
+        },
+        {
+          "id": "controlled-folder-access-mt10rcmo-fkdk",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Controlled Folder Access",
+          "explanation": "Función que, si está habilitada, protege archivos, carpetas y áreas de memoria del dispositivo contra cambios no autorizados realizados por aplicaciones maliciosas o desconocidas. Solo las apps aprobadas y de confianza pueden modificar los archivos en las carpetas protegidas.",
+          "keyPoints": [
+            "Se habilita desde 'Manage controlled folder access'",
+            "Solo apps aprobadas pueden modificar archivos protegidos",
+            "Es requisito para habilitar Ransomware protection"
+          ]
+        },
+        {
+          "id": "exclusions-mt10rcmo-h8ch",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Exclusions",
+          "explanation": "Windows Defender Antivirus permite excluir archivos o carpetas del escaneo antivirus para reducir falsos positivos. Los administradores pueden no querer que el antivirus escanee archivos o carpetas específicas, agregándolas a la lista de exclusiones.",
+          "keyPoints": [
+            "Se agregan desde 'Add or remove exclusions'",
+            "Reduce falsos positivos",
+            "Advertencia: los elementos excluidos podrían contener amenazas reales"
+          ]
+        },
+        {
+          "id": "ransomware-protection-mt10rcmo-e9rl",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Ransomware Protection",
+          "explanation": "Ransomware protection requiere que Controlled folder access esté habilitado, lo cual a su vez requiere que Real-time protection esté habilitado.",
+          "keyPoints": [
+            "Depende de Controlled folder access",
+            "Controlled folder access depende de Real-time protection",
+            "Real-time protection debe estar siempre actualizado y habilitado en dispositivos personales, salvo que se use un producto de terceros equivalente"
+          ]
         }
       ],
       "glossary": [
@@ -4404,6 +4486,83 @@
           "term": "Patch Tuesday",
           "tag": "",
           "definition": "Segundo martes de cada mes, día en que Microsoft suele publicar las actualizaciones regulares de Windows."
+        },
+        {
+          "id": "quick-scan-mt10rcmo-4xsp",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Quick scan",
+          "tag": "",
+          "definition": "Revisa las carpetas del sistema donde comúnmente se encuentran amenazas."
+        },
+        {
+          "id": "full-scan-mt10rcmo-y1sy",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Full scan",
+          "tag": "",
+          "definition": "Revisa todos los archivos y programas en ejecución en el disco duro; puede tardar más de una hora."
+        },
+        {
+          "id": "custom-scan-mt10rcmo-mi4j",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Custom scan",
+          "tag": "",
+          "definition": "Permite elegir qué archivos y ubicaciones se desean revisar."
+        },
+        {
+          "id": "quarantined-threats-mt10rcmo-7kht",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Quarantined threats",
+          "tag": "",
+          "definition": "Amenazas que han sido aisladas e impedidas de ejecutarse en el dispositivo; se eliminan periódicamente."
+        },
+        {
+          "id": "allowed-threats-mt10rcmo-folc",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Allowed threats",
+          "tag": "",
+          "definition": "Elementos identificados como amenazas que el usuario permitió ejecutar en su dispositivo."
+        },
+        {
+          "id": "real-time-protection-mt10rcmo-1ono",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Real-time protection",
+          "tag": "",
+          "definition": "Localiza y detiene malware antes de que se instale o ejecute en el dispositivo."
+        },
+        {
+          "id": "cloud-delivered-protection-mt10rcmo-reyp",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Cloud-delivered protection",
+          "tag": "",
+          "definition": "Brinda protección aumentada y más rápida mediante acceso a los datos de protección más recientes en la nube."
+        },
+        {
+          "id": "automatic-sample-submission-mt10rcmo-29mj",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Automatic sample submission",
+          "tag": "",
+          "definition": "Envía archivos de muestra a Microsoft para ayudar a proteger al usuario y a otros de posibles amenazas."
+        },
+        {
+          "id": "controlled-folder-access-mt10rcmo-z0um",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Controlled folder access",
+          "tag": "",
+          "definition": "Función que protege archivos, carpetas y áreas de memoria del dispositivo contra cambios no autorizados de aplicaciones maliciosas o desconocidas."
+        },
+        {
+          "id": "exclusions-mt10rcmo-m7mf",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Exclusions",
+          "tag": "",
+          "definition": "Archivos o carpetas excluidos del escaneo antivirus para reducir falsos positivos."
+        },
+        {
+          "id": "ransomware-protection-mt10rcmo-udoo",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Ransomware protection",
+          "tag": "",
+          "definition": "Protección contra ransomware que requiere Controlled folder access habilitado, el cual a su vez requiere Real-time protection habilitado."
         }
       ]
     }
