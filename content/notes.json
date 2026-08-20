@@ -4263,6 +4263,49 @@
             "El malware puede buscar y eliminar shadow copies",
             "Sin shadow copies, la recuperación tras ransomware depende de backups offline/off-site"
           ]
+        },
+        {
+          "id": "problema-de-administracion-sin-dominio-mt11lsac-kq8w",
+          "submodule": "Windows Domain",
+          "title": "Problema de administración sin dominio",
+          "explanation": "En una red pequeña (ej. 5 computadoras, 5 empleados) es posible configurar cada equipo manualmente, crear usuarios uno por uno y dar soporte presencial. Sin embargo, al crecer la empresa (ej. 157 computadoras, 320 usuarios en 4 oficinas), administrar cada equipo como entidad separada, configurar políticas manualmente por usuario y dar soporte in situ deja de ser viable.",
+          "keyPoints": [
+            "Redes pequeñas permiten administración manual equipo por equipo",
+            "Al crecer la red, la gestión manual se vuelve inviable",
+            "Se necesita un sistema centralizado de administración"
+          ]
+        },
+        {
+          "id": "que-es-un-windows-domain-mt11lsac-d9j9",
+          "submodule": "Windows Domain",
+          "title": "Qué es un Windows Domain",
+          "explanation": "Un Windows Domain es un grupo de usuarios y computadoras bajo la administración de una empresa determinada. Su idea principal es centralizar la administración de los componentes comunes de una red de computadoras Windows en un único repositorio llamado Active Directory (AD). El servidor que ejecuta los servicios de Active Directory se conoce como Domain Controller (DC).",
+          "keyPoints": [
+            "Agrupa usuarios y computadoras bajo administración centralizada",
+            "Usa Active Directory como repositorio central",
+            "El Domain Controller (DC) es el servidor que corre los servicios de AD"
+          ]
+        },
+        {
+          "id": "ventajas-de-un-windows-domain-mt11lsac-h91p",
+          "submodule": "Windows Domain",
+          "title": "Ventajas de un Windows Domain",
+          "explanation": "Las principales ventajas de tener un dominio Windows configurado son la gestión centralizada de identidades, donde todos los usuarios de la red pueden configurarse desde Active Directory con mínimo esfuerzo, y la gestión de políticas de seguridad, que permite configurar políticas directamente desde Active Directory y aplicarlas a usuarios y computadoras de toda la red según sea necesario.",
+          "keyPoints": [
+            "Gestión centralizada de identidades desde Active Directory",
+            "Gestión de políticas de seguridad aplicables a toda la red"
+          ]
+        },
+        {
+          "id": "ejemplo-real-de-active-directory-mt11lsac-m37h",
+          "submodule": "Windows Domain",
+          "title": "Ejemplo real de Active Directory",
+          "explanation": "En redes escolares o universitarias, se suele proveer un usuario y contraseña válidos en cualquier computadora del campus. Al ingresar las credenciales en una máquina, esta reenvía el proceso de autenticación a Active Directory, donde se validan las credenciales. Así, las credenciales no necesitan existir en cada máquina individualmente, sino que están disponibles en toda la red. Active Directory también es el componente que permite restringir el acceso al panel de control mediante políticas desplegadas en la red, quitando privilegios administrativos a los usuarios.",
+          "keyPoints": [
+            "La autenticación se reenvía a Active Directory para validarse",
+            "Las credenciales están disponibles en toda la red sin duplicarse por máquina",
+            "Las políticas de AD pueden restringir privilegios administrativos"
+          ]
         }
       ],
       "glossary": [
@@ -4762,6 +4805,27 @@
           "term": "System Volume Information",
           "tag": "",
           "definition": "Carpeta en cada unidad con protección habilitada donde se almacenan las Volume Shadow Copies."
+        },
+        {
+          "id": "windows-domain-mt11lsac-om0f",
+          "submodule": "Windows Domain",
+          "term": "Windows Domain",
+          "tag": "",
+          "definition": "Grupo de usuarios y computadoras bajo la administración de una empresa, cuya gestión se centraliza mediante Active Directory."
+        },
+        {
+          "id": "active-directory-ad-mt11lsac-318y",
+          "submodule": "Windows Domain",
+          "term": "Active Directory (AD)",
+          "tag": "",
+          "definition": "Repositorio central donde se almacenan y gestionan los usuarios, computadoras y políticas de seguridad de una red bajo un Windows Domain."
+        },
+        {
+          "id": "domain-controller-dc-mt11lsac-lf3w",
+          "submodule": "Windows Domain",
+          "term": "Domain Controller (DC)",
+          "tag": "",
+          "definition": "Servidor encargado de ejecutar los servicios de Active Directory dentro de un Windows Domain."
         }
       ]
     }
