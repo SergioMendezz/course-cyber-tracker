@@ -3446,6 +3446,14 @@
           "command": "control /name Microsoft.WindowsUpdate",
           "explanation": "Permite acceder directamente a la configuración de Windows Update desde el cuadro de diálogo Run o desde CMD.",
           "example": ""
+        },
+        {
+          "id": "abrir-windows-defender-firewall-mt10vrr4-349r",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Abrir Windows Defender Firewall",
+          "command": "WF.msc",
+          "explanation": "Comando para abrir directamente la consola de Windows Defender Firewall con configuración avanzada.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -4141,6 +4149,50 @@
             "Controlled folder access depende de Real-time protection",
             "Real-time protection debe estar siempre actualizado y habilitado en dispositivos personales, salvo que se use un producto de terceros equivalente"
           ]
+        },
+        {
+          "id": "que-es-un-firewall-mt10vrr3-r4t8",
+          "submodule": "Windows Defender Antivirus",
+          "title": "¿Qué es un firewall?",
+          "explanation": "Un firewall controla qué tráfico puede pasar (y qué no) a través de los puertos de un dispositivo. El tráfico entra y sale de los dispositivos mediante puertos, y el firewall funciona como un guardia de seguridad que revisa la 'identificación' de todo lo que intenta entrar o salir.",
+          "keyPoints": [
+            "El tráfico fluye hacia y desde los dispositivos a través de puertos",
+            "El firewall controla qué está permitido pasar por esos puertos",
+            "Funciona como un guardia de seguridad verificando cada conexión entrante o saliente"
+          ]
+        },
+        {
+          "id": "perfiles-de-windows-firewall-mt10vrr3-j5uc",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Perfiles de Windows Firewall",
+          "explanation": "Windows Firewall ofrece tres perfiles: dominio, privado y público. El perfil de dominio aplica cuando el sistema puede autenticarse a un controlador de dominio. El perfil privado es asignado por el usuario y se usa para redes privadas o del hogar. El perfil público es el predeterminado y se usa para redes públicas como hotspots de Wi-Fi en cafeterías, aeropuertos u otros lugares. Al hacer clic en cualquier perfil, aparecen dos opciones: activar/desactivar el firewall y bloquear todas las conexiones entrantes.",
+          "keyPoints": [
+            "Dominio: para redes donde el sistema se autentica a un controlador de dominio",
+            "Privado: asignado por el usuario, para redes privadas o del hogar",
+            "Público: perfil predeterminado, para redes públicas como Wi-Fi de cafeterías o aeropuertos",
+            "Cada perfil permite activar/desactivar el firewall y bloquear todas las conexiones entrantes",
+            "Se recomienda dejar Windows Defender Firewall habilitado salvo que se sepa exactamente qué se está haciendo"
+          ]
+        },
+        {
+          "id": "permitir-una-app-a-traves-del-firewall-mt10vrr3-on8c",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Permitir una app a través del firewall",
+          "explanation": "Es posible ver la configuración actual de cualquier perfil de firewall, incluyendo qué aplicaciones tienen acceso en el perfil Privado y/o Público. Algunas apps ofrecen información adicional disponible mediante el botón Details.",
+          "keyPoints": [
+            "Se puede ver qué apps tienen acceso en cada perfil (Privado/Público)",
+            "El botón Details brinda información adicional sobre algunas apps"
+          ]
+        },
+        {
+          "id": "configuracion-avanzada-del-firewall-mt10vrr3-3zz2",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Configuración avanzada del firewall",
+          "explanation": "Configurar el Windows Defender Firewall está pensado para usuarios avanzados de Windows. Se recomienda consultar la documentación oficial de Microsoft sobre buenas prácticas antes de realizar cambios avanzados.",
+          "keyPoints": [
+            "Dirigido a usuarios avanzados",
+            "Consultar documentación de Microsoft sobre buenas prácticas antes de modificar"
+          ]
         }
       ],
       "glossary": [
@@ -4563,6 +4615,34 @@
           "term": "Ransomware protection",
           "tag": "",
           "definition": "Protección contra ransomware que requiere Controlled folder access habilitado, el cual a su vez requiere Real-time protection habilitado."
+        },
+        {
+          "id": "firewall-mt10vrr4-ghsg",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Firewall",
+          "tag": "",
+          "definition": "Componente que controla qué tráfico está permitido pasar a través de los puertos de un dispositivo, actuando como un guardia de seguridad para las conexiones entrantes y salientes."
+        },
+        {
+          "id": "domain-profile-mt10vrr4-7v81",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Domain profile",
+          "tag": "",
+          "definition": "Perfil de firewall que aplica a redes donde el sistema host puede autenticarse ante un controlador de dominio."
+        },
+        {
+          "id": "private-profile-mt10vrr4-2clf",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Private profile",
+          "tag": "",
+          "definition": "Perfil de firewall asignado por el usuario, utilizado para designar redes privadas o del hogar."
+        },
+        {
+          "id": "public-profile-mt10vrr4-6og2",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Public profile",
+          "tag": "",
+          "definition": "Perfil de firewall predeterminado, usado para designar redes públicas como hotspots de Wi-Fi en cafeterías o aeropuertos."
         }
       ]
     }
