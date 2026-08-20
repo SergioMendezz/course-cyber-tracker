@@ -4219,6 +4219,17 @@
           "title": "Exploit protection",
           "explanation": "Exploit protection está integrado en Windows 10 (y en Windows Server 2019) para ayudar a proteger el dispositivo contra ataques.",
           "keyPoints": []
+        },
+        {
+          "id": "bitlocker-drive-encryption-mt11711o-2g5n",
+          "submodule": "Sistemas de Archivos",
+          "title": "BitLocker Drive Encryption",
+          "explanation": "BitLocker Drive Encryption es una característica de protección de datos que se integra con el sistema operativo y aborda las amenazas de robo o exposición de datos provenientes de computadoras perdidas, robadas o dadas de baja de forma inapropiada.",
+          "keyPoints": [
+            "Protege contra robo o exposición de datos en equipos perdidos, robados o decomisionados incorrectamente",
+            "Ofrece la mejor protección en dispositivos que tienen TPM instalado",
+            "El feature de BitLocker no está incluido en la VM adjunta del curso"
+          ]
         }
       ],
       "glossary": [
@@ -4683,6 +4694,20 @@
           "term": "Exploit protection",
           "tag": "",
           "definition": "Característica integrada en Windows 10 y Windows Server 2019 que ayuda a proteger el dispositivo contra ataques."
+        },
+        {
+          "id": "bitlocker-mt11711o-xqia",
+          "submodule": "Sistemas de Archivos",
+          "term": "BitLocker",
+          "tag": "",
+          "definition": "Característica de protección de datos que integra con el sistema operativo para proteger contra el robo o exposición de datos en computadoras perdidas, robadas o decomisionadas inapropiadamente."
+        },
+        {
+          "id": "tpm-trusted-platform-module-mt11711o-z63u",
+          "submodule": "Sistemas de Archivos",
+          "term": "TPM (Trusted Platform Module)",
+          "tag": "",
+          "definition": "Componente de hardware instalado en muchas computadoras nuevas por los fabricantes. Trabaja junto con BitLocker (versión 1.2 o posterior) para ayudar a proteger los datos del usuario y asegurar que la computadora no haya sido manipulada mientras estaba offline."
         }
       ]
     }
