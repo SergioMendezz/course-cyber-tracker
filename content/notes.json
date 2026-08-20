@@ -4512,6 +4512,21 @@
             "Se elige la tarea específica, por ejemplo reset de passwords",
             "Permite dar privilegios granulares sin hacer al usuario Domain Administrator"
           ]
+        },
+        {
+          "id": "organizacion-de-dispositivos-en-active-directory-mediante-ous-mt14cqbj-k36w",
+          "submodule": "Windows Domain",
+          "title": "Organización de dispositivos en Active Directory mediante OUs",
+          "explanation": "Por defecto, todas las máquinas que se unen a un dominio (excepto los DCs) se colocan en el contenedor llamado 'Computers'. Tener todos los dispositivos ahí no es ideal, ya que probablemente se quieran políticas distintas para servidores y para las máquinas que usan los usuarios normales a diario. Un buen punto de partida es segregar los dispositivos según su uso, dividiéndolos al menos en tres categorías: Workstations, Servers y Domain Controllers. Es recomendable crear OUs separadas para Workstations y Servers (los Domain Controllers ya tienen su propia OU creada por Windows), ubicándolas directamente bajo el contenedor del dominio. Luego se deben mover las PCs y laptops a la OU de Workstations, y los servidores a la OU de Servers, para poder configurar políticas específicas para cada OU.",
+          "keyPoints": [
+            "Por defecto todas las máquinas (excepto DCs) se unen al contenedor 'Computers'",
+            "Es recomendable segregar dispositivos según su uso para aplicar políticas distintas",
+            "Workstations: dispositivos donde los usuarios hacen su trabajo diario, nunca deben tener un usuario privilegiado logueado",
+            "Servers: proveen servicios a usuarios u otros servidores",
+            "Domain Controllers: gestionan el dominio de Active Directory y contienen los hashes de contraseñas de todos los usuarios, son los dispositivos más sensibles de la red",
+            "Se deben crear OUs para Workstations y Servers bajo el contenedor del dominio (los DCs ya tienen su OU propia)",
+            "Mover las PCs/laptops a Workstations y los servidores a Servers desde el contenedor Computers permite configurar políticas por OU"
+          ]
         }
       ],
       "glossary": [
@@ -5200,6 +5215,34 @@
           "term": "Advanced Features",
           "tag": "",
           "definition": "Opción del menú View en Active Directory Users and Computers que muestra contenedores adicionales y habilita opciones avanzadas, como desactivar la protección contra eliminación accidental de OUs."
+        },
+        {
+          "id": "workstation-mt14cqbj-cup8",
+          "submodule": "Windows Domain",
+          "term": "Workstation",
+          "tag": "",
+          "definition": "Dispositivo dentro de un dominio de Active Directory donde un usuario inicia sesión para realizar su trabajo o actividades de navegación normales. No debería tener nunca un usuario privilegiado logueado."
+        },
+        {
+          "id": "server-mt14cqbj-dtac",
+          "submodule": "Windows Domain",
+          "term": "Server",
+          "tag": "",
+          "definition": "Dispositivo dentro de un dominio de Active Directory utilizado generalmente para proveer servicios a usuarios u otros servidores."
+        },
+        {
+          "id": "domain-controller-dc-mt14cqbj-e3yo",
+          "submodule": "Windows Domain",
+          "term": "Domain Controller (DC)",
+          "tag": "",
+          "definition": "Dispositivo que permite gestionar el dominio de Active Directory. Se considera el más sensible de la red porque contiene las contraseñas hasheadas de todas las cuentas de usuario del entorno."
+        },
+        {
+          "id": "computers-contenedor-mt14cqbj-6tf9",
+          "submodule": "Windows Domain",
+          "term": "Computers (contenedor)",
+          "tag": "",
+          "definition": "Contenedor por defecto de Active Directory donde se colocan todas las máquinas que se unen al dominio, excepto los Domain Controllers."
         }
       ]
     }
