@@ -3438,6 +3438,14 @@
           "command": "net help",
           "explanation": "Para el comando net, el parámetro /? no funciona para obtener ayuda; en su lugar se debe usar 'net help'. Por ejemplo, para ver la ayuda de 'net user', el comando es 'net help user'. La misma sintaxis sirve para otros subcomandos útiles como localgroup, use, share y session.",
           "example": "net help user"
+        },
+        {
+          "id": "abrir-windows-update-desde-run-o-cmd-mt10d8ub-mbmf",
+          "submodule": "System Configuration",
+          "title": "Abrir Windows Update desde Run o CMD",
+          "command": "control /name Microsoft.WindowsUpdate",
+          "explanation": "Permite acceder directamente a la configuración de Windows Update desde el cuadro de diálogo Run o desde CMD.",
+          "example": ""
         }
       ],
       "concepts": [
@@ -4027,6 +4035,30 @@
             "La GUI simplificó tareas complejas mediante clics",
             "El command prompt sigue disponible como método de interacción alternativo"
           ]
+        },
+        {
+          "id": "windows-update-mt10d8ua-tw1p",
+          "submodule": "System Configuration",
+          "title": "Windows Update",
+          "explanation": "Windows Update es un servicio proporcionado por Microsoft para brindar actualizaciones de seguridad, mejoras de funciones y parches para el sistema operativo Windows y otros productos de Microsoft, como Microsoft Defender.",
+          "keyPoints": [
+            "Las actualizaciones suelen publicarse el segundo martes de cada mes, día conocido como Patch Tuesday",
+            "Si una actualización es urgente, Microsoft puede publicarla fuera del Patch Tuesday",
+            "Se ubica en Settings",
+            "Puede accederse también desde el cuadro de diálogo Run o CMD con un comando específico"
+          ]
+        },
+        {
+          "id": "reinicio-obligatorio-tras-actualizaciones-windows-10-en-adelante-mt10d8ub-vn2y",
+          "submodule": "System Configuration",
+          "title": "Reinicio obligatorio tras actualizaciones (Windows 10 en adelante)",
+          "explanation": "Microsoft abordó el problema de los usuarios que posponían indefinidamente las actualizaciones. A partir de Windows 10, las actualizaciones ya no pueden ignorarse por completo: solo pueden posponerse temporalmente, pero eventualmente se instalan y el equipo se reinicia, garantizando que el dispositivo permanezca seguro.",
+          "keyPoints": [
+            "Antes los usuarios podían posponer o ignorar actualizaciones indefinidamente",
+            "Una de las razones era que las actualizaciones suelen requerir reinicio",
+            "Desde Windows 10 solo se puede posponer, no evitar, la actualización",
+            "Existen opciones para programar el reinicio requerido"
+          ]
         }
       ],
       "glossary": [
@@ -4365,6 +4397,13 @@
           "term": "net",
           "tag": "comando",
           "definition": "Comando usado principalmente para administrar recursos de red, que admite subcomandos como user, localgroup, use, share y session."
+        },
+        {
+          "id": "patch-tuesday-mt10d8ua-g213",
+          "submodule": "System Configuration",
+          "term": "Patch Tuesday",
+          "tag": "",
+          "definition": "Segundo martes de cada mes, día en que Microsoft suele publicar las actualizaciones regulares de Windows."
         }
       ]
     }
