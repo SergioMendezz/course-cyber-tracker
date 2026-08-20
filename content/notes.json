@@ -4193,6 +4193,32 @@
             "Dirigido a usuarios avanzados",
             "Consultar documentación de Microsoft sobre buenas prácticas antes de modificar"
           ]
+        },
+        {
+          "id": "microsoft-defender-smartscreen-mt10z5oz-k8g4",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Microsoft Defender SmartScreen",
+          "explanation": "Microsoft Defender SmartScreen protege contra sitios web y aplicaciones de phishing o malware, y contra la descarga de archivos potencialmente maliciosos. En esta sección se puede ver y cambiar su estado (Warn, Block o Off).",
+          "keyPoints": [
+            "Protege contra phishing y malware en sitios web y aplicaciones",
+            "Previene la descarga de archivos potencialmente maliciosos",
+            "El estado puede configurarse como Warn, Block o Off",
+            "Existe documentación oficial de Microsoft con más información"
+          ]
+        },
+        {
+          "id": "check-apps-and-files-mt10z5oz-z82w",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Check apps and files",
+          "explanation": "Windows Defender SmartScreen ayuda a proteger el dispositivo verificando aplicaciones y archivos no reconocidos provenientes de la web.",
+          "keyPoints": []
+        },
+        {
+          "id": "exploit-protection-mt10z5oz-qx1c",
+          "submodule": "Windows Defender Antivirus",
+          "title": "Exploit protection",
+          "explanation": "Exploit protection está integrado en Windows 10 (y en Windows Server 2019) para ayudar a proteger el dispositivo contra ataques.",
+          "keyPoints": []
         }
       ],
       "glossary": [
@@ -4643,6 +4669,20 @@
           "term": "Public profile",
           "tag": "",
           "definition": "Perfil de firewall predeterminado, usado para designar redes públicas como hotspots de Wi-Fi en cafeterías o aeropuertos."
+        },
+        {
+          "id": "microsoft-defender-smartscreen-mt10z5oz-mqqp",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Microsoft Defender SmartScreen",
+          "tag": "",
+          "definition": "Funcionalidad que protege contra sitios web y aplicaciones de phishing o malware, y contra la descarga de archivos potencialmente maliciosos."
+        },
+        {
+          "id": "exploit-protection-mt10z5oz-ib2m",
+          "submodule": "Windows Defender Antivirus",
+          "term": "Exploit protection",
+          "tag": "",
+          "definition": "Característica integrada en Windows 10 y Windows Server 2019 que ayuda a proteger el dispositivo contra ataques."
         }
       ]
     }
