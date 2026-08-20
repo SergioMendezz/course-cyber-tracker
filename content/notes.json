@@ -4230,6 +4230,39 @@
             "Ofrece la mejor protección en dispositivos que tienen TPM instalado",
             "El feature de BitLocker no está incluido en la VM adjunta del curso"
           ]
+        },
+        {
+          "id": "volume-shadow-copy-service-vss-mt11bd33-7hfv",
+          "submodule": "Advanced System Settings",
+          "title": "Volume Shadow Copy Service (VSS)",
+          "explanation": "Según Microsoft, el Volume Shadow Copy Service (VSS) coordina las acciones necesarias para crear una copia sombra consistente (también conocida como snapshot o copia en un punto en el tiempo) de los datos que se van a respaldar. Las Volume Shadow Copies se almacenan en la carpeta System Volume Information de cada unidad que tiene la protección habilitada.",
+          "keyPoints": [
+            "Coordina la creación de shadow copies (snapshots o copias en un punto en el tiempo)",
+            "Las copias se guardan en la carpeta System Volume Information de cada unidad protegida",
+            "Requiere que System Protection (VSS) esté habilitado"
+          ]
+        },
+        {
+          "id": "tareas-disponibles-con-vss-habilitado-mt11bd33-y6q4",
+          "submodule": "Advanced System Settings",
+          "title": "Tareas disponibles con VSS habilitado",
+          "explanation": "Si VSS está habilitado (System Protection activado), se pueden realizar varias tareas desde advanced system settings relacionadas con puntos de restauración.",
+          "keyPoints": [
+            "Crear un punto de restauración (restore point)",
+            "Realizar una restauración del sistema (system restore)",
+            "Configurar los ajustes de restauración (restore settings)",
+            "Eliminar puntos de restauración (delete restore points)"
+          ]
+        },
+        {
+          "id": "riesgo-de-seguridad-de-vss-ante-ransomware-mt11bd33-594j",
+          "submodule": "Advanced System Settings",
+          "title": "Riesgo de seguridad de VSS ante ransomware",
+          "explanation": "Desde una perspectiva de seguridad, los creadores de malware conocen esta función de Windows y escriben código en su malware para buscar estos archivos y eliminarlos. Hacer esto imposibilita la recuperación tras un ataque de ransomware a menos que se cuente con un backup offline u off-site.",
+          "keyPoints": [
+            "El malware puede buscar y eliminar shadow copies",
+            "Sin shadow copies, la recuperación tras ransomware depende de backups offline/off-site"
+          ]
         }
       ],
       "glossary": [
@@ -4708,6 +4741,27 @@
           "term": "TPM (Trusted Platform Module)",
           "tag": "",
           "definition": "Componente de hardware instalado en muchas computadoras nuevas por los fabricantes. Trabaja junto con BitLocker (versión 1.2 o posterior) para ayudar a proteger los datos del usuario y asegurar que la computadora no haya sido manipulada mientras estaba offline."
+        },
+        {
+          "id": "vss-volume-shadow-copy-service-mt11bd33-4bpo",
+          "submodule": "Advanced System Settings",
+          "term": "VSS (Volume Shadow Copy Service)",
+          "tag": "",
+          "definition": "Servicio de Windows que coordina la creación de shadow copies (snapshots o copias en un punto en el tiempo) de los datos para respaldo."
+        },
+        {
+          "id": "shadow-copy-mt11bd33-8ica",
+          "submodule": "Advanced System Settings",
+          "term": "Shadow Copy",
+          "tag": "",
+          "definition": "También conocida como snapshot o copia en un punto en el tiempo; copia consistente de los datos generada por VSS y almacenada en la carpeta System Volume Information."
+        },
+        {
+          "id": "system-volume-information-mt11bd33-bnws",
+          "submodule": "Advanced System Settings",
+          "term": "System Volume Information",
+          "tag": "",
+          "definition": "Carpeta en cada unidad con protección habilitada donde se almacenan las Volume Shadow Copies."
         }
       ]
     }
