@@ -4380,6 +4380,98 @@
             "OUs: aplicación de políticas, un usuario solo pertenece a una OU",
             "Security Groups: otorgamiento de permisos sobre recursos, un usuario puede pertenecer a varios grupos"
           ]
+        },
+        {
+          "id": "active-directory-domain-service-ad-ds-mt1313w4-usj6",
+          "submodule": "Windows Domain",
+          "title": "Active Directory Domain Service (AD DS)",
+          "explanation": "El núcleo de cualquier Windows Domain es el Active Directory Domain Service (AD DS). Este servicio actúa como un catálogo que contiene la información de todos los 'objetos' que existen en la red, como usuarios, grupos, máquinas, impresoras y shares, entre otros.",
+          "keyPoints": [
+            "Actúa como catálogo de objetos de red",
+            "Soporta usuarios, grupos, máquinas, impresoras y shares"
+          ]
+        },
+        {
+          "id": "usuarios-en-active-directory-mt1313w4-9ca2",
+          "submodule": "Windows Domain",
+          "title": "Usuarios en Active Directory",
+          "explanation": "Los usuarios son uno de los tipos de objetos más comunes en Active Directory. Son considerados 'security principals', lo que significa que pueden ser autenticados por el dominio y se les pueden asignar privilegios sobre recursos como archivos o impresoras. Un security principal es un objeto que puede actuar sobre recursos en la red.",
+          "keyPoints": [
+            "Pueden representar personas (empleados) o servicios (IIS, MSSQL)",
+            "Los usuarios de servicio solo tienen los privilegios necesarios para ejecutar su servicio específico",
+            "Son security principals: pueden ser autenticados y tener privilegios asignados"
+          ]
+        },
+        {
+          "id": "machines-en-active-directory-mt1313w4-2ru2",
+          "submodule": "Windows Domain",
+          "title": "Machines en Active Directory",
+          "explanation": "Las máquinas son otro tipo de objeto dentro de Active Directory. Por cada computadora que se une al dominio, se crea un objeto de máquina. Las máquinas también son consideradas 'security principals' y se les asigna una cuenta como a cualquier usuario regular, aunque con derechos limitados dentro del dominio.",
+          "keyPoints": [
+            "Se crea un objeto de máquina por cada computadora que se une al dominio",
+            "Las cuentas de máquina son administradores locales en su computadora asignada",
+            "Las contraseñas de las cuentas de máquina se rotan automáticamente y suelen tener 120 caracteres aleatorios",
+            "El nombre de la cuenta de máquina es el nombre de la computadora seguido de un signo de dólar ($)"
+          ]
+        },
+        {
+          "id": "security-groups-en-active-directory-mt1313w4-unay",
+          "submodule": "Windows Domain",
+          "title": "Security Groups en Active Directory",
+          "explanation": "Los security groups permiten definir grupos de usuarios para asignar derechos de acceso a archivos u otros recursos a grupos enteros en lugar de a usuarios individuales, mejorando la manejabilidad. Los security groups también son considerados security principals y por lo tanto pueden tener privilegios sobre recursos de la red.",
+          "keyPoints": [
+            "Permiten asignar privilegios a múltiples usuarios agregándolos al grupo",
+            "Son security principals",
+            "Los grupos pueden contener usuarios, máquinas y otros grupos",
+            "Un usuario puede pertenecer a muchos grupos"
+          ]
+        },
+        {
+          "id": "active-directory-users-and-computers-mt1313w4-xq73",
+          "submodule": "Windows Domain",
+          "title": "Active Directory Users and Computers",
+          "explanation": "Para configurar usuarios, grupos o máquinas en Active Directory, se debe iniciar sesión en el Domain Controller y ejecutar 'Active Directory Users and Computers' desde el menú inicio. Esto abre una ventana donde se puede ver la jerarquía de usuarios, computadoras y grupos que existen en el dominio, organizados en Organizational Units (OUs).",
+          "keyPoints": [
+            "Se ejecuta desde el Domain Controller",
+            "Muestra la jerarquía de usuarios, computadoras y grupos",
+            "Permite crear, eliminar o modificar objetos y resetear contraseñas"
+          ]
+        },
+        {
+          "id": "organizational-units-ous-mt1313w4-1wgd",
+          "submodule": "Windows Domain",
+          "title": "Organizational Units (OUs)",
+          "explanation": "Las OUs son objetos contenedor que permiten clasificar usuarios y máquinas, usados principalmente para definir conjuntos de usuarios con requerimientos de políticas similares. Un usuario solo puede pertenecer a una única OU a la vez. Es típico que las OUs imiten la estructura del negocio, permitiendo desplegar eficientemente políticas base que aplican a departamentos enteros.",
+          "keyPoints": [
+            "Permiten clasificar usuarios y máquinas para aplicar políticas",
+            "Un usuario solo puede ser miembro de una OU a la vez",
+            "Suelen imitar la estructura organizacional de la empresa (departamentos)",
+            "Se pueden definir arbitrariamente aunque el modelo típico sigue la estructura del negocio"
+          ]
+        },
+        {
+          "id": "contenedores-por-defecto-en-active-directory-mt1313w4-s5qy",
+          "submodule": "Windows Domain",
+          "title": "Contenedores por defecto en Active Directory",
+          "explanation": "Windows crea automáticamente varios contenedores por defecto además de las OUs personalizadas: Builtin, Computers, Domain Controllers, Users y Managed Service Accounts, cada uno con un propósito específico dentro del dominio.",
+          "keyPoints": [
+            "Builtin: contiene grupos por defecto disponibles para cualquier host Windows",
+            "Computers: contiene por defecto las máquinas que se unen a la red",
+            "Domain Controllers: OU por defecto que contiene los DCs de la red",
+            "Users: usuarios y grupos por defecto de contexto dominio-wide",
+            "Managed Service Accounts: contiene cuentas usadas por servicios del dominio"
+          ]
+        },
+        {
+          "id": "security-groups-vs-ous-mt1313w4-88i4",
+          "submodule": "Windows Domain",
+          "title": "Security Groups vs OUs",
+          "explanation": "Aunque tanto los grupos de seguridad como las OUs se usan para clasificar usuarios y computadoras, sus propósitos son completamente diferentes. Las OUs se usan para aplicar políticas a usuarios y computadoras según su rol específico en la empresa, mientras que los Security Groups se usan para otorgar permisos sobre recursos, como acceso a carpetas compartidas o impresoras de red.",
+          "keyPoints": [
+            "OUs: aplicar políticas de configuración según el rol del usuario",
+            "Security Groups: otorgar permisos sobre recursos",
+            "Un usuario solo puede estar en una OU, pero puede estar en múltiples grupos"
+          ]
         }
       ],
       "glossary": [
@@ -4970,6 +5062,90 @@
           "term": "Organizational Unit (OU)",
           "tag": "",
           "definition": "Objeto contenedor que permite clasificar usuarios y máquinas, usado principalmente para definir conjuntos de usuarios con requisitos de políticas similares. Un usuario solo puede pertenecer a una OU a la vez."
+        },
+        {
+          "id": "active-directory-domain-service-ad-ds-mt1313w4-e44l",
+          "submodule": "Windows Domain",
+          "term": "Active Directory Domain Service (AD DS)",
+          "tag": "",
+          "definition": "Servicio central de un Windows Domain que actúa como catálogo de todos los objetos que existen en la red, como usuarios, grupos, máquinas, impresoras y shares."
+        },
+        {
+          "id": "security-principal-mt1313w4-o7db",
+          "submodule": "Windows Domain",
+          "term": "Security Principal",
+          "tag": "",
+          "definition": "Objeto que puede ser autenticado por el dominio y al que se le pueden asignar privilegios sobre recursos de la red, como usuarios, máquinas o security groups."
+        },
+        {
+          "id": "machine-account-mt1313w4-adr4",
+          "submodule": "Windows Domain",
+          "term": "Machine Account",
+          "tag": "",
+          "definition": "Cuenta creada automáticamente para cada computadora que se une al dominio, con el nombre de la computadora seguido de un signo de dólar ($). Actúa como administrador local en su computadora asignada."
+        },
+        {
+          "id": "security-group-mt1313w4-nx1p",
+          "submodule": "Windows Domain",
+          "term": "Security Group",
+          "tag": "",
+          "definition": "Grupo de usuarios o máquinas usado para asignar permisos de acceso a recursos de forma colectiva, en lugar de individualmente."
+        },
+        {
+          "id": "domain-admins-mt1313w4-5nl8",
+          "submodule": "Windows Domain",
+          "term": "Domain Admins",
+          "tag": "",
+          "definition": "Grupo de seguridad cuyos usuarios tienen privilegios administrativos sobre todo el dominio, incluyendo cualquier computadora y los Domain Controllers."
+        },
+        {
+          "id": "server-operators-mt1313w4-ztpq",
+          "submodule": "Windows Domain",
+          "term": "Server Operators",
+          "tag": "",
+          "definition": "Grupo de seguridad cuyos usuarios pueden administrar Domain Controllers, pero no pueden cambiar membresías de grupos administrativos."
+        },
+        {
+          "id": "backup-operators-mt1313w4-vfgm",
+          "submodule": "Windows Domain",
+          "term": "Backup Operators",
+          "tag": "",
+          "definition": "Grupo de seguridad cuyos usuarios pueden acceder a cualquier archivo ignorando permisos, usado para realizar backups de datos en las computadoras."
+        },
+        {
+          "id": "account-operators-mt1313w4-2cqq",
+          "submodule": "Windows Domain",
+          "term": "Account Operators",
+          "tag": "",
+          "definition": "Grupo de seguridad cuyos usuarios pueden crear o modificar otras cuentas en el dominio."
+        },
+        {
+          "id": "domain-users-mt1313w4-a472",
+          "submodule": "Windows Domain",
+          "term": "Domain Users",
+          "tag": "",
+          "definition": "Grupo de seguridad que incluye todas las cuentas de usuario existentes en el dominio."
+        },
+        {
+          "id": "domain-computers-mt1313w4-m85x",
+          "submodule": "Windows Domain",
+          "term": "Domain Computers",
+          "tag": "",
+          "definition": "Grupo de seguridad que incluye todas las computadoras existentes en el dominio."
+        },
+        {
+          "id": "domain-controllers-mt1313w4-sz4u",
+          "submodule": "Windows Domain",
+          "term": "Domain Controllers",
+          "tag": "",
+          "definition": "Grupo de seguridad que incluye todos los Domain Controllers existentes en el dominio."
+        },
+        {
+          "id": "organizational-unit-ou-mt1313w4-ibxz",
+          "submodule": "Windows Domain",
+          "term": "Organizational Unit (OU)",
+          "tag": "",
+          "definition": "Objeto contenedor en Active Directory usado para clasificar usuarios y máquinas, principalmente para aplicar políticas consistentes según su rol o departamento. Un usuario solo puede pertenecer a una OU a la vez."
         }
       ]
     }
