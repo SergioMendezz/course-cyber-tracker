@@ -5575,6 +5575,82 @@
           "definition": "Relación de confianza que permite a dos dominios autorizar mutuamente a sus usuarios para acceder a recursos del otro dominio. Se establece por defecto al unir dominios en un tree o forest."
         }
       ]
+    },
+    {
+      "id": "command-line-win-lin-sec1",
+      "name": "Command Line (WIN % LIN) SEC1",
+      "commands": [
+        {
+          "id": "ver-variables-de-entorno-y-el-path-mt2clusj-xi48",
+          "submodule": "Windows CMD Básico",
+          "title": "Ver variables de entorno y el Path",
+          "command": "set",
+          "explanation": "Muestra las variables de entorno de la sesión actual, incluyendo la variable Path que indica los directorios donde Windows buscará y ejecutará comandos.",
+          "example": "C:\\>set\nALLUSERSPROFILE=C:\\ProgramData\nPath=C:\\Windows\\system32;C:\\Windows;..."
+        },
+        {
+          "id": "ver-version-del-sistema-operativo-mt2clusj-9oie",
+          "submodule": "Windows CMD Básico",
+          "title": "Ver versión del sistema operativo",
+          "command": "ver",
+          "explanation": "Muestra la versión del sistema operativo Windows instalado.",
+          "example": "C:\\>ver\nMicrosoft Windows [Version 10.0.17763.1821]"
+        },
+        {
+          "id": "obtener-informacion-detallada-del-sistema-mt2clusj-1d95",
+          "submodule": "Windows CMD Básico",
+          "title": "Obtener información detallada del sistema",
+          "command": "systeminfo",
+          "explanation": "Lista información detallada sobre el sistema, como datos del sistema operativo, hardware, procesador y memoria.",
+          "example": "C:\\>systeminfo\nHost Name: WIN-SRV-2019\nOS Name: Microsoft Windows Server 2019 Datacenter\nOS Version: 10.0.17763 N/A Build 17763"
+        },
+        {
+          "id": "listar-controladores-instalados-mt2clusj-dja6",
+          "submodule": "Windows CMD Básico",
+          "title": "Listar controladores instalados",
+          "command": "driverquery",
+          "explanation": "Muestra una lista de todos los controladores de dispositivo instalados en el sistema y sus propiedades.",
+          "example": ""
+        },
+        {
+          "id": "paginar-la-salida-de-un-comando-mt2clusj-37cs",
+          "submodule": "Windows CMD Básico",
+          "title": "Paginar la salida de un comando",
+          "command": "driverquery | more",
+          "explanation": "Combina un comando con 'more' mediante una tubería (pipe) para mostrar la salida página por página cuando es muy larga. Se avanza presionando la barra espaciadora y se puede salir con CTRL + C.",
+          "example": "C:\\>driverquery | more"
+        },
+        {
+          "id": "obtener-ayuda-de-un-comando-mt2clusj-h16e",
+          "submodule": "Windows CMD Básico",
+          "title": "Obtener ayuda de un comando",
+          "command": "help",
+          "explanation": "Proporciona información de ayuda para un comando específico.",
+          "example": ""
+        },
+        {
+          "id": "limpiar-la-pantalla-de-la-consola-mt2clusj-qlt4",
+          "submodule": "Windows CMD Básico",
+          "title": "Limpiar la pantalla de la consola",
+          "command": "cls",
+          "explanation": "Limpia la pantalla del Command Prompt (símbolo del sistema).",
+          "example": ""
+        }
+      ],
+      "concepts": [
+        {
+          "id": "restriccion-de-ejecucion-de-comandos-segun-el-path-mt2clusj-mbrr",
+          "submodule": "Windows CMD Básico",
+          "title": "Restricción de ejecución de comandos según el Path",
+          "explanation": "Antes de emitir comandos en la línea de comandos de Windows, es importante notar que solo se pueden ejecutar aquellos comandos cuyos ejecutables se encuentren dentro de los directorios listados en la variable de entorno Path. Se puede usar el comando 'set' para verificar el path actual desde la línea de comandos.",
+          "keyPoints": [
+            "Los comandos solo pueden ejecutarse si están dentro del Windows Path",
+            "El comando 'set' permite ver la variable Path",
+            "La línea 'Path=' indica los directorios donde Windows buscará ejecutables"
+          ]
+        }
+      ],
+      "glossary": []
     }
   ]
 }
