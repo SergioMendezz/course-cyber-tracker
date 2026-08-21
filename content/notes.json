@@ -4527,6 +4527,47 @@
             "Se deben crear OUs para Workstations y Servers bajo el contenedor del dominio (los DCs ya tienen su OU propia)",
             "Mover las PCs/laptops a Workstations y los servidores a Servers desde el contenedor Computers permite configurar políticas por OU"
           ]
+        },
+        {
+          "id": "autenticacion-en-windows-domains-mt2ajhqt-a6cd",
+          "submodule": "Windows Domain",
+          "title": "Autenticación en Windows Domains",
+          "explanation": "Cuando se usan dominios de Windows, todas las credenciales se almacenan en los Domain Controllers. Cada vez que un usuario intenta autenticarse a un servicio usando credenciales de dominio, el servicio necesita preguntarle al Domain Controller si son correctas. Existen dos protocolos para la autenticación de red en dominios de Windows: Kerberos (protocolo por defecto en versiones recientes) y NetNTLM (protocolo legado mantenido por compatibilidad). Aunque NetNTLM debería considerarse obsoleto, la mayoría de las redes tienen ambos protocolos habilitados.",
+          "keyPoints": [
+            "Las credenciales se almacenan en los Domain Controllers",
+            "Kerberos es el protocolo por defecto en versiones recientes de Windows",
+            "NetNTLM es un protocolo legado mantenido por compatibilidad",
+            "La mayoría de las redes tienen ambos protocolos habilitados"
+          ]
+        },
+        {
+          "id": "autenticacion-kerberos-mt2ajhqt-pnfn",
+          "submodule": "Windows Domain",
+          "title": "Autenticación Kerberos",
+          "explanation": "Kerberos es el protocolo de autenticación por defecto en versiones recientes de Windows. Los usuarios que se autentican mediante Kerberos reciben tickets, que funcionan como prueba de una autenticación previa, permitiéndoles demostrar ante un servicio que ya se autenticaron en la red. El proceso tiene tres pasos principales: 1) El usuario envía su nombre de usuario y un timestamp cifrado con una clave derivada de su contraseña al Key Distribution Center (KDC), servicio generalmente instalado en el Domain Controller encargado de crear tickets Kerberos. El KDC responde con un Ticket Granting Ticket (TGT) cifrado con el hash de la contraseña de la cuenta krbtgt, junto con una Session Key que el usuario necesitará para futuras solicitudes; el TGT contiene una copia de la Session Key en su interior cifrado. 2) Cuando el usuario quiere conectarse a un servicio, usa el TGT para pedirle al KDC un Ticket Granting Service (TGS), enviando su nombre de usuario y un timestamp cifrado con la Session Key, junto con el TGT y un Service Principal Name (SPN) que indica el servicio y servidor al que se quiere acceder. El KDC responde con un TGS cifrado con una clave derivada del hash del Service Owner (la cuenta bajo la cual corre el servicio), que contiene una copia de la Service Session Key. 3) El usuario envía el TGS al servicio deseado para autenticarse y establecer la conexión; el servicio usa el hash de su cuenta configurada para descifrar el TGS y validar la Service Session Key.",
+          "keyPoints": [
+            "Los usuarios reciben tickets como prueba de autenticación previa",
+            "El KDC (Key Distribution Center) suele estar en el Domain Controller",
+            "El TGT se obtiene enviando usuario y timestamp cifrado con clave derivada de la contraseña",
+            "El TGT está cifrado con el hash de la cuenta krbtgt e incluye la Session Key",
+            "El TGS se solicita usando el TGT, la Session Key y un SPN",
+            "El TGS está cifrado con el hash del Service Owner e incluye la Service Session Key",
+            "El servicio descifra el TGS con el hash de su propia cuenta para validar la conexión"
+          ]
+        },
+        {
+          "id": "autenticacion-netntlm-mt2ajhqt-ti50",
+          "submodule": "Windows Domain",
+          "title": "Autenticación NetNTLM",
+          "explanation": "NetNTLM funciona mediante un mecanismo de desafío-respuesta (challenge-response). El proceso es: 1) El cliente envía una solicitud de autenticación al servidor al que quiere acceder. 2) El servidor genera un número aleatorio y lo envía como challenge al cliente. 3) El cliente combina su hash de contraseña NTLM con el challenge (y otros datos conocidos) para generar una respuesta, y la envía de vuelta al servidor. 4) El servidor reenvía el challenge y la respuesta al Domain Controller para su verificación. 5) El Domain Controller recalcula la respuesta usando el challenge y la compara con la respuesta original enviada por el cliente; si coinciden, el cliente es autenticado, de lo contrario se deniega el acceso, y el resultado se envía de vuelta al servidor. 6) El servidor reenvía el resultado de la autenticación al cliente. La contraseña del usuario (o su hash) nunca se transmite por la red por seguridad. Si se usa una cuenta local en lugar de una de dominio, el servidor puede verificar la respuesta al challenge por sí mismo sin necesidad del Domain Controller, ya que tiene el hash de la contraseña almacenado localmente en su SAM.",
+          "keyPoints": [
+            "Funciona mediante un mecanismo de challenge-response",
+            "El servidor genera un challenge aleatorio para el cliente",
+            "El cliente combina su hash NTLM con el challenge para generar la respuesta",
+            "El servidor reenvía challenge y respuesta al Domain Controller para verificar",
+            "La contraseña o su hash nunca se transmiten por la red",
+            "Con cuentas locales, el servidor verifica usando el hash almacenado en su SAM, sin el Domain Controller"
+          ]
         }
       ],
       "glossary": [
@@ -5243,6 +5284,83 @@
           "term": "Computers (contenedor)",
           "tag": "",
           "definition": "Contenedor por defecto de Active Directory donde se colocan todas las máquinas que se unen al dominio, excepto los Domain Controllers."
+        },
+        {
+          "id": "domain-controller-mt2ajhqt-hz71",
+          "submodule": "Windows Domain",
+          "term": "Domain Controller",
+          "tag": "",
+          "definition": "Servidor donde se almacenan todas las credenciales de un dominio de Windows y que verifica la autenticación de los usuarios ante los servicios de la red."
+        },
+        {
+          "id": "kerberos-mt2ajhqt-s8ze",
+          "submodule": "Windows Domain",
+          "term": "Kerberos",
+          "tag": "",
+          "definition": "Protocolo de autenticación de red por defecto en versiones recientes de Windows, basado en el uso de tickets como prueba de autenticación previa."
+        },
+        {
+          "id": "netntlm-mt2ajhqt-umgu",
+          "submodule": "Windows Domain",
+          "term": "NetNTLM",
+          "tag": "",
+          "definition": "Protocolo de autenticación de red legado mantenido por compatibilidad, que utiliza un mecanismo de desafío-respuesta."
+        },
+        {
+          "id": "key-distribution-center-kdc-mt2ajhqt-rt5q",
+          "submodule": "Windows Domain",
+          "term": "Key Distribution Center (KDC)",
+          "tag": "",
+          "definition": "Servicio, generalmente instalado en el Domain Controller, encargado de crear los tickets Kerberos en la red."
+        },
+        {
+          "id": "ticket-granting-ticket-tgt-mt2ajhqt-kxsl",
+          "submodule": "Windows Domain",
+          "term": "Ticket Granting Ticket (TGT)",
+          "tag": "",
+          "definition": "Ticket entregado por el KDC tras la autenticación inicial que permite al usuario solicitar tickets adicionales para acceder a servicios específicos, sin volver a enviar sus credenciales."
+        },
+        {
+          "id": "session-key-mt2ajhqt-km8x",
+          "submodule": "Windows Domain",
+          "term": "Session Key",
+          "tag": "",
+          "definition": "Clave entregada al usuario junto con el TGT, necesaria para generar futuras solicitudes; también está contenida dentro del TGT cifrado."
+        },
+        {
+          "id": "ticket-granting-service-tgs-mt2ajhqt-gohr",
+          "submodule": "Windows Domain",
+          "term": "Ticket Granting Service (TGS)",
+          "tag": "",
+          "definition": "Ticket que permite la conexión únicamente al servicio específico para el cual fue creado, obtenido presentando el TGT al KDC."
+        },
+        {
+          "id": "service-principal-name-spn-mt2ajhqt-e8g8",
+          "submodule": "Windows Domain",
+          "term": "Service Principal Name (SPN)",
+          "tag": "",
+          "definition": "Identificador que indica el servicio y el nombre del servidor al que se pretende acceder al solicitar un TGS."
+        },
+        {
+          "id": "service-session-key-mt2ajhqt-mmqb",
+          "submodule": "Windows Domain",
+          "term": "Service Session Key",
+          "tag": "",
+          "definition": "Clave entregada junto con el TGS, necesaria para autenticarse ante el servicio al que se desea acceder."
+        },
+        {
+          "id": "service-owner-mt2ajhqt-faix",
+          "submodule": "Windows Domain",
+          "term": "Service Owner",
+          "tag": "",
+          "definition": "Usuario o cuenta de máquina bajo la cual corre un servicio; su hash de contraseña se usa para cifrar el TGS."
+        },
+        {
+          "id": "krbtgt-mt2ajhqt-ox1k",
+          "submodule": "Windows Domain",
+          "term": "krbtgt",
+          "tag": "",
+          "definition": "Cuenta cuyo hash de contraseña se utiliza para cifrar el Ticket Granting Ticket (TGT) en Kerberos."
         }
       ]
     }
