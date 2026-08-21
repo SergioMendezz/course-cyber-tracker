@@ -5851,6 +5851,30 @@
           "command": "taskkill /PID target_pid",
           "explanation": "Termina un proceso específico utilizando su identificador de proceso (PID), conocido previamente mediante tasklist.",
           "example": "taskkill /PID 4567"
+        },
+        {
+          "id": "verificar-errores-del-disco-mt2eai8o-r3tb",
+          "submodule": "Windows CMD Básico",
+          "title": "Verificar errores del disco",
+          "command": "chkdsk",
+          "explanation": "Checks the file system and disk volumes for errors and bad sectors.",
+          "example": ""
+        },
+        {
+          "id": "listar-controladores-instalados-mt2eai8o-h4er",
+          "submodule": "Windows CMD Básico",
+          "title": "Listar controladores instalados",
+          "command": "driverquery",
+          "explanation": "Displays a list of installed device drivers.",
+          "example": ""
+        },
+        {
+          "id": "escanear-y-reparar-archivos-de-sistema-mt2eai8o-9uks",
+          "submodule": "Windows CMD Básico",
+          "title": "Escanear y reparar archivos de sistema",
+          "command": "sfc /scannow",
+          "explanation": "Scans system files for corruption and repairs them if possible.",
+          "example": ""
         }
       ],
       "concepts": [
