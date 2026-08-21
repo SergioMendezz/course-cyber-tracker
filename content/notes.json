@@ -4615,6 +4615,52 @@
             "La contraseña del usuario (o su hash) nunca se transmite por la red por seguridad",
             "Si se usa una cuenta local en lugar de una cuenta de dominio, el servidor puede verificar la respuesta al challenge por sí mismo sin interactuar con el Domain Controller, ya que tiene el hash de la contraseña almacenado localmente en su SAM"
           ]
+        },
+        {
+          "id": "necesidad-de-multiples-dominios-mt2boshs-yw7t",
+          "submodule": "Windows Domain",
+          "title": "Necesidad de múltiples dominios",
+          "explanation": "Tener un solo dominio es suficiente para empezar, pero a medida que una empresa crece (por ejemplo, al expandirse a un nuevo país con distintas leyes y regulaciones, o al necesitar equipos de IT independientes), puede ser necesario integrar múltiples dominios. Aunque se podría usar una estructura compleja de OUs y delegaciones, esto puede volverse difícil de manejar y propenso a errores humanos. Active Directory permite integrar varios dominios para particionar la red en unidades administradas independientemente.",
+          "keyPoints": [
+            "Un solo dominio es suficiente al inicio",
+            "El crecimiento empresarial puede requerir múltiples dominios",
+            "Alternativa a estructuras complejas de OUs y delegaciones"
+          ]
+        },
+        {
+          "id": "trees-arboles-de-dominio-mt2boshs-0nht",
+          "submodule": "Windows Domain",
+          "title": "Trees (Árboles de dominio)",
+          "explanation": "Si dos dominios comparten el mismo namespace (por ejemplo thm.local), pueden unirse en un Tree. Por ejemplo, thm.local puede dividirse en subdominios uk.thm.local y us.thm.local, cada uno con su propio AD, equipos y usuarios. Esta estructura particionada da mejor control sobre el acceso a recursos: cada Domain Controller gestiona solo sus recursos, y los Domain Admins de una rama no tienen control sobre otras ramas. Las políticas también pueden configurarse de forma independiente para cada dominio del árbol.",
+          "keyPoints": [
+            "Los dominios en un Tree comparten el mismo namespace",
+            "Cada subdominio tiene su propio DC, usuarios y equipos",
+            "Los Domain Admins solo controlan su propio dominio",
+            "Las GPOs pueden configurarse independientemente por dominio"
+          ]
+        },
+        {
+          "id": "forests-bosques-mt2boshs-ydvi",
+          "submodule": "Windows Domain",
+          "title": "Forests (Bosques)",
+          "explanation": "Un forest es la unión de varios trees con diferentes namespaces dentro de la misma red. Por ejemplo, si una empresa adquiere otra compañía con su propio dominio y namespace, ambos trees pueden combinarse en un forest, cada uno gestionado por su propio departamento de IT.",
+          "keyPoints": [
+            "Un forest une varios trees con distintos namespaces",
+            "Surge típicamente en fusiones o adquisiciones de empresas",
+            "Cada tree conserva su propia administración de IT"
+          ]
+        },
+        {
+          "id": "trust-relationships-relaciones-de-confianza-mt2boshs-2u4u",
+          "submodule": "Windows Domain",
+          "title": "Trust Relationships (Relaciones de confianza)",
+          "explanation": "Las relaciones de confianza permiten conectar dominios organizados en trees y forests para autorizar el acceso a recursos entre ellos. Una relación de confianza unidireccional (one-way trust) significa que si el Dominio AAA confía en el Dominio BBB, un usuario de BBB puede ser autorizado a acceder a recursos de AAA; la dirección de la confianza es contraria a la dirección del acceso. También existen relaciones de confianza bidireccionales (two-way trust), que permiten la autorización mutua entre dominios y se forman por defecto al unir dominios en un tree o forest. Establecer una relación de confianza no otorga automáticamente acceso a todos los recursos; sigue siendo necesario autorizar explícitamente a los usuarios.",
+          "keyPoints": [
+            "One-way trust: la dirección de confianza es opuesta a la dirección de acceso",
+            "Two-way trust: autorización mutua entre dominios",
+            "Por defecto, unir dominios en un tree o forest crea two-way trust",
+            "Una relación de confianza no otorga acceso automático a todos los recursos"
+          ]
         }
       ],
       "glossary": [
@@ -5492,6 +5538,41 @@
           "term": "SAM",
           "tag": "",
           "definition": "Base de datos local donde se almacenan los hashes de contraseñas de las cuentas locales de un equipo Windows."
+        },
+        {
+          "id": "tree-mt2boshs-4qj1",
+          "submodule": "Windows Domain",
+          "term": "Tree",
+          "tag": "",
+          "definition": "Conjunto de dos o más dominios que comparten el mismo namespace, organizados en una estructura jerárquica con un dominio raíz y subdominios."
+        },
+        {
+          "id": "forest-mt2boshs-ltth",
+          "submodule": "Windows Domain",
+          "term": "Forest",
+          "tag": "",
+          "definition": "Unión de varios trees con diferentes namespaces dentro de la misma red, típicamente resultado de fusiones o adquisiciones de empresas."
+        },
+        {
+          "id": "enterprise-admins-mt2boshs-14tj",
+          "submodule": "Windows Domain",
+          "term": "Enterprise Admins",
+          "tag": "",
+          "definition": "Grupo de seguridad que otorga a un usuario privilegios administrativos sobre todos los dominios de una empresa (enterprise), a diferencia de Domain Admins que solo controla un dominio individual."
+        },
+        {
+          "id": "one-way-trust-mt2boshs-jy28",
+          "submodule": "Windows Domain",
+          "term": "One-way trust",
+          "tag": "",
+          "definition": "Relación de confianza entre dos dominios donde, si el Dominio AAA confía en el Dominio BBB, un usuario de BBB puede ser autorizado a acceder a recursos de AAA. La dirección de la confianza es opuesta a la dirección del acceso."
+        },
+        {
+          "id": "two-way-trust-mt2boshs-owkm",
+          "submodule": "Windows Domain",
+          "term": "Two-way trust",
+          "tag": "",
+          "definition": "Relación de confianza que permite a dos dominios autorizar mutuamente a sus usuarios para acceder a recursos del otro dominio. Se establece por defecto al unir dominios en un tree o forest."
         }
       ]
     }
