@@ -5827,6 +5827,30 @@
           "command": "copy *.md C:\\Markdown",
           "explanation": "El carácter comodín * permite referirse a múltiples archivos; en este ejemplo copia todos los archivos con extensión .md al directorio especificado.",
           "example": "copy *.md C:\\Markdown"
+        },
+        {
+          "id": "listar-procesos-en-ejecucion-mt2e9t67-y85m",
+          "submodule": "Windows CMD Básico",
+          "title": "Listar procesos en ejecución",
+          "command": "tasklist",
+          "explanation": "Muestra la lista de procesos en ejecución en el sistema, incluyendo nombre de imagen, PID, sesión y uso de memoria. Es similar a la funcionalidad del Administrador de Tareas de Windows.",
+          "example": "C:\\>tasklist"
+        },
+        {
+          "id": "filtrar-procesos-por-nombre-de-imagen-mt2e9t67-8s8m",
+          "submodule": "Windows CMD Básico",
+          "title": "Filtrar procesos por nombre de imagen",
+          "command": "tasklist /FI \"imagename eq sshd.exe\"",
+          "explanation": "Filtra la salida de tasklist para mostrar solo los procesos cuyo nombre de imagen coincide con el especificado. /FI se usa para establecer el filtro.",
+          "example": "C:\\>tasklist /FI \"imagename eq sshd.exe\""
+        },
+        {
+          "id": "terminar-un-proceso-por-pid-mt2e9t67-vweo",
+          "submodule": "Windows CMD Básico",
+          "title": "Terminar un proceso por PID",
+          "command": "taskkill /PID target_pid",
+          "explanation": "Termina un proceso específico utilizando su identificador de proceso (PID), conocido previamente mediante tasklist.",
+          "example": "taskkill /PID 4567"
         }
       ],
       "concepts": [
@@ -5879,6 +5903,18 @@
             "del y erase eliminan archivos",
             "el comodín * permite operar sobre múltiples archivos a la vez"
           ]
+        },
+        {
+          "id": "gestion-de-procesos-desde-la-linea-de-comandos-mt2e9t67-rwki",
+          "submodule": "Windows CMD Básico",
+          "title": "Gestión de procesos desde la línea de comandos",
+          "explanation": "Windows permite listar y terminar procesos no responsivos desde la línea de comandos, ofreciendo una funcionalidad similar al Administrador de Tareas gráfico. Esto se logra combinando tasklist para identificar procesos (con filtros opcionales) y taskkill para finalizarlos usando su PID.",
+          "keyPoints": [
+            "tasklist muestra procesos en ejecución con su PID, sesión y uso de memoria",
+            "Se pueden aplicar filtros con /FI para reducir resultados extensos",
+            "taskkill permite terminar procesos usando el PID obtenido",
+            "tasklist /? muestra todos los filtros disponibles"
+          ]
         }
       ],
       "glossary": [
@@ -5909,6 +5945,13 @@
           "term": "ICMP",
           "tag": "networking",
           "definition": "Internet Control Message Protocol, protocolo usado para enviar mensajes de control y diagnóstico en redes IP, como los usados por el comando ping."
+        },
+        {
+          "id": "pid-mt2e9t67-i3pe",
+          "submodule": "Windows CMD Redes",
+          "term": "PID",
+          "tag": "",
+          "definition": "Process ID, identificador numérico único asignado a cada proceso en ejecución en el sistema, utilizado para referenciarlo en comandos como taskkill."
         }
       ]
     }
