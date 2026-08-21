@@ -5635,6 +5635,102 @@
           "command": "cls",
           "explanation": "Limpia la pantalla del Command Prompt (símbolo del sistema).",
           "example": ""
+        },
+        {
+          "id": "ver-configuracion-de-red-mt2dmvpy-jlz6",
+          "submodule": "Windows CMD Redes",
+          "title": "Ver configuración de red",
+          "command": "ipconfig",
+          "explanation": "Muestra la configuración de red actual, incluyendo la dirección IP, la máscara de subred y la puerta de enlace predeterminada.",
+          "example": "C:\\>ipconfig"
+        },
+        {
+          "id": "ver-configuracion-de-red-detallada-mt2dmvpy-bs88",
+          "submodule": "Windows CMD Redes",
+          "title": "Ver configuración de red detallada",
+          "command": "ipconfig /all",
+          "explanation": "Muestra información más detallada sobre la configuración de red, incluyendo servidores DNS y si DHCP está habilitado.",
+          "example": "C:\\>ipconfig /all"
+        },
+        {
+          "id": "probar-conectividad-con-un-host-mt2dmvpy-yen1",
+          "submodule": "Windows CMD Redes",
+          "title": "Probar conectividad con un host",
+          "command": "ping target_name",
+          "explanation": "Envía un paquete ICMP a un objetivo y espera una respuesta para verificar si se puede alcanzar dicho objetivo y viceversa.",
+          "example": "C:\\>ping example.com"
+        },
+        {
+          "id": "trazar-ruta-de-red-mt2dmvpy-td6n",
+          "submodule": "Windows CMD Redes",
+          "title": "Trazar ruta de red",
+          "command": "tracert target_name",
+          "explanation": "Traza la ruta de red recorrida para llegar a un objetivo, mostrando los routers intermedios que se atraviesan hasta alcanzarlo.",
+          "example": "C:\\>tracert example.com"
+        },
+        {
+          "id": "consultar-servidor-dns-mt2dmvpy-hire",
+          "submodule": "Windows CMD Redes",
+          "title": "Consultar servidor DNS",
+          "command": "nslookup example.com",
+          "explanation": "Busca un host o dominio y devuelve su dirección IP usando el servidor de nombres predeterminado.",
+          "example": "C:\\>nslookup example.com"
+        },
+        {
+          "id": "consultar-dns-con-servidor-especifico-mt2dmvpy-o0r4",
+          "submodule": "Windows CMD Redes",
+          "title": "Consultar DNS con servidor específico",
+          "command": "nslookup example.com 1.1.1.1",
+          "explanation": "Busca un host o dominio utilizando un servidor de nombres específico en lugar del predeterminado.",
+          "example": "C:\\>nslookup example.com 1.1.1.1"
+        },
+        {
+          "id": "ver-conexiones-de-red-activas-mt2dmvpy-cosl",
+          "submodule": "Windows CMD Redes",
+          "title": "Ver conexiones de red activas",
+          "command": "netstat",
+          "explanation": "Muestra las conexiones de red actuales y los puertos en escucha. Sin argumentos, muestra las conexiones establecidas.",
+          "example": "C:\\>netstat"
+        },
+        {
+          "id": "ver-ayuda-de-netstat-mt2dmvpy-schw",
+          "submodule": "Windows CMD Redes",
+          "title": "Ver ayuda de netstat",
+          "command": "netstat -h",
+          "explanation": "Muestra la página de ayuda del comando netstat con todas sus opciones disponibles.",
+          "example": "netstat -h"
+        },
+        {
+          "id": "ver-conexiones-detalladas-con-proceso-y-pid-mt2dmvpy-qcp9",
+          "submodule": "Windows CMD Redes",
+          "title": "Ver conexiones detalladas con proceso y PID",
+          "command": "netstat -abon",
+          "explanation": "Combina las opciones -a (todas las conexiones y puertos en escucha), -b (programa asociado), -o (PID asociado) y -n (formato numérico) para mostrar información detallada de las conexiones de red.",
+          "example": "C:\\>netstat -abon"
+        },
+        {
+          "id": "buscar-puerto-especifico-en-conexiones-mt2dmvpy-fgxh",
+          "submodule": "Windows CMD Redes",
+          "title": "Buscar puerto específico en conexiones",
+          "command": "netstat -ano | findstr \"24563\"",
+          "explanation": "Filtra la salida de netstat para encontrar el PID asociado a un puerto específico.",
+          "example": "netstat -ano | findstr \"24563\""
+        },
+        {
+          "id": "ver-nombre-de-proceso-por-pid-mt2dmvpy-ylz9",
+          "submodule": "Windows CMD Redes",
+          "title": "Ver nombre de proceso por PID",
+          "command": "tasklist /FI \"PID eq <numero_de_pid>\"",
+          "explanation": "Muestra el nombre del programa exacto asociado a un PID determinado.",
+          "example": "tasklist /FI \"PID eq 2116\""
+        },
+        {
+          "id": "obtener-proceso-por-puerto-con-powershell-mt2dmvpy-6fzl",
+          "submodule": "Windows CMD Redes",
+          "title": "Obtener proceso por puerto con PowerShell",
+          "command": "Get-Process -Id (Get-NetTCPConnection -LocalPort 24563).OwningProcess",
+          "explanation": "Comando de PowerShell que obtiene directamente el proceso asociado a un puerto local específico sin necesidad de pasos intermedios.",
+          "example": "Get-Process -Id (Get-NetTCPConnection -LocalPort 24563).OwningProcess"
         }
       ],
       "concepts": [
@@ -5648,9 +5744,61 @@
             "El comando 'set' permite ver la variable Path",
             "La línea 'Path=' indica los directorios donde Windows buscará ejecutables"
           ]
+        },
+        {
+          "id": "diagnostico-de-red-desde-la-linea-de-comandos-mt2dmvpy-e1av",
+          "submodule": "Windows CMD Redes",
+          "title": "Diagnóstico de red desde la línea de comandos",
+          "explanation": "Windows ofrece varios comandos desde la línea de comandos para consultar la configuración de red, revisar conexiones activas y solucionar problemas de conectividad, como alternativa a la interfaz gráfica.",
+          "keyPoints": [
+            "ipconfig muestra la configuración de red básica",
+            "ping y tracert permiten diagnosticar problemas de conectividad",
+            "nslookup permite consultar resolución de nombres DNS",
+            "netstat permite ver conexiones activas y puertos en escucha"
+          ]
+        },
+        {
+          "id": "identificar-el-programa-que-usa-un-puerto-mt2dmvpy-14mz",
+          "submodule": "Windows CMD Redes",
+          "title": "Identificar el programa que usa un puerto",
+          "explanation": "Para identificar qué programa está utilizando un puerto específico en Windows, primero se obtiene el PID asociado con netstat, y luego se usa tasklist o PowerShell para encontrar el nombre del proceso.",
+          "keyPoints": [
+            "netstat -ano con findstr filtra por número de puerto",
+            "tasklist /FI busca el proceso por PID",
+            "Get-Process con Get-NetTCPConnection en PowerShell simplifica el proceso en un solo paso"
+          ]
         }
       ],
-      "glossary": []
+      "glossary": [
+        {
+          "id": "ttl-mt2dmvpy-8kcz",
+          "submodule": "Windows CMD Redes",
+          "term": "TTL",
+          "tag": "networking",
+          "definition": "Time-to-live, un valor que indica el número máximo de saltos que puede dar un paquete antes de ser descartado en la red."
+        },
+        {
+          "id": "dhcp-mt2dmvpy-qhbd",
+          "submodule": "Windows CMD Redes",
+          "term": "DHCP",
+          "tag": "networking",
+          "definition": "Dynamic Host Configuration Protocol, protocolo que asigna automáticamente direcciones IP y otra configuración de red a los dispositivos."
+        },
+        {
+          "id": "pid-mt2dmvpy-nqnd",
+          "submodule": "Windows CMD Redes",
+          "term": "PID",
+          "tag": "sistema",
+          "definition": "Process ID, identificador numérico único asignado a cada proceso en ejecución en un sistema operativo."
+        },
+        {
+          "id": "icmp-mt2dmvpy-bl4v",
+          "submodule": "Windows CMD Redes",
+          "term": "ICMP",
+          "tag": "networking",
+          "definition": "Internet Control Message Protocol, protocolo usado para enviar mensajes de control y diagnóstico en redes IP, como los usados por el comando ping."
+        }
+      ]
     }
   ]
 }
