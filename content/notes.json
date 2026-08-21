@@ -5875,6 +5875,54 @@
           "command": "sfc /scannow",
           "explanation": "Scans system files for corruption and repairs them if possible.",
           "example": ""
+        },
+        {
+          "id": "listar-todos-los-cmdlets-disponibles-mt3e4eky-v7e3",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Listar todos los cmdlets disponibles",
+          "command": "Get-Command",
+          "explanation": "Lista todos los cmdlets, funciones, alias y scripts disponibles que pueden ejecutarse en la sesión actual de PowerShell. Es esencial para descubrir qué comandos se pueden usar.",
+          "example": "Get-Command"
+        },
+        {
+          "id": "filtrar-comandos-por-tipo-mt3e4eky-cy2q",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Filtrar comandos por tipo",
+          "command": "Get-Command -CommandType \"Function\"",
+          "explanation": "Filtra la lista de comandos según el valor de una propiedad mostrada, en este caso mostrando solo los comandos de tipo 'función'.",
+          "example": "Get-Command -CommandType \"Function\""
+        },
+        {
+          "id": "obtener-ayuda-de-un-cmdlet-mt3e4eky-h1yi",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Obtener ayuda de un cmdlet",
+          "command": "Get-Help Get-Date",
+          "explanation": "Proporciona información detallada sobre un cmdlet, incluyendo su uso, parámetros y ejemplos. Es el comando de referencia para aprender a usar cmdlets de PowerShell.",
+          "example": "Get-Help Get-Date -examples"
+        },
+        {
+          "id": "listar-alias-disponibles-mt3e4eky-xnhy",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Listar alias disponibles",
+          "command": "Get-Alias",
+          "explanation": "Lista todos los alias disponibles en PowerShell, que son atajos o nombres alternativos para cmdlets, útiles para usuarios acostumbrados a comandos tradicionales de línea de comandos.",
+          "example": "Get-Alias"
+        },
+        {
+          "id": "buscar-modulos-en-repositorios-en-linea-mt3e4eky-n1ki",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Buscar módulos en repositorios en línea",
+          "command": "Find-Module -Name \"PowerShell*\"",
+          "explanation": "Busca módulos (colecciones de cmdlets) en repositorios en línea como PowerShell Gallery, permitiendo usar comodines (*) para buscar nombres parciales.",
+          "example": "Find-Module -Name \"PowerShell*\""
+        },
+        {
+          "id": "instalar-un-modulo-desde-un-repositorio-mt3e4eky-g2xc",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Instalar un módulo desde un repositorio",
+          "command": "Install-Module -Name \"PowerShellGet\"",
+          "explanation": "Descarga e instala un módulo desde un repositorio en línea, haciendo disponibles los nuevos cmdlets contenidos en el módulo.",
+          "example": "Install-Module -Name \"PowerShellGet\""
         }
       ],
       "concepts": [
@@ -5974,6 +6022,42 @@
             "Los cmdlets devuelven objetos, no texto plano",
             "Permite manipulación de datos sin parseo adicional de texto"
           ]
+        },
+        {
+          "id": "formas-de-lanzar-powershell-mt3e4eky-go2m",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Formas de lanzar PowerShell",
+          "explanation": "PowerShell puede lanzarse de varias formas desde un entorno gráfico de Windows: desde el Menú Inicio escribiendo 'powershell', desde el diálogo Ejecutar (Win + R), desde el Explorador de Archivos escribiendo 'powershell' en la barra de direcciones, desde el Administrador de Tareas (File > Run new task), o desde el Command Prompt (cmd.exe) escribiendo 'powershell' y presionando Enter.",
+          "keyPoints": [
+            "Start Menu: buscar 'powershell'",
+            "Run Dialog: Win + R y escribir 'powershell'",
+            "File Explorer: escribir 'powershell' en la barra de direcciones abre PowerShell en ese directorio",
+            "Task Manager: File > Run new task y escribir 'powershell'",
+            "También se puede lanzar desde cmd.exe escribiendo 'powershell'"
+          ]
+        },
+        {
+          "id": "sintaxis-basica-verb-noun-mt3e4eky-3d16",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Sintaxis básica: Verb-Noun",
+          "explanation": "Los comandos de PowerShell se llaman cmdlets (command-lets) y son mucho más poderosos que los comandos tradicionales de Windows, permitiendo manipulación de datos más avanzada. Los cmdlets siguen una convención de nombres consistente Verbo-Sustantivo, donde el Verbo describe la acción y el Sustantivo especifica el objeto sobre el que se realiza la acción.",
+          "keyPoints": [
+            "Get-Content: obtiene el contenido de un archivo y lo muestra en la consola",
+            "Set-Location: cambia el directorio de trabajo actual",
+            "La convención Verbo-Sustantivo facilita entender qué hace cada cmdlet"
+          ]
+        },
+        {
+          "id": "descarga-de-modulos-y-cmdlets-adicionales-mt3e4eky-vdh0",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Descarga de módulos y cmdlets adicionales",
+          "explanation": "PowerShell permite extender su funcionalidad descargando cmdlets adicionales desde repositorios en línea, como la PowerShell Gallery. Se puede buscar módulos con Find-Module usando comodines (*) para nombres parciales, y luego instalarlos con Install-Module para tener disponibles nuevos cmdlets.",
+          "keyPoints": [
+            "Requiere conexión a internet para consultar repositorios en línea",
+            "Find-Module busca módulos, se puede filtrar por Name con wildcard",
+            "Install-Module descarga e instala el módulo, haciendo disponibles sus cmdlets",
+            "Install-Module puede pedir confirmación si el repositorio no es de confianza"
+          ]
         }
       ],
       "glossary": [
@@ -6032,6 +6116,27 @@
           "term": "Object-oriented (orientado a objetos)",
           "tag": "Programación",
           "definition": "Enfoque en el que la información se maneja como objetos con propiedades (datos) y métodos (acciones), en lugar de como texto plano."
+        },
+        {
+          "id": "cmdlet-mt3e4eky-dlf1",
+          "submodule": "PowerShell Fundamentos",
+          "term": "Cmdlet",
+          "tag": "",
+          "definition": "Comando de PowerShell (pronunciado 'command-let'), más poderoso que los comandos tradicionales de Windows, sigue la convención de nombres Verbo-Sustantivo."
+        },
+        {
+          "id": "alias-powershell-mt3e4eky-vd0w",
+          "submodule": "PowerShell Fundamentos",
+          "term": "Alias (PowerShell)",
+          "tag": "",
+          "definition": "Atajo o nombre alternativo para un cmdlet, incluido para facilitar la transición de usuarios acostumbrados a comandos tradicionales de Windows. Por ejemplo, 'dir' es alias de Get-ChildItem y 'cd' es alias de Set-Location."
+        },
+        {
+          "id": "module-mt3e4eky-svfy",
+          "submodule": "PowerShell Fundamentos",
+          "term": "Module",
+          "tag": "",
+          "definition": "Colección de cmdlets que puede buscarse en repositorios en línea como PowerShell Gallery y descargarse para extender la funcionalidad de PowerShell."
         }
       ]
     }
