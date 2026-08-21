@@ -5939,6 +5939,41 @@
             "taskkill permite terminar procesos usando el PID obtenido",
             "tasklist /? muestra todos los filtros disponibles"
           ]
+        },
+        {
+          "id": "que-es-powershell-mt3cgii4-yim5",
+          "submodule": "PowerShell Fundamentos",
+          "title": "¿Qué es PowerShell?",
+          "explanation": "PowerShell es una solución de automatización de tareas multiplataforma de Microsoft, compuesta por un shell de línea de comandos, un lenguaje de scripting y un framework de gestión de configuración. Combina una interfaz de línea de comandos con un lenguaje de scripting construido sobre el framework .NET. A diferencia de las herramientas de línea de comandos tradicionales basadas en texto, PowerShell es orientado a objetos, lo que le permite manejar tipos de datos complejos e interactuar de forma más efectiva con los componentes del sistema. Inicialmente exclusivo de Windows, se expandió luego para soportar macOS y Linux.",
+          "keyPoints": [
+            "Multiplataforma: Windows, macOS y Linux",
+            "Combina shell de comandos + lenguaje de scripting + framework de gestión de configuración",
+            "Construido sobre el framework .NET",
+            "Orientado a objetos, no a texto plano"
+          ]
+        },
+        {
+          "id": "historia-de-powershell-mt3cgii4-rwd1",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Historia de PowerShell",
+          "explanation": "PowerShell fue desarrollado para superar las limitaciones de las herramientas de línea de comandos existentes en Windows, como cmd.exe y los archivos batch, que no alcanzaban para automatizar y gestionar entornos empresariales complejos. Jeffrey Snover, ingeniero de Microsoft, notó que Windows y Unix manejaban las operaciones del sistema de forma distinta: Windows usaba datos estructurados y APIs, mientras Unix trataba todo como archivos de texto. Esto hacía impráctico portar herramientas de Unix a Windows. Su solución fue un enfoque orientado a objetos que combinaba la simplicidad del scripting con el poder del framework .NET. PowerShell se lanzó en 2006. En 2016, Microsoft lanzó PowerShell Core, una versión open-source y multiplataforma que corre en Windows, macOS y Linux.",
+          "keyPoints": [
+            "Creado por Jeffrey Snover, ingeniero de Microsoft",
+            "Windows usa datos estructurados/APIs; Unix trata todo como texto",
+            "Lanzamiento original: 2006",
+            "PowerShell Core (open-source, multiplataforma): 2016"
+          ]
+        },
+        {
+          "id": "objetos-en-powershell-mt3cgii4-ojnm",
+          "submodule": "PowerShell Fundamentos",
+          "title": "Objetos en PowerShell",
+          "explanation": "En programación, un objeto representa un elemento con propiedades (características) y métodos (acciones). Por ejemplo, un objeto 'auto' podría tener propiedades como Color, Model y FuelLevel, y métodos como Drive(), HonkHorn() y Refuel(). En PowerShell, los objetos son unidades fundamentales que encapsulan datos y funcionalidad, facilitando la gestión y manipulación de información. Un objeto en PowerShell puede contener nombres de archivo, nombres de usuario o tamaños como datos (propiedades), y funciones (métodos) como copiar un archivo o detener un proceso. A diferencia del Command Shell tradicional, que procesa y entrega datos como texto plano, un cmdlet en PowerShell devuelve objetos que conservan sus propiedades y métodos, permitiendo una manipulación de datos más potente y flexible sin necesidad de parsear texto adicional.",
+          "keyPoints": [
+            "Objeto = propiedades (datos) + métodos (acciones)",
+            "Los cmdlets devuelven objetos, no texto plano",
+            "Permite manipulación de datos sin parseo adicional de texto"
+          ]
         }
       ],
       "glossary": [
@@ -5976,6 +6011,27 @@
           "term": "PID",
           "tag": "",
           "definition": "Process ID, identificador numérico único asignado a cada proceso en ejecución en el sistema, utilizado para referenciarlo en comandos como taskkill."
+        },
+        {
+          "id": "cmdlet-mt3cgii4-a7vt",
+          "submodule": "PowerShell Fundamentos",
+          "term": "cmdlet",
+          "tag": "PowerShell",
+          "definition": "Se pronuncia 'command-let'. Comando de PowerShell que, al ejecutarse, devuelve objetos que retienen sus propiedades y métodos, en lugar de texto plano."
+        },
+        {
+          "id": "powershell-core-mt3cgii4-cvwy",
+          "submodule": "PowerShell Fundamentos",
+          "term": "PowerShell Core",
+          "tag": "PowerShell",
+          "definition": "Versión open-source y multiplataforma de PowerShell lanzada por Microsoft en 2016, que corre en Windows, macOS y Linux."
+        },
+        {
+          "id": "object-oriented-orientado-a-objetos-mt3cgii4-ngbs",
+          "submodule": "PowerShell Fundamentos",
+          "term": "Object-oriented (orientado a objetos)",
+          "tag": "Programación",
+          "definition": "Enfoque en el que la información se maneja como objetos con propiedades (datos) y métodos (acciones), en lugar de como texto plano."
         }
       ]
     }
