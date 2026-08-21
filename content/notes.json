@@ -5731,6 +5731,102 @@
           "command": "Get-Process -Id (Get-NetTCPConnection -LocalPort 24563).OwningProcess",
           "explanation": "Comando de PowerShell que obtiene directamente el proceso asociado a un puerto local específico sin necesidad de pasos intermedios.",
           "example": "Get-Process -Id (Get-NetTCPConnection -LocalPort 24563).OwningProcess"
+        },
+        {
+          "id": "mostrar-directorio-actual-mt2dzd3q-15b0",
+          "submodule": "Windows CMD Básico",
+          "title": "Mostrar directorio actual",
+          "command": "cd",
+          "explanation": "Sin parámetros, muestra la unidad y el directorio actual, equivalente a preguntar '¿dónde estoy?'.",
+          "example": "C:\\Users\\strategos>cd\nC:\\Users\\strategos"
+        },
+        {
+          "id": "listar-contenido-de-un-directorio-mt2dzd3q-96zo",
+          "submodule": "Windows CMD Básico",
+          "title": "Listar contenido de un directorio",
+          "command": "dir",
+          "explanation": "Muestra los directorios y archivos hijos del directorio actual. Con /a muestra archivos ocultos y de sistema, y con /s muestra archivos del directorio actual y todos los subdirectorios.",
+          "example": "C:\\Users\\strategos>dir"
+        },
+        {
+          "id": "ver-arbol-de-directorios-mt2dzd3r-kc1e",
+          "submodule": "Windows CMD Básico",
+          "title": "Ver árbol de directorios",
+          "command": "tree",
+          "explanation": "Representa visualmente los directorios y subdirectorios hijos del directorio actual.",
+          "example": "C:.\n├───Desktop\n├───Documents\n└───Videos"
+        },
+        {
+          "id": "cambiar-de-directorio-mt2dzd3r-gdbu",
+          "submodule": "Windows CMD Básico",
+          "title": "Cambiar de directorio",
+          "command": "cd target_directory",
+          "explanation": "Cambia al directorio especificado, equivalente a hacer doble clic en esa carpeta. Usando cd .. se sube un nivel en la jerarquía de directorios.",
+          "example": "C:\\>cd Users\nC:\\Users>cd ..\nC:\\>"
+        },
+        {
+          "id": "crear-un-directorio-mt2dzd3r-c776",
+          "submodule": "Windows CMD Básico",
+          "title": "Crear un directorio",
+          "command": "mkdir directory_name",
+          "explanation": "Crea un nuevo directorio con el nombre especificado.",
+          "example": "C:\\example>mkdir backup_files"
+        },
+        {
+          "id": "eliminar-un-directorio-mt2dzd3r-u7jl",
+          "submodule": "Windows CMD Básico",
+          "title": "Eliminar un directorio",
+          "command": "rmdir directory_name",
+          "explanation": "Elimina el directorio especificado.",
+          "example": "C:\\example>rmdir backup_files"
+        },
+        {
+          "id": "mostrar-contenido-de-un-archivo-de-texto-mt2dzd3r-9ejh",
+          "submodule": "Windows CMD Básico",
+          "title": "Mostrar contenido de un archivo de texto",
+          "command": "type",
+          "explanation": "Muestra el contenido completo de un archivo de texto en pantalla; conveniente para archivos que caben en la ventana de la terminal.",
+          "example": ""
+        },
+        {
+          "id": "ver-archivo-de-texto-por-paginas-mt2dzd3r-b7x9",
+          "submodule": "Windows CMD Básico",
+          "title": "Ver archivo de texto por páginas",
+          "command": "more",
+          "explanation": "Muestra el contenido de un archivo de texto largo página por página. Presionar Espacio avanza una página y Enter avanza una línea.",
+          "example": ""
+        },
+        {
+          "id": "copiar-archivos-mt2dzd3r-t4t6",
+          "submodule": "Windows CMD Básico",
+          "title": "Copiar archivos",
+          "command": "copy origen destino",
+          "explanation": "Copia archivos de una ubicación a otra.",
+          "example": "C:\\example>copy test.txt test2.txt\n1 file(s) copied."
+        },
+        {
+          "id": "mover-archivos-mt2dzd3r-19tr",
+          "submodule": "Windows CMD Básico",
+          "title": "Mover archivos",
+          "command": "move origen destino",
+          "explanation": "Mueve archivos de una ubicación a otra.",
+          "example": "C:\\example>move test2.txt ..\n1 file(s) moved."
+        },
+        {
+          "id": "eliminar-un-archivo-mt2dzd3r-dhb4",
+          "submodule": "Windows CMD Básico",
+          "title": "Eliminar un archivo",
+          "command": "del / erase",
+          "explanation": "Elimina un archivo especificado. Ambos comandos son equivalentes.",
+          "example": "C:\\example>erase test2.txt"
+        },
+        {
+          "id": "usar-comodin-para-multiples-archivos-mt2dzd3r-uz8k",
+          "submodule": "Windows CMD Básico",
+          "title": "Usar comodín para múltiples archivos",
+          "command": "copy *.md C:\\Markdown",
+          "explanation": "El carácter comodín * permite referirse a múltiples archivos; en este ejemplo copia todos los archivos con extensión .md al directorio especificado.",
+          "example": "copy *.md C:\\Markdown"
         }
       ],
       "concepts": [
@@ -5766,6 +5862,22 @@
             "netstat -ano con findstr filtra por número de puerto",
             "tasklist /FI busca el proceso por PID",
             "Get-Process con Get-NetTCPConnection en PowerShell simplifica el proceso en un solo paso"
+          ]
+        },
+        {
+          "id": "navegacion-y-manejo-de-directorios-y-archivos-en-cmd-mt2dzd3r-zidf",
+          "submodule": "Windows CMD Básico",
+          "title": "Navegación y manejo de directorios y archivos en CMD",
+          "explanation": "Windows CMD permite explorar directorios, moverse entre ellos y administrar archivos usando un conjunto de comandos básicos como cd, dir, tree, mkdir, rmdir, type, more, copy, move y del/erase.",
+          "keyPoints": [
+            "cd sin parámetros muestra la ubicación actual",
+            "dir lista archivos y carpetas, con opciones /a y /s",
+            "tree muestra la estructura de directorios visualmente",
+            "mkdir y rmdir crean y eliminan directorios",
+            "type y more muestran contenido de archivos de texto",
+            "copy y move copian y mueven archivos",
+            "del y erase eliminan archivos",
+            "el comodín * permite operar sobre múltiples archivos a la vez"
           ]
         }
       ],
