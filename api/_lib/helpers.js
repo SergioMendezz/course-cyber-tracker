@@ -34,7 +34,16 @@ export async function readNotes(env) {
   }
 
   const getRes = await fetch(`${ghApiBase}?ref=${env.GITHUB_BRANCH}`, { headers: ghHeaders })
-  if (!getRes.ok) throw new Error('No se pudo leer content/notes.json de GitHub')
+  if (!getRes.ok) {
+    const hints = {
+      401: 'el GITHUB_TOKEN es inválido o expiró',
+      403: 'el token no tiene permiso (necesita Contents: Read and write) o se acabó el rate limit',
+      404: `no existe ${env.GITHUB_OWNER}/${env.GITHUB_REPO} (rama ${env.GITHUB_BRANCH}) o el token no tiene acceso a ese repo`,
+    }
+    throw new Error(
+      `No se pudo leer content/notes.json de GitHub (HTTP ${getRes.status}): ${hints[getRes.status] || 'error inesperado'}`,
+    )
+  }
   const getData = await getRes.json()
 
   let content
